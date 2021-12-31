@@ -23,7 +23,7 @@ Mappings:
       AMI: ami-002068ed284fb165b
 
 Resources:
-  Ec2Instance:
+  EC2Instance:
     Type: "AWS::EC2::Instance"
     Properties:
       # InstanceType: t2.micro
@@ -55,3 +55,15 @@ Resources:
           ToPort: '22'
           CidrIp: 0.0.0.0/0
 
+Outputs:
+  ServerDNS:
+    Value: !GetAtt EC2Instance.PublicDnsName
+    # Value: !GetAtt
+    #   - EC2Instance
+    #   - PublicDnsName
+  ServerAZ:
+    Value: !GetAtt EC2Instance.AvailabilityZone
+  ServerPrivateIP:
+    Value: !GetAtt EC2Instance.PrivateIp
+  ServerPublicIP:
+    Value: !GetAtt EC2Instance.PublicIp        
