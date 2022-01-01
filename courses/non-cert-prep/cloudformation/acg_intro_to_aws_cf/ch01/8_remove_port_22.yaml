@@ -76,12 +76,8 @@ Resources:
   MySecurityGroup:
     Type: 'AWS::EC2::SecurityGroup'
     Properties:
-      GroupDescription: "Base Security Group enabling SSH access via port 22"
+      GroupDescription: "Open port 80"
       SecurityGroupIngress:
-        - IpProtocol: tcp
-          FromPort: '22'
-          ToPort: '22'
-          CidrIp: 0.0.0.0/0
         - IpProtocol: tcp
           FromPort: '80'
           ToPort: '80'
