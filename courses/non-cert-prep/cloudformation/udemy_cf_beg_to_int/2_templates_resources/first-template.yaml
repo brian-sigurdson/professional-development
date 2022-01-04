@@ -28,3 +28,6 @@ Resources:
       Tags:
         - Key: Name 
           Value: Web server security group 
+  SQSQueue:
+    Type: AWS::SQS::Queue
+    DependsOn: WebServerInstance
