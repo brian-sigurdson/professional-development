@@ -6,12 +6,13 @@ Resources:
   # create vpc
   MyVPC:
     Type: AWS::EC2::VPC
+    Description: Activity 2 VPC 
     Properties:
       CidrBlock: 10.0.0.0/16
       EnableDnsSupport: true
       Tags:
         - Key: Name
-          Value: My First CF VPC
+          Value: Activity2VPC
 
   # create igw
   MyIGW:
