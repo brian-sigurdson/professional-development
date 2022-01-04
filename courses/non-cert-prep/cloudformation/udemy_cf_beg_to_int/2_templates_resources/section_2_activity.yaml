@@ -1,0 +1,116 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+Description: First template 
+
+Resources: 
+  # create vpc
+  MyVPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/16
+      EnableDnsSupport: true
+      Tags:
+        - Key: Name
+          Value: My First CF VPC
+
+  # create igw
+  MyIGW:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+        - Key: Name
+          Value: MyIGW
+    
+  # attache igw to vpc
+  AttachGateway:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId: 
+        Ref: MyVPC
+      InternetGatewayId: 
+        Ref: MyIGW
+
+  # create a publice rroute tablet
+  PublicRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: 
+        Ref: MyVPC
+      Tags:
+        - Key: Name
+          Value: PublicRT
+
+  # specify the route to the igw in the route table
+  RouteToIGW:
+    Type: AWS::EC2::Route
+    Properties:
+      RouteTableId: 
+        Ref: PublicRouteTable
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: 
+        Ref: MyIGW
+
+  # create a public subnet
+  PublicSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      AvailabilityZone: us-east-1a
+      MapPublicIpOnLaunch: true 
+      VpcId: 
+        Ref: MyVPC
+      CidrBlock: 10.0.1.0/24
+      Tags:
+        - Key: Name
+          Value: PublicSubnet01
+
+  # associate subnet01 with the route table
+  Subnet01RouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: 
+        Ref: PublicRouteTable
+      SubnetId: 
+        # The kept throwing a no id found error when using !Ref PublicSubnet.  
+        # Using Ref: going forward
+        Ref: PublicSubnet
+
+  MyEC2:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-0ed9277fb7eb570c9 # N. Virginia
+      InstanceType: t2.micro
+      Monitoring: false
+      SecurityGroupIds:
+        - Ref: MyEC2SecurityGroup
+      SubnetId:
+        Ref: PublicSubnet
+      UserData: !Base64 |
+        #!/bin/bash -ex
+        yum update -y 
+        yum install -y httpd
+        systemctl start httpd
+        systemctl enable httpd
+      Tags:
+        - Key: Name
+          Value: MyEC2
+
+  MyEC2SecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupName: MyEC2SecurityGroup
+      GroupDescription: Allow ICMP and HTTP
+      VpcId:
+        Ref: MyVPC
+      SecurityGroupIngress:
+        - IpProtocol: icmp 
+          FromPort: 8
+          ToPort: -1
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp 
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+      Tags:
+        - Key: Name 
+          Value: MyEC2SecurityGroup
+
