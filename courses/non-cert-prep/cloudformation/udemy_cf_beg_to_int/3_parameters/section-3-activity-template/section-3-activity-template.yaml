@@ -1,3 +1,5 @@
+# this is the template provided by the author for the exercise
+
 AWSTemplateFormatVersion: 2010-09-09
 Description: >-
   Section 3 Activity template. 
@@ -5,25 +7,65 @@ Description: >-
   a web server EC2 instance in the public subnet 
   and a security group attached to this EC2 instance.
 
+Parameters:
+  EC2InstanceType:
+    Description: EC2 instance type
+    Type: String
+    Default: db.t2.micro
+    AllowedValues:
+      - db.t2.nano
+      - db.t2.micro
+      - db.t2.small
+  
+  WebServerInstanceImageId:
+    Description: Web server image id 
+    Type: String 
+    Default: ami-0ed9277fb7eb570c9 #for N. Virginia
+  
+  EbsSize:
+    Type: Number
+    Description: Database storage size in GB
+    MinValue: 8
+    MaxValue: 20
+    Default: 8
+
+  KeyPairName:
+    Description: The key pair to use.
+    Type: AWS::EC2::KeyPair::KeyName
+
+  CidrBlocks:
+    Type: CommaDelimitedList
+    Description: 'CIDR blocks as a list:  <cidr-vpc>,<cidr-public-subnet>,<cidr-private-subnet>'
+    Default: '10.0.0.0/16,10.0.0.0/24,10.0.1.0/24'
+
+  # I'm not doing any error checking for overlapping subnets.
+  AZPublic:
+    Type: AWS::EC2::AvailabilityZone::Name
+  AZPrivate:
+    Type: AWS::EC2::AvailabilityZone::Name   
+
+
+########################################################################################################################
+
 Resources:
   Vpc:
     Type: AWS::EC2::VPC
     Description: Section 3 activity VPC
     Properties:
-      CidrBlock: 10.0.0.0/16
+      CidrBlock: !Select [ 0, !Ref CidrBlocks]
       EnableDnsSupport: true
       EnableDnsHostnames: true
       Tags:
         -
           Key: Name
-          Value: Section 3 Activity VPC
+          Value: !Sub "Section 3 Activity VPC for ${AWS::StackName}"
 
   # Subnets ---        
   PublicSubnet:
     Type: AWS::EC2::Subnet 
     Properties:
-      AvailabilityZone: eu-west-1a
-      CidrBlock: 10.0.0.0/24
+      AvailabilityZone: !Ref AZPublic
+      CidrBlock: !Select [ 1, !Ref CidrBlocks]
       MapPublicIpOnLaunch: true
       VpcId: !Ref Vpc
       Tags:
@@ -34,8 +76,8 @@ Resources:
   PrivateSubnet:
     Type: AWS::EC2::Subnet 
     Properties:
-      AvailabilityZone: eu-west-1a
-      CidrBlock: 10.0.1.0/24
+      AvailabilityZone: !Ref AZPrivate
+      CidrBlock: !Select [ 2, !Ref CidrBlocks]
       VpcId: !Ref Vpc
       Tags:
         -
@@ -96,16 +138,17 @@ Resources:
       - InternetRoute
       - PublicSubnetRouteTableAssoc
     Properties:
-      InstanceType: t2.micro
+      InstanceType: !Ref EC2InstanceType
       SubnetId: !Ref PublicSubnet 
-      ImageId: ami-0fad7378adf284ce0
+      ImageId: !Ref WebServerInstanceImageId
+      KeyName: !Ref KeyPairName
       SecurityGroupIds:
         - !Ref WebServerSecurityGroup
       BlockDeviceMappings:
         - 
           DeviceName: /dev/sdf
           Ebs:
-            VolumeSize: 20
+            VolumeSize: !Ref EbsSize
             VolumeType: gp2
       Tags:
         -
@@ -133,4 +176,4 @@ Resources:
           FromPort: 22 
           ToPort: 22
 
-
+########################################################################################################################
