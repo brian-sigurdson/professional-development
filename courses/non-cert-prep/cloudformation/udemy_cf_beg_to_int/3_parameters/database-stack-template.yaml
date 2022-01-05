@@ -8,26 +8,59 @@ Parameters:
     Description: RDS instance class 
     Type: String
     Default: db.t2.micro
+    AllowedValues:
+      - db.t2.micro 
+      - db.t2.small
+    ConstraintDescription: Valid values are db.t2.micro and db.t2.small.
   MasterUsername:
     Type: String 
     Description: Master username for db
-    Default: dba 
+    Default: dba
+    MaxLength: 10 
+    AllowedPattern: '[a-zA-Z][a-zA-Z0-9]*'
+    NoEcho: true 
   MasterUserPassword:
     Type: String
-    Description: Master pwd for db 
+    Description: Master pwd for db (min of 8 characters)
     Default: 12345678
+    MinLength: 8
+    NoEcho: true 
   MultiAZ:
-    Type: Boolean 
+    Type: String 
     Description: Enable Multi-AZ?
-    Default: true
+    Default: false
+    AllowedValues:
+      - true 
+      - false 
+    ConstraintDescription: MultiAZ parameter should be true or false.
   AllocatedStorage:
     Type: Number
     Description: Database storage size in GB
+    MinValue: 8
+    MaxValue: 20
     Default: 8
+    ConstraintDescription: AllocatedStorage parameter value should be between 8 and 20.
+  SecurityGroupPorts:
+    Type: List<Number>
+    Description: 'Port numbers as a list:  <web-server-port>,<database-port>'
+    Default: '80,3306'
+  DBSubnets: 
+    Type: CommaDelimitedList
+    Description: 'Db subnet ids as a list: <subnet1>,<subnet2>, ...'
 
 Resources:
-  # Note: Please replace the value of VpcId property
-  # with the VPC id of your default VPC
+  WebServerSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      VpcId: vpc-0ae879a735c40226e # my default vpc
+      GroupDescription: 'Web server instances security group'
+      SecurityGroupIngress:
+        - 
+          CidrIp: 0.0.0.0/0
+          FromPort: !Select: [ 0, !Ref SecurityGroupsPorts ]
+          ToPort: !Select [ 0, !Ref SecurityGroupsPorts ]
+          IpProtocol: tcp
+
   DbSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
@@ -36,8 +69,8 @@ Resources:
       SecurityGroupIngress:
         - 
           CidrIp: 0.0.0.0/0
-          FromPort: 3306
-          ToPort: 3306
+          FromPort: !Select: [ 1, !Ref SecurityGroupsPorts ]
+          ToPort: !Select [ 1, !Ref SecurityGroupsPorts ]
           IpProtocol: tcp
 
   # Note: Please replace the value of SubnetIds property 
@@ -46,10 +79,7 @@ Resources:
     Type: 'AWS::RDS::DBSubnetGroup'
     Properties:
       DBSubnetGroupDescription: Subnets to launch db instances into
-      SubnetIds: 
-        - subnet-000ae4980d2881053 # us-east-1a
-        - subnet-040de78cda579f378 # us-east-1b
-        - subnet-0cbe48dc082d115b5 # us-east-1c
+      SubnetIds: !Ref DBSubnets
 
   DatabaseInstance:
     Type: AWS::RDS::DBInstance
