@@ -45,32 +45,46 @@ Parameters:
     Description: 'Port numbers as a list:  <web-server-port>,<database-port>'
     Default: '80,3306'
   DBSubnets: 
-    Type: CommaDelimitedList
+    Type: List<AWS::EC2::Subnet::Id>
     Description: 'Db subnet ids as a list: <subnet1>,<subnet2>, ...'
+  VpcId:
+    Type: AWS::EC2::VPC::Id
+    Description: A valid VPC id in your account
 
 Resources:
+  Bastion:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-0ed9277fb7eb570c9
+      InstanceType: t2.micro 
+      SubnetId: !Select [ 0, !Ref DBSubnets ]
+      Tags:
+        - Key: Name
+          Value: # I got a yaml syntax error trying to use !Sub here
+            Fn::Sub '${AWS::StackName}-Bastion'
+
   WebServerSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
-      VpcId: vpc-0ae879a735c40226e # my default vpc
+      VpcId: !Ref VpcId 
       GroupDescription: 'Web server instances security group'
       SecurityGroupIngress:
         - 
           CidrIp: 0.0.0.0/0
-          FromPort: !Select: [ 0, !Ref SecurityGroupsPorts ]
-          ToPort: !Select [ 0, !Ref SecurityGroupsPorts ]
+          FromPort: !Select [ 0, !Ref SecurityGroupPorts ]
+          ToPort: !Select [ 0, !Ref SecurityGroupPorts ]
           IpProtocol: tcp
 
   DbSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
-      VpcId: vpc-0ae879a735c40226e # my default vpc
+      VpcId: !Ref VpcId
       GroupDescription: 'Database instances security group'
       SecurityGroupIngress:
         - 
           CidrIp: 0.0.0.0/0
-          FromPort: !Select: [ 1, !Ref SecurityGroupsPorts ]
-          ToPort: !Select [ 1, !Ref SecurityGroupsPorts ]
+          FromPort: !Select [ 1, !Ref SecurityGroupPorts ]
+          ToPort: !Select [ 1, !Ref SecurityGroupPorts ]
           IpProtocol: tcp
 
   # Note: Please replace the value of SubnetIds property 
