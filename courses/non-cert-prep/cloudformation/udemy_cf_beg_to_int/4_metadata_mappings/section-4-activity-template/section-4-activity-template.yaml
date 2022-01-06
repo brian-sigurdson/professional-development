@@ -4,7 +4,36 @@ Description: >-
   It launches a VPC with public and private subnets, 
   a web server EC2 instance in the public subnet 
   and a security group attached to this EC2 instance.
+########################################################################################################################
+Mappings:
+  AWSRegionImageId:
+    eu-west-1:
+      ImageId: ami-04dd4500af104442f
+    us-east-1:
+      ImageId: ami-0ed9277fb7eb570c9
 
+########################################################################################################################
+Metadata:
+  AWS::CloudFormation::Interface:
+    ParametersGroup:
+      - Label:
+          default: EC2 Instance Settings
+        Parameters: 
+          - InstanceType
+          - EbsVolumeSize
+          - KeyPairName
+      - Label:
+          default: VPC Settings 
+        Parameters:
+          - VpcCidrBlocks 
+          - SubnetAZ
+    ParameterLabels:
+      SubnetAZ:
+        default: Select desired AZ subnets 
+      KeyPairName:
+        default: Select a desired KeyPair to use for this stack.
+
+########################################################################################################################
 Parameters:
   InstanceType:
     Type: String 
@@ -13,9 +42,6 @@ Parameters:
       - t2.micro 
       - t2.small
     Default: t2.micro
-  ImageId:
-    Type: String
-    Default: ami-0fad7378adf284ce0
   EbsVolumeSize:
     Type: Number
     Description: Volume size in GiB
@@ -29,6 +55,7 @@ Parameters:
   SubnetAZ:
     Type: AWS::EC2::AvailabilityZone::Name 
 
+########################################################################################################################
 Resources:
   Vpc:
     Type: AWS::EC2::VPC
@@ -122,7 +149,7 @@ Resources:
     Properties:
       InstanceType: !Ref InstanceType 
       SubnetId: !Ref PublicSubnet 
-      ImageId: !Ref ImageId
+      ImageId: !FindInMap [AWSRegionImageId, !Ref AWS::Region , ImageId]
       KeyName: !Ref KeyPairName 
       SecurityGroupIds:
         - !Ref WebServerSecurityGroup
