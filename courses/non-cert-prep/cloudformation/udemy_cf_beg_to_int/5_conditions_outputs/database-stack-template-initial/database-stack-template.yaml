@@ -20,6 +20,14 @@ Parameters:
   VpcId:
     Type: AWS::EC2::VPC::Id 
     Description: A valid VPC id in your AWS account
+  Environment:
+    Type: String
+    AllowedValues: [test, prod]
+    default: test 
+
+  Conditions:
+    EnvironmentIsProduction: !Equals [ !Ref Environment, prod]
+
 
 Resources:
   DbSecurityGroup:
@@ -43,7 +51,7 @@ Resources:
   MasterDbInstance:
     Type: AWS::RDS::DBInstance
     Properties:
-      DBInstanceClass: db.t2.micro 
+      DBInstanceClass: !If [ EnvironmentIsProduction, db.t2.small, db.t2.micro]
       Engine: mysql
       MultiAZ: false
       PubliclyAccessible: true
@@ -56,6 +64,7 @@ Resources:
 
   ReadReplica:
     Type: AWS::RDS::DBInstance
+    Condition: EnvironmentIsProduction
     Properties:
       SourceDBInstanceIdentifier: !Ref MasterDbInstance
       DBInstanceClass: db.t2.micro 
@@ -64,4 +73,14 @@ Resources:
       VPCSecurityGroups: 
         - !Ref DbSecurityGroup
 
-      
+Outputs:
+  MasterDbId:
+    Value: !Ref MasterDbInstance
+    Description: Master database identifier 
+  MasterDbEndPoint:
+    Value: !GetAtt [!Ref MasterDbInstance, Endpoint.Address]
+    Description: The connection endpoint for the master database.
+  ReadReplicaEndpoint:
+    Value: !GetAtt [ReadReplica, Endpoint.Address]
+    Description: The connection endpoint for the read replica.
+    Condition: EnvironmentIsProduction
