@@ -9,7 +9,7 @@ def game_over(message="Game over."):
 def guessing_game():
 	lower_bound = 0
 	upper_bound = 100
-	random_value = random.randint(lower_bound, upper_bound + 1)
+	random_value = random.randint(lower_bound, upper_bound)
 	count = 0
 	max_tries = 15
 
