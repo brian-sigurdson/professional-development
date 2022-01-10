@@ -23,7 +23,6 @@ Metadata:
           default: EBS Volume Settings
         Parameters:
           - EbsVolumeSize
-#          - EbsVolumeAZ
 
     ParameterLabels:
       VpcId:
@@ -42,28 +41,17 @@ Parameters:
   EbsVolumeSize:
     Type: Number
     Description: Size in GiB
-    Default: 10
-  Environment:
-    Type: String
-    Description:  Test or Prod?
-    Default: test
-    AllowedValues: [test, prod]
-  EnableSSHAccess:
-    Type: String
-    Description: Enable or disable ssh access to web server
-    Default: enable
-    AllowedValues:
-      - disable
-      - enable
-#  EbsVolumeAZ:
-#    Type: AWS::EC2::AvailabilityZone::Name
-#    Description: Availability Zone of the EBS volume
+    Default: 10 
   KeyPairName:
     Type: AWS::EC2::KeyPair::KeyName
-
-Conditions:
-  IsProd: !Equals [ !Ref Environment, prod]
-  EnableSSH: !Equals [ !Ref EnableSSHAccess, enable]
+  NewVolumeOption:
+    Type: String 
+    AllowedValues: [ true, false ]
+    Description: Whether to create and attach an EBS volume
+  AllowSshAccess:
+    Type: String
+    AllowedValues: [ true, false ]
+    Description: Whether to allow SSH access to the web server
 
 Mappings:
   RegionImages:
@@ -72,21 +60,27 @@ Mappings:
     us-east-1:
       ImageId: ami-0de53d8956e8dcf80
 
+Conditions:
+  NewVolumeOptionSelected: !Equals [ !Ref NewVolumeOption, true ]
+  SshAccessAllowed: !Equals [ !Ref AllowSshAccess, true ]
+
 Resources:
+  
   WebServerInstance:
     Type: AWS::EC2::Instance 
     Properties:
       InstanceType: t2.micro
       SubnetId: !Ref WebServerSubnet 
       ImageId: !FindInMap [ RegionImages, !Ref 'AWS::Region', ImageId ]
-      KeyName: !If [ EnableSSH, !Ref KeyPairName, !Ref 'AWS::NoValue' ]
+      KeyName: !If [ SshAccessAllowed, !Ref KeyPairName, !Ref 'AWS::NoValue' ]
       SecurityGroupIds:
         - !Ref HttpSecurityGroup
-        - !If [ EnableSSH, !Ref SshSecurityGroup, !Ref 'AWS::NoValue' ]
+        - !If [ SshAccessAllowed, !Ref SshSecurityGroup, !Ref 'AWS::NoValue' ]
       Tags:
         -
           Key: Name
           Value: !Sub '${AWS::StackName}-WebServer'
+
 
   # Security groups allowing access to different ports
   HttpSecurityGroup:
@@ -102,8 +96,8 @@ Resources:
           ToPort: 80
 
   SshSecurityGroup:
-    Type: AWS::EC2::SecurityGroup
-    Condition: EnableSSH
+    Type: AWS::EC2::SecurityGroup 
+    Condition: SshAccessAllowed
     Properties:
       GroupDescription: Security group to allow SSH access 
       VpcId: !Ref VpcId
@@ -114,11 +108,12 @@ Resources:
           FromPort: 22 
           ToPort: 22
 
-  # EBS Volume that should be created in the same AZ with the WebServerInstance
+
+  # EBS Volume that should be created in the same AZ 
+  # with the WebServerInstance
   EbsVolume:
     Type: AWS::EC2::Volume
-    Condition: IsProd
-    DependsOn: WebServerInstance
+    Condition: NewVolumeOptionSelected
     Properties:
       AvailabilityZone: !GetAtt [ WebServerInstance, AvailabilityZone ]
       VolumeType: gp2
@@ -130,21 +125,18 @@ Resources:
 
   VolumeAttachment:
     Type: AWS::EC2::VolumeAttachment
-    Condition: IsProd
-#    DependsOn: WebServerInstance
+    Condition: NewVolumeOptionSelected
     Properties:
       Device: /dev/sdf
       InstanceId: !Ref WebServerInstance
       VolumeId: !Ref EbsVolume
-
+      
 Outputs:
-  WebServereId:
-    Description: Id of the web server
+  WebServerInstanceId:
     Value: !Ref WebServerInstance
-  WebServerDNS:
-    Description: The DNS value for the web server
-    Value: !GetAtt [ WebServerInstance, PublicDnsName]
-  EBSVolumeId:
-    Condition: IsProd
-    Description: Id of the EBS volume resource
+  WebServerPublicDns:
+    Value: !GetAtt [ WebServerInstance, PublicDnsName ]
+    Description: The public DNS name of the web server
+  EbsVolumeId:
     Value: !Ref EbsVolume
+    Condition: NewVolumeOptionSelected

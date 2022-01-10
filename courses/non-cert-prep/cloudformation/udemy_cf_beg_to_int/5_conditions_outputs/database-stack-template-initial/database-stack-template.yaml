@@ -78,7 +78,7 @@ Outputs:
     Value: !Ref MasterDbInstance
     Description: Master database identifier 
   MasterDbEndPoint:
-    Value: !GetAtt [!Ref MasterDbInstance, Endpoint.Address]
+    Value: !GetAtt [ MasterDbInstance, Endpoint.Address]
     Description: The connection endpoint for the master database.
   ReadReplicaEndpoint:
     Value: !GetAtt [ReadReplica, Endpoint.Address]
