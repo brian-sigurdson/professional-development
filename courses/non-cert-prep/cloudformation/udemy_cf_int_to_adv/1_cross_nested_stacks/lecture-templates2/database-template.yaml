@@ -16,20 +16,17 @@ Metadata:
         Label:
           default: Network Settings
         Parameters:
-          - NetworkStackName
+          - DbSecurityGroup
+          - DbSubnets 
 
 Parameters:  
-#  DbSubnets:
-#    Type: List<AWS::EC2::Subnet::Id>
-#    Description: Subnets that the DB instance will be launched into.
-#
-#  DbSecurityGroup:
-#    Type: AWS::EC2::SecurityGroup::Id
-#    Description: The security group that will be attached to the DB instance.
+  DbSubnets:
+    Type: List<AWS::EC2::Subnet::Id>
+    Description: Subnets that the DB instance will be launched into.
 
-  NetworkStackName:
-    Type: String
-    Description: The name of the network stack to reference
+  DbSecurityGroup:
+    Type: AWS::EC2::SecurityGroup::Id 
+    Description: The security group that will be attached to the DB instance.
 
   AllocatedStorage:
     Type: Number
@@ -62,7 +59,7 @@ Resources:
       MasterUserPassword: dbpassword
       DBSubnetGroupName: !Ref DbSubnetGroup
       VPCSecurityGroups: 
-        - Fn::ImportValue: !Sub "${NetworkStackName}-DbSecurityGroup"
+        - !Ref DbSecurityGroup
 
 
       

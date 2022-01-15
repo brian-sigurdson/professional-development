@@ -124,6 +124,25 @@ Resources:
       RouteTableId: !Ref PrivateRouteTable
       SubnetId: !Ref PrivateSubnet2
 
+#  PrivateSubnet3:
+#    Type: 'AWS::EC2::Subnet'
+#    Properties:
+#      AvailabilityZone: !Select
+#        - 2
+#        - !GetAZs:
+#          !Ref 'AWS::Region'
+#      CidrBlock: 10.0.4.0/24
+#      VpcId: !Ref Vpc
+#      Tags:
+#        - Key: Name
+#          Value: !Sub '${AWS::StackName}-PrivateSubnet3'
+#
+#  PrivateSubnet3RouteTblAscn:
+#    Type: 'AWS::EC2::SubnetRouteTableAssociation'
+#    Properties:
+#      RouteTableId: !Ref PrivateRouteTable
+#      SubnetId: !Ref PrivateSubnet3
+
   # Security groups ---
   AppSecurityGroup:
     Type: AWS::EC2::SecurityGroup
@@ -169,6 +188,7 @@ Outputs:
       - 
         - !Ref PrivateSubnet1
         - !Ref PrivateSubnet2
+#        - !Ref PrivateSubnet3
     Export:
       Name: !Sub "${AWS::StackName}-PrivateSubnets"
 
