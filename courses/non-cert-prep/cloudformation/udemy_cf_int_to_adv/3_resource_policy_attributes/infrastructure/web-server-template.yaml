@@ -26,6 +26,23 @@ Resources:
       ResourceSignal:
         Count: 1
         Timeout: PT10M
+    Metadata:
+      AWS::CloudFormation::Init:
+        config:
+          packages:
+            yum:
+              nginx: []
+          sources:
+            /usr/share/nginx/html
+          services:
+            sysvinit:
+              nginx:
+                enabled: true
+                ensureRunning: true
+                files:
+                  - /etc/nginx/nginx.conf
+                sources:
+                  - /usr/share/nginx/html
     Properties:
       InstanceType: t2.micro
       ImageId: !Ref ImageId
@@ -41,11 +58,12 @@ Resources:
           #!/bin/bash -xe
           yum update -y
           yum install -y aws-cfn-bootstrap
-          amazon-linux-extras install -y nginx1
-          rm -rf /usr/share/nginx/html/*
-          aws s3 cp s3://${WebsiteBucket}/index.html /usr/share/nginx/html/
-          service nginx start
-          /opt/aws/bin/cfn-signal -s true --stack ${AWS::StackName} --resource WebServerInstance --region ${AWS::Region}
+
+          amazon-linux-extras enable nginx1
+
+          /opt/aws/bin/cfn-init -v --stack ${AWS::StackName} --resource WebserverInstance --region ${AWS::Region}
+
+          /opt/aws/bin/cfn-signal -e $? --stack ${AWS::StackName} --resource WebServerInstance --region ${AWS::Region}
 
   WebServerRole:
     Type: AWS::IAM::Role
