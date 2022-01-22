@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: k8s-for-beginners
+spec:
+  containers:
+  - name: k8s-for-beginners
+    image: packtworkshops/the-kubernetes-workshop:k8s-for-beginners
+
