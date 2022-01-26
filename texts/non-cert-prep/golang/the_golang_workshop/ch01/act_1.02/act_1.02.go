@@ -1,17 +1,27 @@
 package main
-
-import (
-	"fmt"
-)
-
-var fname string = "Brian"
-var lname string = "Sigurdson"
-var age int = 0
-var peanutAlergy bool = false
+import "fmt"
 
 func main() {
-	fmt.Println(fname)
-	fmt.Println(lname)
-	fmt.Println(age)
-	fmt.Println(peanutAlergy)
+	a, b := 5, 10
+	fmt.Println("Before swap: a = ", a)
+	fmt.Println("Before swap: b = ", b)
+
+	// call swap here
+	swap(&a, &b)
+
+	fmt.Println("After swap: a = ", a)
+	fmt.Println("After swap: b = ", b)
+
+	fmt.Println(a == 10, b == 5)
+}
+
+func swap(a *int, b *int) {
+	//swap values here
+	// tmp := *a
+	// *a = *b
+	// *b = tmp
+
+	// ha!  I though that this was possible.
+	// I just wasn't doing it correctly
+	*a, *b = *b, *a 
 }
