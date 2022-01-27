@@ -5,6 +5,28 @@ Description: >-
   a web server EC2 instance in the public subnet 
   and a security group attached to this EC2 instance.
 
+########################################################################################################################
+Metadata:
+  AWS::CloudFormation::Interface:
+    ParameterGroups:
+      - Label:
+          default: EC2 Instance Settings
+        Parameters:
+          - InstanceType
+          - EbsVolumeSize
+          - KeyPairName
+      - Label:
+          default: VPC Settings
+        Parameters:
+          - VpcCidrBlocks
+          - SubnetAZ
+    ParameterLabels:
+      SubnetAZ:
+        default: Availability Zone Subnets
+      KeyPairName:
+        default: The key name pair to us for this stack.
+
+########################################################################################################################
 Parameters:
   InstanceType:
     Type: String 
@@ -13,9 +35,9 @@ Parameters:
       - t2.micro 
       - t2.small
     Default: t2.micro
-  ImageId:
-    Type: String
-    Default: ami-0fad7378adf284ce0
+#  ImageId:
+#    Type: String
+#    Default: ami-0fad7378adf284ce0
   EbsVolumeSize:
     Type: Number
     Description: Volume size in GiB
@@ -29,6 +51,17 @@ Parameters:
   SubnetAZ:
     Type: AWS::EC2::AvailabilityZone::Name 
 
+########################################################################################################################
+Mappings:
+  RegionMap:
+    us-east-1: # N. Virginia
+      ImageId: ami-08e4e35cccc6189f4
+    us-east-2: # Ohio
+      ImageId: ami-001089eb624938d9f
+    eu-west-1: # Ireland
+      ImageId: ami-01efa4023f0f3a042
+
+########################################################################################################################
 Resources:
   Vpc:
     Type: AWS::EC2::VPC
@@ -122,7 +155,7 @@ Resources:
     Properties:
       InstanceType: !Ref InstanceType 
       SubnetId: !Ref PublicSubnet 
-      ImageId: !Ref ImageId
+      ImageId: !FindInMap [RegionMap, !Ref AWS::Region, ImageId]
       KeyName: !Ref KeyPairName 
       SecurityGroupIds:
         - !Ref WebServerSecurityGroup
