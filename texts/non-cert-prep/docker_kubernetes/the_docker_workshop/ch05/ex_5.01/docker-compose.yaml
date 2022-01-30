@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  init:
+    build:
+      context: ./init
+    volumes:
+      - my_vol:/data
+
+  server:
+    image: nginx
+    volumes:
+      - my_vol:/usr/share/nginx/html
+    ports:
+      - "8080:80"
+
+volumes:
+  my_vol:
