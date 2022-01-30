@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Document Structure</title>
+    <style>
+        table {
+            background-color: red;
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+        tr, th, td {
+            border: 1px solid black;
+        }
+        th {
+            font-family: Arial;
+            padding: 3px;
+        }
+        .odd {
+            background-color: yellow;
+        }
+        .even {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <h1>Computers</h1>
+    <table>
+        <thead>
+            <tr class="odd">
+                <th>Maker</th><th>Model</th><th>Year</th>
+            </tr>
+        </thead>
+        <tr class="even">
+            <td>Commodore</td><td>64</td><td>1982</td>
+        </tr>
+        <tr>
+            <td>Commodore</td><td>64</td><td>1982</td>
+        </tr>
+    </table>
+</body>
+</html>

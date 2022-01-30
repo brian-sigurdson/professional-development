@@ -1,0 +1,12 @@
+h1 {
+    font-family: Arial;
+    font-size: 3em;
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    font-variant: small-caps;
+}
+
+p {
+    line-height: 2em;
+}
