@@ -1,0 +1,33 @@
+# I wasn't able to work around the error below, so compile it locally and just copy in the
+# executible for now.
+############################################
+
+# a multi-stage docker build file
+
+# build
+FROM golang:alpine AS builder
+RUN apk update
+RUN apk add git
+# getting an error that no module provide redis, but the suggested 
+# go get below does not solve it either.
+#
+# RUN go get github.com/go-redis/redis/v7
+#
+# suggestion:  https://github.com/go-redis/redis/issues/1174
+# seems a little clunky, but this is just for practice
+WORKDIR /go/src/github.com/go-redis/redis/
+RUN git clone https://github.com/go-redis/redis.git .
+RUN git checkout v7
+RUN go get github.com/go-redis/redis/v7
+
+WORKDIR /myapp
+COPY main.go .
+
+RUN go mod init example/myapp
+RUN go build main.go
+
+# run
+FROM scratch AS runner
+WORKDIR /myapp
+COPY --from=builder /myapp/main .
+ENTRYPOINT [ "./main" ]
