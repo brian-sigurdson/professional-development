@@ -1,0 +1,21 @@
+f = open('myfile.txt', 'w')
+f.write("Hello world!\n")
+f.write("Hello world! (again)\n")
+f.write("Hello world! (again, again)\n")
+f.close()
+
+f = open('myfile.txt', 'a')
+f.write("More stuff")
+f.close()
+
+f = open('myfile.txt', 'r')
+print("first read")
+print(f.read())
+print("second read")
+print(f.read())
+f.close()
+
+f = open('myfile.txt', 'r')
+print(f.readline())
+print(f.readlines())
+f.close()
