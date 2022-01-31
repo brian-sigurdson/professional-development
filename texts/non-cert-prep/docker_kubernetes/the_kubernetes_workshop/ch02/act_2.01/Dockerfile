@@ -1,6 +1,8 @@
 FROM alpine:3.10
 
-COPY page-view /
+ARG APP_NAME
 
-CMD ["/page-view"]
+COPY $APP_NAME /
+
+CMD ["/$APP_NAME"]
 

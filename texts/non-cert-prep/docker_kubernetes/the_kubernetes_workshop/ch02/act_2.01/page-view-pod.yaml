@@ -1,0 +1,17 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: page-view
+  labels:
+    tier: frontend
+spec:
+  containers:
+    - name: page-view
+      # image: sigurdsonbrian/page-view:v0.0.1
+      # the problem with imagePullPolicy: Always is that it continues to pull it everytime it does a backoff
+      # regardless, it didn't solve the problem.
+      # imagePullPolicy: Always      
+      #
+      # the author's container works, or at least doesn't get errors.
+      # figure out where mine is wrong.
+      image: packtworkshops/the-kubernetes-workshop:pageview
