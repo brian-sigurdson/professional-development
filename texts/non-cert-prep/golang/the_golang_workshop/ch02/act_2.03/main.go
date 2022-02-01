@@ -15,7 +15,7 @@ func main() {
 			}
 		}
 
-		if swapped == false {
+		if !swapped {
 			// then no elements were swapped => we're done
 			break
 		} else {
