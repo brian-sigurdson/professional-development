@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>layout</title>
+    <style>
+        #container {
+            width: 90%;
+            background-color: #eee;
+            margin: 0 auto;
+            padding-left: 3px;
+            padding-right: 3px;
+        }
+        header {
+            text-align: center;
+            background-color: #121212;
+            color: white;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-family: Verdana, Arial,serif;
+            font-size: 1.1em;
+        }
+        footer {
+            border-top: 1px solid black;
+            font-size: .75em;
+        }
+        #colA {
+            width: 30%;
+            float: left;
+            border-right: 1px solid black;
+            padding-right: 3px;
+        }
+        #colB {
+            width: 30%;
+            float: left;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        #colB {
+            width: 30%;
+            float: left;
+        }
+        @media only screen and (max-width: 600px) {
+            #colA, #colB, #colC {
+                float: none;
+                width: 100%
+            }
+            #colA {
+                border-right: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header><h1>News</h1></header>
+        <div id="colA">
+            <h2>ColA</h2>
+            <p>The quick brown fox jumped over the lazy dogs.  The quick brown fox jumped over the lazy dogs.  The quick brown fox jumped over the lazy dogs.</p>
+        </div>
+        <div id="colB">
+            <h2>ColB</h2>
+            <p>The quick brown fox jumped over the lazy dogs.  The quick brown fox jumped over the lazy dogs.  The quick brown fox jumped over the lazy dogs.</p>
+        </div>
+        <div id="colC">
+            <h2>ColC</h2>
+            <p>The quick brown fox jumped over the lazy dogs.  The quick brown fox jumped over the lazy dogs.  The quick brown fox jumped over the lazy dogs.</p>
+        </div>
+        <footer>Copyright &copy;2022 Brian Sigurdson</footer>
+    </div> <!-- container -->
+</body>
+</html>

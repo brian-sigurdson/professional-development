@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flex Box</title>
+    <style>
+        #one, #two, #three {
+            border: 1px solid black;
+            font-family: Arial,serif;
+            font-size: .75em;
+            padding: 10px;
+            width: 20%;
+        }
+        #one { background-color: antiquewhite}
+        #two { background-color: azure}
+        #three { background-color: beige}
+        #container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            height: 100%;
+            align-items: baseline;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="one">
+            <h2>One</h2>
+            <p>The quick brown fox jumped over the lazy dogs.
+                The quick brown fox jumped over the lazy dogs.
+                The quick brown fox jumped over the lazy dogs.
+                The quick brown fox jumped over the lazy dogs.
+                The quick brown fox jumped over the lazy dogs.
+                The quick brown fox jumped over the lazy dogs.</p>
+        </div>
+        <div id="two">
+            <h2>Two</h2>
+            <p>The quick brown fox jumped over the lazy dogs.  The quick brown fox jumped over the lazy dogs.  The quick brown fox jumped over the lazy dogs.</p>
+        </div>
+        <div id="three">
+            <h2>Three</h2>
+            <p>The quick brown fox jumped over the lazy dogs.  The quick brown fox jumped over the lazy dogs.  The quick brown fox jumped over the lazy dogs.</p>
+        </div>
+    </div>
+
+</body>
+</html>
