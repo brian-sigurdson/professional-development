@@ -1,0 +1,2 @@
+I wasted a lot of time trying to figure out why my container wouldn't run in ch 1's activity.
+Additionally, their code didn't seem to run either, so I'm going straight to testing thier code this time because I'm falling behind schedule.
