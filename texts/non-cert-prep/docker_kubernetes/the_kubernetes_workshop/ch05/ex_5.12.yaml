@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: rediness-probe
+spec:
+  containers:
+  - name: ubuntu-container
+    image: ubuntu
+    command:
+      - /bin/bash
+      - -ec
+      - sleep 30; touch /tmp/ready; sleep 600
+    readinessProbe:
+      exec:
+        command:
+        - cat
+        - /tmp/ready
+      initialDelaySeconds: 10
+      periodSeconds: 5
+      
+
+        
