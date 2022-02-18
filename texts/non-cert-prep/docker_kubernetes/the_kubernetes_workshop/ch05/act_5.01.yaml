@@ -1,0 +1,29 @@
+# I didn't try to implement their solution.
+# Their solution didn't even implement what was required and no clue if it would work.
+# I'm not going to waste any more time debugging their stuff.
+
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: act_5.01
+spec:
+  restartPolicy: Always
+  containers:
+  - name: k8ws-container
+    image: packtworkshops/the-kubernetes-workshop:custom-application-for-pods-chapter
+    livenessProbe:
+      exec:
+        command:
+        - cat
+        - /tmp/live
+      initialDelaySeconds: 5
+      periodSeconds: 5
+      readinessProbe:
+      exec:
+        command:
+        - cat
+        - /tmp/ready
+      initialDelaySeconds: 30
+      periodSeconds: 5
+
+        
