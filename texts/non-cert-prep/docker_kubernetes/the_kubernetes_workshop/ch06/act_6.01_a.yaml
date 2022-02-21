@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: arbitrary-product-application
+  namespace: ch06
+  labels:
+    env: prod
+    criticality: non-critical
+  annotations:
+    team: product-development
+    team-link: infra-libraries-link    
+spec:
+  containers:
+  - name: arbitrary-product-application
+    image: nginx
+    

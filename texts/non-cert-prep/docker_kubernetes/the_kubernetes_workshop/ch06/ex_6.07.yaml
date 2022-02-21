@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: exercise-6.07
+  annotations:
+    someKey: someValue
+spec:
+  containers:
+  - name: application-container
+    image: nginx
+    
