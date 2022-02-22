@@ -1,0 +1,37 @@
+# a good activity turned bad
+# there is no explaination of the use of the env section and the frontend prints "it works" regardless
+# i was glad that I was able to setup the front and back end dep & svc properly.  I'm just not convinced
+# that the front end is actually connecting to the backend
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deploy
+  labels:
+    app: chapter-activity
+spec:
+  replicas: 5
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: chapter-activity
+      env: prod
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: chapter-activity
+        env: prod
+        tier: frontend
+    spec:
+      containers:
+      - name: apache-container
+        image: httpd
+        ports:
+        - containerPort: 80
+        env:
+        - name: BACKEND_SERVICE_IP
+          value: "10.110.146.118"
+        - name: BACKEND_SERVICE_PORT
+          value: "80"

@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deploy
+  labels:
+    app: chapter-activity
+spec:
+  replicas: 4
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: chapter-activity
+      env: prod
+      tier: backend
+  template:
+    metadata:
+      labels:
+        app: chapter-activity
+        env: prod
+        tier: backend
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx
+        ports:
+        - containerPort: 80
+      # env:
+      # - name: APPLICATION_TYPE
+      #   value: "Backend"
