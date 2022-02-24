@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: shared-emptydir
+spec:
+  containers:
+  - image: ubuntu
+    name: c1
+    command: ['/bin/bash', '-ec', 'sleep 3600']
+    volumeMounts:
+    - mountPath: /mounted-data-1
+      name: data-volume
+  - image: ubuntu
+    name: c2
+    command: ['/bin/bash', '-ec', 'sleep 3600']
+    volumeMounts:
+    - mountPath: /mounted-data-2
+      name: data-volume
+  - image: ubuntu
+    name: c3
+    command: ['/bin/bash', '-ec', 'sleep 3600']
+    volumeMounts:
+    - mountPath: /mounted-data-3
+      name: data-volume            
+  volumes:
+  - name: data-volume
+    emptyDir: {}
