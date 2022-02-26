@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: secret-test-pod
+spec:
+  containers:
+  - name: secret-containers
+    image: busybox
+    command: ['/bin/sh', '-c', 'ls /etc/appconfig/; cat /etc/appconfig/private-key']
+    volumeMounts:
+      - name: secret-volume
+        mountPath: /etc/appconfig
+  volumes:
+    - name: secret-volume
+      configMap:
+        name: test-key-secret
+  restartPolicy: Never
