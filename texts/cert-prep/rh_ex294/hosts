@@ -1,13 +1,13 @@
 ansible1
 ansible2
+ansible3
+ansible4
 
-[worker1]
+[exercises]
 ansible1
-
-[worker2]
 ansible2
 
-[workers:children]
-worker1
-worker2
 
+[labs]
+ansible3
+ansible4
