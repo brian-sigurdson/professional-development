@@ -1,0 +1,44 @@
+---
+# play 1
+- name: enable webserver (play 1)
+  hosts: ansible1
+  gather_facts: no
+  tasks:
+  - name: install stuff
+    yum:
+      name:
+      - httpd
+      - firewalld
+  - name: create a welcome page
+    copy:
+      content: "welcome to my webserver\n"
+      dest: /var/www/html/index.html
+  - name: enable webserver
+    service:
+      name: httpd
+      state: started
+      enabled: true
+  - name: enable firewall
+    service:
+      name: firewalld
+      state: started
+      enabled: true
+  - name: open service in firewall
+    firewalld:
+      service: http
+      permanent: true
+      state: enabled
+      immediate: yes
+
+# play 2
+- name: test webserver access (play 2)
+  hosts: localhost
+  become: no
+  gather_facts: no
+  tasks:
+  - name: test webserver access
+    uri:
+      url: http://ansible1
+      return_content: yes
+      status_code: 200
+    
