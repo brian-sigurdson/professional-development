@@ -3,7 +3,7 @@ ansible2
 ansible3
 ansible4
 
-[exercises]
+[exer]
 ansible1
 ansible2
 
@@ -11,3 +11,4 @@ ansible2
 [labs]
 ansible3
 ansible4
+
