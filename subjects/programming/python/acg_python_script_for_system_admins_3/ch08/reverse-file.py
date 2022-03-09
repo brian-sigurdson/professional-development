@@ -1,5 +1,5 @@
 import argparse
-from email import parser
+
 
 # build the parser
 parser = argparse.ArgumentParser(description='Read a file in reverse.')
