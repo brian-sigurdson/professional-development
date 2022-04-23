@@ -14,7 +14,7 @@
 *.tfvars
 
 # tfplan output
-tfplan
+*.tfplan
 
 # anything related to mac
 __MACOSX
