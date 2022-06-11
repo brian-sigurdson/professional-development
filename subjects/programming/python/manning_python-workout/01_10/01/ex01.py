@@ -1,46 +1,21 @@
+from mimetypes import guess_all_extensions
 import random
-import sys
 
-
-def game_over(message="Game over."):
-	sys.exit(message)
-
-
-def guessing_game():
-	lower_bound = 0
-	upper_bound = 100
-	random_value = random.randint(lower_bound, upper_bound)
-	count = 0
-	max_tries = 15
-
-	print(f"You have {max_tries} tries to guess the correct value between {lower_bound} and {upper_bound}")
+def guess_a_value():
+	min = 0
+	max = 100
+	number = random.randint(min, max)
 
 	while True:
-		try:
-			guess = input(f"Guess a number between {lower_bound} and {upper_bound}, or 'q' to quit. ")
-			if guess == 'q':
-				game_over()
-			elif not guess.isnumeric():
-				raise ValueError
-			else:
-				guess = int(guess)
-		except ValueError:
-			print(f"The value you entered ({guess}) is not a number.  Please enter a number.")
-			continue
+		user_input = int(input(f"Guess a value between {min} and {max} "))
+		print(f"You entered: {user_input}")
 
-		if guess < random_value:
-			print("Too low")
-		elif guess > random_value:
-			print("Too high")
+		if user_input < number:
+			print("Too low. Try again.")
+		elif user_input > number:
+			print("Too high. Try again.")
 		else:
-			print("You are correct!")
-			game_over()
+			print(f"Correct!  The value was {number}")
+			break
 
-		count += 1
-		if count >= max_tries:
-			print(f"The value was {random_value}.  You are out of tries.")
-			game_over()
-
-
-if __name__ == "__main__":
-	guessing_game()
+guess_a_value()
