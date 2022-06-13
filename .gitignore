@@ -1,3 +1,6 @@
+# Docker files
+Dockerfile
+
 #  Local .terraform directories
 .terraform
 .terraform.*
