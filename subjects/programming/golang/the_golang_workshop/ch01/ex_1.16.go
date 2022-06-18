@@ -14,7 +14,7 @@ func cacheGet(key string) string {
 	return cache[key]
 }
 
-func cacheSet(key, val string) {
+func cacheSet(key string, val string) {
 	if len(cache) + 1 >= MaxCacheSize {
 		return
 	}
@@ -22,5 +22,26 @@ func cacheSet(key, val string) {
 }
 
 func GetBook(isbn string) string {
-	return cacheGet(cacheKeyBook + isbnyf)
+	return cacheGet(CacheKeyBook + isbn)
+}
+
+func SetBook(isbn string, name string) {
+	cacheSet(CacheKeyBook + isbn, name)
+}
+
+func GetCD(sku string) string {
+	return cacheGet(CacheKeyCD + sku)
+}
+
+func SetCD(sku string, title string) {
+	cacheSet(CacheKeyCD + sku, title)
+}
+
+func main() {
+	cache = make(map[string]string)
+	SetBook("1234-5678", "Get Ready to Go")
+	SetCD("1234-5678", "Get Ready to Go CD")
+	fmt.Println("Book: ", GetBook("1234-5678"))
+	fmt.Println("CD: ", GetCD("1234-5678"))
+
 }
