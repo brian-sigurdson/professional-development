@@ -1,8 +1,20 @@
+terraform {
+  backend "s3" {
+    bucket = "bks-name-us-east-2-tf-brikman-state"
+    key    = "global/s3/terraform.tfstate"
+    region = "us-east-2"
+
+    dynamodb_table = "tf-up-running-locks"
+    encrypt        = true
+  }
+}
+
 locals {
   region              = "us-east-2"
-  s3_bucket_name      = "bks-name-${local.region}-tf-brikman-state"
+  s3_bucket_name      = "bks-name-us-east-2-tf-brikman-state"
   dynamodb_table_name = "tf-up-running-locks"
 }
+
 provider "aws" {
   region = local.region
 }
