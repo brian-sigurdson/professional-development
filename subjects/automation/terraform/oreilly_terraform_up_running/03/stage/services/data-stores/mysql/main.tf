@@ -14,17 +14,14 @@ provider "aws" {
 }
 
 resource "aws_db_instance" "example" {
-  identifier_prefix = "tf-up-and-running"
-  engine            = "mysql"
-  allocated_storage = 10
-  instance_class    = "db.t2.micro"
-  db_name           = "example_database"
-  username          = "admin"
-  password          = data.aws_ssm_parameter.db_password.value
-
-  depends_on = [
-    data.aws_ssm_parameter.db_password
-  ]
+  identifier_prefix   = "tf-up-and-running"
+  engine              = "mysql"
+  allocated_storage   = 10
+  instance_class      = "db.t2.micro"
+  db_name             = "example_database"
+  username            = "admin"
+  password            = data.aws_ssm_parameter.db_password.value
+  skip_final_snapshot = true
 }
 
 data "aws_ssm_parameter" "db_password" {
