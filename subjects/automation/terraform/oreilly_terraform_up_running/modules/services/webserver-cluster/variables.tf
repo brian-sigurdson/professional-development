@@ -33,3 +33,13 @@ variable "max_size" {
   description = "The maximum number of ec2 instances in the ASG"
   type        = number
 }
+
+variable "db_address" {
+  description = "Connect to the database at this endpoint"
+  type        = string
+}
+
+variable "db_port" {
+  description = "The port the database is listening on"
+  type        = string
+}

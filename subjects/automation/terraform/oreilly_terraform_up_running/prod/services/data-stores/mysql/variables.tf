@@ -36,10 +36,10 @@ variable "db_instance_class" {
   description = "The database instance class"
   type        = string
   nullable    = false
-  default     = "t2.micro"
+  default     = "db.t2.micro"
 
   validation {
-    condition     = contains(["t2.micro"], var.db_instance_class)
-    error_message = "Only t2.micro is allowed."
+    condition     = contains(["db.t2.micro"], var.db_instance_class)
+    error_message = "Only db.t2.micro is allowed."
   }
 }

@@ -1,5 +1,25 @@
+# I don't like having a mysql in stage and prod, but I'm not sure how to get around
+# the use of the S3 backend without having this terraform {} block 
+#
+# Maybe in the next chapter we'll decouple
+#
+# I know we can't specify terraform vars in the terraform block
+#
+# Terragrunt provides a work around
+#
+terraform {
+  backend "s3" {
+    bucket = "bks-name-us-east-2-tf-brikman-state"
+    key    = "prod/services/webserver-cluster/terraform.tfstate"
+    region = "us-east-2"
+
+    dynamodb_table = "tf-up-running-locks"
+    encrypt        = true
+  }
+}
+
 locals {
-  region = "us-east2"
+  region = "us-east-2"
   env    = "prod"
 }
 
@@ -13,10 +33,15 @@ module "webserver_cluster" {
   cluster_name           = "webservers-stage"
   db_remote_state_bucket = "bks-name-us-east-2-tf-brikman-state"
   db_remote_state_key    = "prod/services/webserver-cluster/terraform.tfstate"
+  instance_type          = "t2.micro"
+  max_size               = 10
+  min_size               = 2
+  db_address             = module.mysql.db_address
+  db_port                = module.mysql.db_port
 
-  instance_type = "t2.micro"
-  max_size      = 10
-  min_size      = 2
+  depends_on = [
+    module.mysql
+  ]
 }
 
 resource "aws_autoscaling_schedule" "scale_out_during_business_hours" {

@@ -1,5 +1,10 @@
-provider "aws" {
+locals {
   region = "us-east-2"
+  env    = "stage"
+}
+
+provider "aws" {
+  region = local.region
 }
 
 # this needs to go in the mysql/main.tf for prod
