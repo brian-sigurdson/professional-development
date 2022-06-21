@@ -37,5 +37,11 @@ module "webserver_cluster" {
 # }
 
 module "mysql" {
+  source = "../data-stores/mysql"
+
+  region                      = local.region
+  db_admin_pwd_ssm_param      = "/brikman/terraform-up-and-running/${local.env}/admin/mysql-database-password"
+  db_admin_username_ssm_param = "/brikman/terraform-up-and-running/${local.env}/admin/username"
+  env                         = local.env
 
 }

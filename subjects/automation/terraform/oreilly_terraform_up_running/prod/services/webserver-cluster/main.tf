@@ -1,18 +1,11 @@
-provider "aws" {
-  region = "us-east-2"
+locals {
+  region = "us-east2"
+  env    = "prod"
 }
 
-# this needs to go in the mysql/main.tf for stage
-# terraform {
-#   backend "s3" {
-#     bucket = "bks-name-us-east-2-tf-brikman-state"
-#     key    = "stage/services/webserver-cluster/terraform.tfstate"
-#     region = "us-east-2"
-
-#     dynamodb_table = "tf-up-running-locks"
-#     encrypt        = true
-#   }
-# }
+provider "aws" {
+  region = local.region
+}
 
 module "webserver_cluster" {
   source = "../../../modules/services/webserver-cluster"
@@ -47,5 +40,11 @@ resource "aws_autoscaling_schedule" "scale_in_at_night" {
 }
 
 module "mysql" {
+  source = "../data-stores/mysql/"
+
+  region                      = local.region
+  db_admin_pwd_ssm_param      = "/brikman/terraform-up-and-running/${local.env}/admin/mysql-database-password"
+  db_admin_username_ssm_param = "/brikman/terraform-up-and-running/${local.env}/admin/username"
+  env                         = local.env
 
 }
