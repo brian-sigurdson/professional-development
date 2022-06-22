@@ -1,3 +1,23 @@
+# I don't like having a mysql in stage and prod, but I'm not sure how to get around
+# the use of the S3 backend without having this terraform {} block 
+#
+# Maybe in the next chapter we'll decouple
+#
+# I know we can't specify terraform vars in the terraform block
+#
+# Terragrunt provides a work around
+#
+terraform {
+  backend "s3" {
+    bucket = "bks-name-us-east-2-tf-brikman-state"
+    key    = "stage/services/webserver-cluster/terraform.tfstate"
+    region = "us-east-2"
+
+    dynamodb_table = "tf-up-running-locks"
+    encrypt        = true
+  }
+}
+
 locals {
   region = "us-east-2"
   env    = "stage"
@@ -7,28 +27,21 @@ provider "aws" {
   region = local.region
 }
 
-# this needs to go in the mysql/main.tf for prod
-# terraform {
-#   backend "s3" {
-#     bucket = "bks-name-us-east-2-tf-brikman-state"
-#     key    = "prod/services/webserver-cluster/terraform.tfstate"
-#     region = "us-east-2"
-
-#     dynamodb_table = "tf-up-running-locks"
-#     encrypt        = true
-#   }
-# }
-
 module "webserver_cluster" {
   source = "../../../modules/services/webserver-cluster"
 
-  cluster_name           = "webservers-stage"
+  cluster_name           = "webservers-${local.env}"
   db_remote_state_bucket = "bks-name-us-east-2-tf-brikman-state"
-  db_remote_state_key    = "stage/services/webserver-cluster/terraform.tfstate"
+  db_remote_state_key    = "${local.env}/services/webserver-cluster/terraform.tfstate"
+  instance_type          = "t2.micro"
+  max_size               = 4
+  min_size               = 2
+  db_address             = module.mysql.db_address
+  db_port                = module.mysql.db_port
 
-  instance_type = "t2.micro"
-  max_size      = 2
-  min_size      = 2
+  depends_on = [
+    module.mysql
+  ]
 }
 
 # example from pg. 125, not to be implemented
@@ -42,7 +55,7 @@ module "webserver_cluster" {
 # }
 
 module "mysql" {
-  source = "../data-stores/mysql"
+  source = "../../../modules/services/data-stores/mysql"
 
   region                      = local.region
   db_admin_pwd_ssm_param      = "/brikman/terraform-up-and-running/${local.env}/admin/mysql-database-password"

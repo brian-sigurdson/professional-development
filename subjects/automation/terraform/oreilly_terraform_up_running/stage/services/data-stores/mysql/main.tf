@@ -1,27 +1,3 @@
-# I don't like having a mysql in stage and prod, but I'm not sure how to get around
-# the use of the S3 backend without having this terraform {} block 
-#
-# Maybe in the next chapter we'll decouple
-#
-# I know we can't specify terraform vars in the terraform block
-#
-# Terragrunt provides a work around
-#
-terraform {
-  backend "s3" {
-    bucket = "bks-name-us-east-2-tf-brikman-state"
-    key    = "stage/services/data-stores/mysql/terraform.tfstate"
-    region = "us-east-2"
-
-    dynamodb_table = "tf-up-running-locks"
-    encrypt        = true
-  }
-}
-
-provider "aws" {
-  region = var.region
-}
-
 resource "aws_db_instance" "example" {
   identifier_prefix   = "tf-up-and-running-${var.env}"
   engine              = "mysql"
