@@ -8,7 +8,7 @@ variable "cluster_name" {
   type        = string
 }
 
-variable "db_remote_state_bucket" {
+# variable "db_remote_state_bucket" {
   description = "The name of the S3 bucket for the database's remote state"
   type        = string
 }
@@ -41,4 +41,10 @@ variable "db_address" {
 variable "db_port" {
   description = "The port the database is listening on"
   type        = string
+}
+
+variable "custom_tags" {
+  description = "Custom tags to set on the instances in the ASG"
+  type        = map(string)
+  default     = {}
 }

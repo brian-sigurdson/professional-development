@@ -41,6 +41,11 @@ module "webserver_cluster" {
   db_port                = module.mysql.db_port
   server_port            = local.ec2_listen_port
 
+  custom_tags = {
+    "Owner"      = "team-foo"
+    "DeployedBy" = "terraform"
+  }
+
   depends_on = [
     module.mysql
   ]
