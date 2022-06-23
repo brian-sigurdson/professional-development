@@ -19,8 +19,9 @@ terraform {
 }
 
 locals {
-  region = "us-east-2"
-  env    = "stage"
+  region          = "us-east-2"
+  env             = "stage"
+  ec2_listen_port = 8080
 }
 
 provider "aws" {
@@ -38,6 +39,7 @@ module "webserver_cluster" {
   min_size               = 2
   db_address             = module.mysql.db_address
   db_port                = module.mysql.db_port
+  server_port            = local.ec2_listen_port
 
   depends_on = [
     module.mysql
