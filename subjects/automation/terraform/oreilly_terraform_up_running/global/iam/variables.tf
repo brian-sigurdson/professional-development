@@ -14,3 +14,9 @@ variable "hero_thousand_faces" {
     morpheus = "mentor"
   }
 }
+
+variable "names" {
+  description = "Names to render"
+  type        = list(string)
+  default     = ["neo", "trinity", "morpheus"]
+}

@@ -1,14 +1,3 @@
-# count
-# output "neo_arn" {
-#   value       = aws_iam_user.example[0].arn
-#   description = "The ARN for user Neo"
-# }
-
-# output "all_arns" {
-#   value       = aws_iam_user.example[*].arn
-#   description = "The ARNs for all users"
-# }
-
 # for_each
 output "neo_arn" {
   value       = aws_iam_user.example["neo"].arn
@@ -43,4 +32,12 @@ output "upper_roles_1" {
 
 output "upper_roles_2" {
   value = { for name, role in var.hero_thousand_faces : upper(name) => upper(role) }
+}
+
+output "for_directive" {
+  value = <<EOF
+  %{~for name in var.names}
+    ${name}
+  %{~endfor}
+  EOF
 }
