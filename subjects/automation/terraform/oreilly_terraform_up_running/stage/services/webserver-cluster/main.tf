@@ -40,6 +40,7 @@ module "webserver_cluster" {
   db_address             = module.mysql.db_address
   db_port                = module.mysql.db_port
   server_port            = local.ec2_listen_port
+  enable_autoscaling     = false
 
   depends_on = [
     module.mysql

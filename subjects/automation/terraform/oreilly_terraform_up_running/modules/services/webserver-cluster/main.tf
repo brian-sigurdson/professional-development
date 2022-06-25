@@ -7,52 +7,7 @@ locals {
   region       = "us-east-2"
 }
 
-###################################################################################################
-# supplemental resources
-###################################################################################################
 
-resource "aws_security_group" "instance" {
-  name = "${var.cluster_name}-instance"
-}
-
-resource "aws_security_group_rule" "instance_allow_http_inbound" {
-  # eg I want ec2 to listen on 8080
-  from_port         = var.server_port
-  protocol          = local.tcp_protocol
-  security_group_id = aws_security_group.instance.id
-  to_port           = var.server_port
-  type              = "ingress"
-
-  cidr_blocks = [data.aws_vpc.default.cidr_block]
-}
-
-resource "aws_security_group" "alb" {
-  name = "${var.cluster_name}-alb"
-}
-
-resource "aws_security_group_rule" "alb_allow_http_inbound" {
-  # eg I want alb to listen on 80
-  from_port         = local.http_port
-  protocol          = local.tcp_protocol
-  security_group_id = aws_security_group.alb.id
-  to_port           = local.http_port
-  type              = "ingress"
-
-  # cidr_blocks = [data.aws_vpc.default.cidr_block]
-  cidr_blocks = local.all_ips
-}
-
-resource "aws_security_group_rule" "alb_allow_all_outbound" {
-  # i want the alb to send outbound on port 80?
-  from_port         = var.server_port
-  protocol          = local.tcp_protocol
-  security_group_id = aws_security_group.alb.id
-  to_port           = var.server_port
-  type              = "egress"
-
-  cidr_blocks = [data.aws_vpc.default.cidr_block]
-  # cidr_blocks = [local.all_ips]
-}
 
 data "aws_vpc" "default" {
   default = true
@@ -67,103 +22,59 @@ data "aws_subnets" "default" {
 
 ###################################################################################################
 
-resource "aws_autoscaling_group" "example" {
-  launch_configuration = aws_launch_configuration.example.name
-  vpc_zone_identifier  = data.aws_subnets.default.ids
+resource "aws_cloudwatch_metric_alarm" "high_cpu_utilization" {
+  alarm_name  = "${var.cluster_name}-high-cpu-utilization"
+  namespace   = "AWS/EC2"
+  metric_name = "CPUUtilization"
 
-  target_group_arns = [aws_lb_target_group.asg.arn]
-  health_check_type = "ELB"
-
-  max_size = var.max_size
-  min_size = var.min_size
-
-  tag {
-    key                 = "Name"
-    value               = "${var.cluster_name}-asg-example"
-    propagate_at_launch = true
+  dimensions = {
+    AutoScalingGroupName = aws_autoscaling_group.example.name
   }
+
+  comparison_operator = "GreaterThanThreshold"
+  evaluation_periods  = 1
+  period              = 300
+  statistic           = "Average"
+  threshold           = 90
+  unit                = "Percent"
 }
 
-resource "aws_launch_configuration" "example" {
-  image_id      = "ami-02f3416038bdb17fb" # ubuntu should have busybox installed by default
-  instance_type = var.instance_type
+resource "aws_cloudwatch_metric_alarm" "low_cpu_credit_balance" {
+  count = format("%.1s", var.instance_type) == "t" ? 1 : 0
 
-  security_groups = [aws_security_group.instance.id]
+  alarm_name  = "${var.cluster_name}-low-cpu-credit-balance"
+  namespace   = "AWS/EC2"
+  metric_name = "CPUCreditBalance"
 
-  user_data = data.template_file.user_data.rendered
-
-  lifecycle {
-    create_before_destroy = true
+  dimensions = {
+    AutoScalingGroupName = aws_autoscaling_group.example.name
   }
-}
 
-data "template_file" "user_data" {
-  template = file("${path.module}/user-data.sh")
-
-  vars = {
-    server_port = var.server_port
-    db_address  = var.db_address
-    db_port     = var.db_port
-  }
-}
-
-resource "aws_lb_target_group" "asg" {
-  name     = "${var.cluster_name}-asg-example"
-  port     = var.server_port
-  protocol = "HTTP"
-  vpc_id   = data.aws_vpc.default.id
-
-  health_check {
-    path                = "/"
-    protocol            = "HTTP"
-    matcher             = "200"
-    interval            = 15
-    timeout             = 3
-    healthy_threshold   = 2
-    unhealthy_threshold = 2
-  }
+  comparison_operator = "LessThanThreshold"
+  evaluation_periods  = 1
+  period              = 300
+  statistic           = "Minimum"
+  threshold           = 10
+  unit                = "Count"
 }
 
 ###################################################################################################
-
-resource "aws_lb" "example" {
-  name               = "${var.cluster_name}-asg-example"
-  load_balancer_type = "application"
-  subnets            = data.aws_subnets.default.ids
-  security_groups    = [aws_security_group.alb.id]
-}
-
-resource "aws_lb_listener" "http" {
-  load_balancer_arn = aws_lb.example.arn
-  port              = local.http_port
-  protocol          = "HTTP"
-
-  # by default return a simple 404 page
-  default_action {
-    type = "fixed-response"
-
-    fixed_response {
-      content_type = "text/plain"
-      message_body = "404: page not found"
-      status_code  = 404
-    }
-  }
-}
-
-resource "aws_lb_listener_rule" "asg" {
-  listener_arn = aws_lb_listener.http.arn
-  priority     = 100
-
-  condition {
-    path_pattern {
-      values = ["*"]
-    }
-  }
-
-  action {
-    type             = "forward"
-    target_group_arn = aws_lb_target_group.asg.arn
-  }
-}
-
+# iam related
 ###################################################################################################
+
+resource "aws_iam_policy" "cloudwatch_read_only" {
+  name   = "cloudwatch-read-only"
+  policy = data.aws_iam_policy_document.cloudwatch_read_only.json
+}
+
+data "aws_iam_policy_document" "cloudwatch_read_only" {
+  statement {
+    effect = "Allow"
+    actions = [
+      "cloudwatch:Describe*",
+      "cloudwatch:Get*",
+      "cloudwatch:List*"
+    ]
+    resources = ["*"]
+  }
+}
