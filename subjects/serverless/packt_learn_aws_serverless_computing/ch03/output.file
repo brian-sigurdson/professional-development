@@ -1,0 +1,1 @@
+{"errorType":"SyntaxError","errorMessage":"Unexpected token t in JSON at position 4","trace":["SyntaxError: Unexpected token t in JSON at position 4","    at JSON.parse (<anonymous>)","    at Runtime.handleOnce (file:///var/runtime/index.mjs:548:42)"]}
