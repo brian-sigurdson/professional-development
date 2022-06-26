@@ -54,3 +54,13 @@ variable "enable_autoscaling" {
   type        = bool
   default     = false
 }
+
+variable "give_neo_cloudwatch_full_access" {
+  description = "If true, neo gets full access to cloudwatch"
+  type        = bool
+}
+
+variable "enable_new_user_data" {
+  description = "If true, use the new User Data script"
+  type        = bool
+}

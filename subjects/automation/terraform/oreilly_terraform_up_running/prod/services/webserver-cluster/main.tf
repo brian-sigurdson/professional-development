@@ -31,16 +31,18 @@ provider "aws" {
 module "webserver_cluster" {
   source = "../../../modules/services/webserver-cluster"
 
-  cluster_name           = "webservers-${local.env}"
-  db_remote_state_bucket = "bks-name-us-east-2-tf-brikman-state"
-  db_remote_state_key    = "${local.env}/services/webserver-cluster/terraform.tfstate"
-  instance_type          = "t2.micro"
-  max_size               = 10
-  min_size               = 2
-  db_address             = module.mysql.db_address
-  db_port                = module.mysql.db_port
-  server_port            = local.ec2_listen_port
-  enable_autoscaling     = true
+  cluster_name                    = "webservers-${local.env}"
+  db_remote_state_bucket          = "bks-name-us-east-2-tf-brikman-state"
+  db_remote_state_key             = "${local.env}/services/webserver-cluster/terraform.tfstate"
+  instance_type                   = "t2.micro"
+  max_size                        = 10
+  min_size                        = 2
+  db_address                      = module.mysql.db_address
+  db_port                         = module.mysql.db_port
+  server_port                     = local.ec2_listen_port
+  enable_autoscaling              = true
+  enable_new_user_data            = false
+  give_neo_cloudwatch_full_access = false
 
   custom_tags = {
     "Owner"      = "team-foo"
