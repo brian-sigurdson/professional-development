@@ -12,3 +12,7 @@ output "alb_security_group_id" {
   value       = aws_security_group.alb.id
   description = "The id of the security group attached to the load balancer"
 }
+
+output "if_else_directive_name" {
+  value = "Hello, %{if var.if_else_directive_name != ""}${var.if_else_directive_name}%{else} (unnamed)%{endif}"
+}

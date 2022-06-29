@@ -64,3 +64,9 @@ variable "enable_new_user_data" {
   description = "If true, use the new User Data script"
   type        = bool
 }
+
+variable "if_else_directive_name" {
+  description = "A name to render"
+  type        = string
+  default     = "bob"
+}
