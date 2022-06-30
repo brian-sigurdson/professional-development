@@ -20,6 +20,11 @@ data "aws_subnets" "default" {
   }
 }
 
+data "aws_iam_users" "example" {}
+data "aws_iam_user" "neo" {
+  user_name = "neo"
+}
+
 ###################################################################################################
 
 resource "aws_cloudwatch_metric_alarm" "high_cpu_utilization" {
@@ -96,8 +101,8 @@ resource "aws_iam_user_policy_attachment" "neo_cloudwatch_full_access" {
   count = var.give_neo_cloudwatch_full_access ? 1 : 0
 
   # should be able to us "neo" because aws_iam_user.example is a map, uses for_each, not count, which would be an array
-  # user       = aws_iam.user.example[0].name
-  user       = aws_iam.user.example["neo"].name
+  # user = aws_iam_users.example[0].name
+  user       = data.aws_iam_user.neo.user_name
   policy_arn = aws_iam_policy.cloudwatch_full_access.arn
 }
 
@@ -105,7 +110,7 @@ resource "aws_iam_user_policy_attachment" "neo_cloudwatch_read_only" {
   count = var.give_neo_cloudwatch_full_access ? 0 : 1
 
   # should be able to us "neo" because aws_iam_user.example is a map, uses for_each, not count, which would be an array
-  # user       = aws_iam.user.example[0].name
-  user       = aws_iam.user.example["neo"].name
+  # user = aws_iam_users.example[0].name
+  user       = data.aws_iam_user.neo.user_name
   policy_arn = aws_iam_policy.cloudwatch_full_access.arn
 }

@@ -60,13 +60,20 @@ variable "give_neo_cloudwatch_full_access" {
   type        = bool
 }
 
-variable "enable_new_user_data" {
-  description = "If true, use the new User Data script"
-  type        = bool
-}
-
 variable "if_else_directive_name" {
   description = "A name to render"
   type        = string
   default     = "bob"
+}
+
+variable "ami" {
+  description = "The AMI to run in the cluster"
+  type        = string
+  default     = "ami-02f3416038bdb17fb" # ubuntu should have busybox installed by default
+}
+
+variable "server_text" {
+  description = "The text the web server should return"
+  type        = string
+  default     = "Hello, World"
 }

@@ -41,8 +41,9 @@ module "webserver_cluster" {
   db_port                         = module.mysql.db_port
   server_port                     = local.ec2_listen_port
   enable_autoscaling              = false
-  enable_new_user_data            = true
   give_neo_cloudwatch_full_access = false
+  ami                             = "ami-02f3416038bdb17fb"
+  server_text                     = "Server Text - Stage"
 
   depends_on = [
     module.mysql
