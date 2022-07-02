@@ -1,3 +1,30 @@
+# just copied here to finish the chapter
+# i appreciate creating good modules, but I need to make headway
+# on the book, so that I can get onto terratest too
+#
+# added locals and two data sources to complete the example
+
+locals {
+  http_port       = 80
+  any_port        = 0
+  any_protocol    = "-1"
+  tcp_protocol    = "tcp"
+  all_ips         = ["0.0.0.0/0"]
+  region          = "us-east-2"
+  ec2_listen_port = 8080
+}
+
+data "aws_vpc" "default" {
+  default = true
+}
+
+data "aws_subnets" "default" {
+  filter {
+    name   = "vpc-id"
+    values = [data.aws_vpc.default.id]
+  }
+}
+
 ###################################################################################################
 # loadbalancer related
 ###################################################################################################
@@ -47,10 +74,10 @@ resource "aws_security_group_rule" "alb_allow_http_inbound" {
 
 resource "aws_security_group_rule" "alb_allow_all_outbound" {
   # i want the alb to send outbound on port 80?
-  from_port         = var.server_port
+  from_port         = local.any_port
   protocol          = local.tcp_protocol
   security_group_id = aws_security_group.alb.id
-  to_port           = var.server_port
+  to_port           = local.any_port
   type              = "egress"
 
   cidr_blocks = [data.aws_vpc.default.cidr_block]

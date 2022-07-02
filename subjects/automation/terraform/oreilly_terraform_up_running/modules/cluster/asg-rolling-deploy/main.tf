@@ -1,3 +1,27 @@
+# just copied here to finish the chapter
+# i appreciate creating good modules, but I need to make headway
+# on the book, so that I can get onto terratest too
+#
+# added locals and two data sources to complete the example
+
+locals {
+  any_port     = 0
+  any_protocol = "-1"
+  tcp_protocol = "tcp"
+  all_ips      = ["0.0.0.0/0"]
+}
+
+# data "aws_vpc" "default" {
+#   default = true
+# }
+
+# data "aws_subnets" "default" {
+#   filter {
+#     name   = "vpc-id"
+#     values = [data.aws_vpc.default.id]
+#   }
+# }
+
 ###################################################################################################
 # autoscaling group related
 ###################################################################################################
@@ -77,3 +101,21 @@ resource "aws_autoscaling_schedule" "scale_in_at_night" {
 }
 
 
+###################################################################################################
+# instance security group related
+###################################################################################################
+
+resource "aws_security_group" "instance" {
+  name = "${var.cluster_name}-instance"
+}
+
+resource "aws_security_group_rule" "instance_allow_http_inbound" {
+  # eg I want ec2 to listen on 8080
+  from_port         = var.server_port
+  protocol          = local.tcp_protocol
+  security_group_id = aws_security_group.instance.id
+  to_port           = var.server_port
+  type              = "ingress"
+
+  cidr_blocks = local.all_ips
+}

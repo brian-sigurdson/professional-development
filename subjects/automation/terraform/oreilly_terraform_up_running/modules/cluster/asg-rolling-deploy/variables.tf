@@ -60,3 +60,7 @@ variable "user_data" {
   default     = null
 }
 
+variable "server_port" {
+  description = "The port the server will use for http requests"
+  type        = number
+}
