@@ -67,50 +67,61 @@ resource "aws_cloudwatch_metric_alarm" "low_cpu_credit_balance" {
 # iam related
 ###################################################################################################
 
-resource "aws_iam_policy" "cloudwatch_read_only" {
-  name   = "cloudwatch-read-only"
-  policy = data.aws_iam_policy_document.cloudwatch_read_only.json
-}
+# data "aws_iam_policy" "cloudwatch_read_only" {
+#   name = "cloudwatch-read-only"
+# }
 
-data "aws_iam_policy_document" "cloudwatch_read_only" {
-  statement {
-    effect = "Allow"
-    actions = [
-      "cloudwatch:Describe*",
-      "cloudwatch:Get*",
-      "cloudwatch:List*"
-    ]
-    resources = ["*"]
-  }
-}
+# data "aws_iam_policy" "cloudwatch_full_access" {
+#   name = "cloudwatch-full-access"
+# }
 
-resource "aws_iam_policy" "cloudwatch_full_access" {
-  name   = "cloudwatch-read-only"
-  policy = data.aws_iam_policy_document.cloudwatch_read_only.json
-}
+# resource "aws_iam_policy" "cloudwatch_read_only" {
 
-data "aws_iam_policy_document" "cloudwatch_full_access" {
-  statement {
-    effect    = "Allow"
-    actions   = ["cloudwatch:*"]
-    resources = ["*"]
-  }
-}
+#   name   = "cloudwatch-read-only"
+#   policy = data.aws_iam_policy_document.cloudwatch_read_only.json
+# }
 
-resource "aws_iam_user_policy_attachment" "neo_cloudwatch_full_access" {
-  count = var.give_neo_cloudwatch_full_access ? 1 : 0
+# data "aws_iam_policy_document" "cloudwatch_read_only" {
+#   statement {
+#     effect = "Allow"
+#     actions = [
+#       "cloudwatch:Describe*",
+#       "cloudwatch:Get*",
+#       "cloudwatch:List*"
+#     ]
+#     resources = ["*"]
+#   }
+# }
 
-  # should be able to us "neo" because aws_iam_user.example is a map, uses for_each, not count, which would be an array
-  # user = aws_iam_users.example[0].name
-  user       = data.aws_iam_user.neo.user_name
-  policy_arn = aws_iam_policy.cloudwatch_full_access.arn
-}
+# resource "aws_iam_policy" "cloudwatch_full_access" {
+#   # do not create if it already exists
+#   count = data.aws_iam_policy.cloudwatch_full_access.policy_id == null ? 1 : 0
 
-resource "aws_iam_user_policy_attachment" "neo_cloudwatch_read_only" {
-  count = var.give_neo_cloudwatch_full_access ? 0 : 1
+#   name   = "cloudwatch-full-access"
+#   policy = data.aws_iam_policy_document.cloudwatch_full_access.json
+# }
 
-  # should be able to us "neo" because aws_iam_user.example is a map, uses for_each, not count, which would be an array
-  # user = aws_iam_users.example[0].name
-  user       = data.aws_iam_user.neo.user_name
-  policy_arn = aws_iam_policy.cloudwatch_full_access.arn
-}
+# data "aws_iam_policy_document" "cloudwatch_full_access" {
+#   statement {
+#     effect    = "Allow"
+#     actions   = ["cloudwatch:*"]
+#     resources = ["*"]
+#   }
+# }
+
+# resource "aws_iam_user_policy_attachment" "neo_cloudwatch_full_access" {
+#   count = var.give_neo_cloudwatch_full_access ? 1 : 0
+
+#   # should be able to us "neo" because aws_iam_user.example is a map, uses for_each, not count, which would be an array
+#   # user = aws_iam_users.example[0].name
+#   user       = data.aws_iam_user.neo.user_name
+#   policy_arn = aws_iam_policy.cloudwatch_full_access[0].arn
+# }
+
+# resource "aws_iam_user_policy_attachment" "neo_cloudwatch_read_only" {
+
+#   # should be able to us "neo" because aws_iam_user.example is a map, uses for_each, not count, which would be an array
+#   # user = aws_iam_users.example[0].name
+#   user       = data.aws_iam_user.neo.user_name
+#   policy_arn = aws_iam_policy.cloudwatch_read_only[0].arn
+# }

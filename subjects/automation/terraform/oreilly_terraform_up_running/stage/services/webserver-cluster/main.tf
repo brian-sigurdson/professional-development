@@ -43,7 +43,7 @@ module "webserver_cluster" {
   enable_autoscaling              = false
   give_neo_cloudwatch_full_access = false
   ami                             = "ami-02f3416038bdb17fb"
-  server_text                     = "Server Text - Stage"
+  server_text                     = "Server Text - Stage (more text)"
 
   depends_on = [
     module.mysql
