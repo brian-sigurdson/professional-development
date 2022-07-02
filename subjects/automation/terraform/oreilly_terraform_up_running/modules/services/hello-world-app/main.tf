@@ -71,7 +71,7 @@ module "asg" {
   user_data     = data.template_file.user_data.rendered
   instance_type = "t2.micro"
 
-  min_size           = 1
+  min_size           = 2
   max_size           = 5
   enable_autoscaling = true
 
