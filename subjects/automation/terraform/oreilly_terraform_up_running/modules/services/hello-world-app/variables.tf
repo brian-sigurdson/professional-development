@@ -34,3 +34,18 @@ variable "server_text" {
   type        = string
   default     = "Hello, World"
 }
+
+variable "environment" {
+  description = "The name of the environment we're deploying to"
+  type        = string
+}
+
+variable "server_port" {
+  description = "The port the server will use for http requests"
+  type        = number
+}
+
+variable "cluster_name" {
+  description = "The name to use for all the cluster resources"
+  type        = string
+}

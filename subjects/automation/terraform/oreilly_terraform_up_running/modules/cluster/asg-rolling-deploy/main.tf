@@ -7,9 +7,9 @@ resource "aws_autoscaling_group" "example" {
   # replaced, this ASG is also replaced  
   name                 = "${var.cluster_name}-${aws_launch_configuration.example.name}"
   launch_configuration = aws_launch_configuration.example.name
-  vpc_zone_identifier  = data.aws_subnets.default.ids
-  target_group_arns    = [aws_lb_target_group.asg.arn]
-  health_check_type    = "ELB"
+  vpc_zone_identifier  = var.subnet_ids
+  target_group_arns    = var.target_group_arns
+  health_check_type    = var.health_check_type
   max_size             = var.max_size
   min_size             = var.min_size
 
@@ -47,8 +47,7 @@ resource "aws_launch_configuration" "example" {
   image_id        = var.ami
   instance_type   = var.instance_type
   security_groups = [aws_security_group.instance.id]
-
-  user_data = data.template_file.user_data.rendered
+  user_data       = var.user_data
 
   lifecycle {
     create_before_destroy = true
@@ -77,14 +76,4 @@ resource "aws_autoscaling_schedule" "scale_in_at_night" {
   autoscaling_group_name = aws_autoscaling_group.example.name
 }
 
-data "template_file" "user_data" {
-  template = file("${path.module}/user-data.sh")
-
-  vars = {
-    server_port = var.server_port
-    db_address  = var.db_address
-    db_port     = var.db_port
-    server_text = var.server_text
-  }
-}
 

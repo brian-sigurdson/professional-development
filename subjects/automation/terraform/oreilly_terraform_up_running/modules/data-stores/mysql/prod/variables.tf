@@ -11,26 +11,26 @@ variable "region" {
   }
 }
 
-variable "db_admin_pwd_ssm_param" {
-  description = "The ssm parameter that has the database administrative user password"
-  type        = string
-}
+# variable "db_admin_pwd_ssm_param" {
+#   description = "The ssm parameter that has the database administrative user password"
+#   type        = string
+# }
 
-variable "db_admin_username_ssm_param" {
-  description = "The ssm parameter that has the database administrative user name"
-  type        = string
-}
+# variable "db_admin_username_ssm_param" {
+#   description = "The ssm parameter that has the database administrative user name"
+#   type        = string
+# }
 
-variable "env" {
-  description = "The environment in which to run"
-  type        = string
-  nullable    = false
+# variable "env" {
+#   description = "The environment in which to run"
+#   type        = string
+#   nullable    = false
 
-  validation {
-    condition     = contains(["prod", "stage"], var.env)
-    error_message = "Only prod or stage are allowed."
-  }
-}
+#   validation {
+#     condition     = contains(["prod", "stage"], var.env)
+#     error_message = "Only prod or stage are allowed."
+#   }
+# }
 
 variable "db_instance_class" {
   description = "The database instance class"
