@@ -25,17 +25,17 @@ module "asg" {
   ami           = "ami-02f3416038bdb17fb"
   instance_type = "t2.micro"
 
-  min_size           = 1
-  max_size           = 1
-  enable_autoscaling = false
-  instance_listen_port        = 8080
+  min_size             = 1
+  max_size             = 1
+  enable_autoscaling   = false
+  instance_listen_port = 8080
 
   subnet_ids = data.aws_subnet_ids.default.ids
 }
 
 module "elb" {
-  source "../../modules/networking/alb"
+  source = "../../modules/networking/alb"
 
-  alb_name = "my-test-name-alb"
-  subnet_ids = data.aws_subnet_ids.default.ids 
+  alb_name   = "my-test-name-alb"
+  subnet_ids = data.aws_subnet_ids.default.ids
 }
