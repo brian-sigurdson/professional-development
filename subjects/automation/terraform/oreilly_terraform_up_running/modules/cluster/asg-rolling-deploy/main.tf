@@ -11,24 +11,13 @@ locals {
   all_ips      = ["0.0.0.0/0"]
 }
 
-# data "aws_vpc" "default" {
-#   default = true
-# }
-
-# data "aws_subnets" "default" {
-#   filter {
-#     name   = "vpc-id"
-#     values = [data.aws_vpc.default.id]
-#   }
-# }
 
 ###################################################################################################
 # autoscaling group related
 ###################################################################################################
 
 resource "aws_autoscaling_group" "example" {
-  # Explicitly depend on the launch configuration's name so each time it's
-  # replaced, this ASG is also replaced  
+  # Explicitly depend on the launch configuration's name so each time it's replaced, this ASG is also replaced  
   name                 = "${var.cluster_name}-${aws_launch_configuration.example.name}"
   launch_configuration = aws_launch_configuration.example.name
   vpc_zone_identifier  = var.subnet_ids
@@ -37,12 +26,10 @@ resource "aws_autoscaling_group" "example" {
   max_size             = var.max_size
   min_size             = var.min_size
 
-  # Wait for at least this many instances to pass health checks before
-  # considering the ASG deployment complete
+  # Wait for at least this many instances to pass health checks before considering the ASG deployment complete
   min_elb_capacity = var.min_size
 
-  # When replacing this ASG, create the replacement first, and only delete the
-  # original after
+  # When replacing this ASG, create the replacement first, and only delete the original after
   lifecycle {
     create_before_destroy = true
   }
@@ -111,10 +98,10 @@ resource "aws_security_group" "instance" {
 
 resource "aws_security_group_rule" "instance_allow_http_inbound" {
   # eg I want ec2 to listen on 8080
-  from_port         = var.server_port
+  from_port         = var.instance_listen_port
   protocol          = local.tcp_protocol
   security_group_id = aws_security_group.instance.id
-  to_port           = var.server_port
+  to_port           = var.instance_listen_port
   type              = "ingress"
 
   cidr_blocks = local.all_ips

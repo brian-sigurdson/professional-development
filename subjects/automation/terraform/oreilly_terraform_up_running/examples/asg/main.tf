@@ -1,5 +1,21 @@
-provider "aws" {
+locals {
   region = "us-east-2"
+  # any_port     = 0
+  # any_protocol = "-1"
+  # tcp_protocol = "tcp"
+  # all_ips      = ["0.0.0.0/0"]
+}
+
+provider "aws" {
+  region = local.region
+}
+
+data "aws_vpc" "default" {
+  default = true
+}
+
+data "aws_subnet_ids" "default" {
+  vpc_id = data.aws_vpc.default.id
 }
 
 module "asg" {
@@ -12,15 +28,14 @@ module "asg" {
   min_size           = 1
   max_size           = 1
   enable_autoscaling = false
-  server_port        = 8080
+  instance_listen_port        = 8080
 
   subnet_ids = data.aws_subnet_ids.default.ids
 }
 
-data "aws_vpc" "default" {
-  default = true
-}
+module "elb" {
+  source "../../modules/networking/alb"
 
-data "aws_subnet_ids" "default" {
-  vpc_id = data.aws_vpc.default.id
+  alb_name = "my-test-name-alb"
+  subnet_ids = data.aws_subnet_ids.default.ids 
 }

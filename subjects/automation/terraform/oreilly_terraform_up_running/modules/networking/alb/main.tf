@@ -80,6 +80,6 @@ resource "aws_security_group_rule" "alb_allow_all_outbound" {
   to_port           = local.any_port
   type              = "egress"
 
-  cidr_blocks = [data.aws_vpc.default.cidr_block]
-  # cidr_blocks = [local.all_ips]
+  # cidr_blocks = [data.aws_vpc.default.cidr_block]
+  cidr_blocks = local.all_ips
 }
