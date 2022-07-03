@@ -33,9 +33,4 @@ module "asg" {
   subnet_ids = data.aws_subnet_ids.default.ids
 }
 
-module "elb" {
-  source = "../../modules/networking/alb"
 
-  alb_name   = "my-test-name-alb"
-  subnet_ids = data.aws_subnet_ids.default.ids
-}
