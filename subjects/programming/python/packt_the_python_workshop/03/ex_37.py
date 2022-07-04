@@ -1,5 +1,5 @@
 """
-This script prints the current system time.
+This script prints the current date (yyyy-mm-dd).
 """
 
 import datetime
