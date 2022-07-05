@@ -18,11 +18,8 @@ data "aws_vpc" "default" {
   default = true
 }
 
-data "aws_subnets" "default" {
-  filter {
-    name   = "vpc-id"
-    values = [data.aws_vpc.default.id]
-  }
+data "aws_subnet_ids" "default" {
+  vpc_id = data.aws_vpc.default.id
 }
 
 ###################################################################################################
@@ -32,8 +29,9 @@ data "aws_subnets" "default" {
 resource "aws_lb" "example" {
   name               = var.alb_name
   load_balancer_type = "application"
-  subnets            = data.aws_subnets.default.ids
-  security_groups    = [aws_security_group.alb.id]
+  # subnets            = data.aws_subnet_ids.default.ids
+  subnets         = var.subnet_ids
+  security_groups = [aws_security_group.alb.id]
 }
 
 resource "aws_lb_listener" "http" {
