@@ -4,6 +4,7 @@ import (
 	"github.com/gruntwork-io/terratest/modules/terraform"
 	"github.com/gruntwork-io/terratest/modules/http-helper"
 	"testing"
+	"time"
 ) 
 
 func TestAlbExample(t *testing.T) {
@@ -18,11 +19,11 @@ func TestAlbExample(t *testing.T) {
 	// terraform.Init(t, opts)
 	// terraform.Apply(t, opts)
 	// deploy the example
-	terraform.InitAndApply(t, opt)
+	terraform.InitAndApply(t, opts)
 
 	// get the url of the alb
 	albDnsName := terraform.OutputRequired(t, opts, "alb_dns_name")
-	url := fmt.Sprintf("http://&s", albDnsName)
+	url := fmt.Sprintf("http://%s", albDnsName)
 
 	// test that the alb's default action is working and returns a 404
 	expectedStatus := 404
