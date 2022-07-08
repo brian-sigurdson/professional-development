@@ -24,6 +24,7 @@ func TestAlbExample(t *testing.T) {
 	// get the url of the alb
 	albDnsName := terraform.OutputRequired(t, opts, "alb_dns_name")
 	url := fmt.Sprintf("http://%s", albDnsName)
+	fmt.Println(url)
 
 	// test that the alb's default action is working and returns a 404
 	expectedStatus := 404
