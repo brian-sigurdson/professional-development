@@ -4,6 +4,6 @@ def list_products(mylist):
     result *= number
   return result
 
-
-print(list_products([2,3]))
-print(list_products([2,10,15]))
+if __name__ == '__main__':
+  print(list_products([2,3]))
+  print(list_products([2,10,15]))
