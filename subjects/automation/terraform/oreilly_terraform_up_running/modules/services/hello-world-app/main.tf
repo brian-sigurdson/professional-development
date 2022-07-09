@@ -71,7 +71,7 @@ module "asg" {
   user_data     = data.template_file.user_data.rendered
   instance_type = "t2.micro"
 
-  min_size           = 2
+  min_size           = var.min_size
   max_size           = 5
   enable_autoscaling = true
 
@@ -79,7 +79,8 @@ module "asg" {
   target_group_arns = [aws_lb_target_group.asg.arn]
   health_check_type = "ELB"
 
-  server_port = var.server_port
+  server_port          = var.server_port
+  instance_listen_port = var.instance_listen_port
 
   # custom_tags = var.custom_tags
 }

@@ -44,3 +44,29 @@ variable "cluster_name" {
   type        = string
   default     = "my-cluster"
 }
+
+variable "instance_type" {
+  description = "The type of ec2 instances to run (eg. t2.micro)"
+  type        = string
+}
+
+variable "min_size" {
+  description = "The minimum number of ec2 instances in the ASG"
+  type        = number
+}
+
+variable "max_size" {
+  description = "The maximum number of ec2 instances in the ASG"
+  type        = number
+}
+
+variable "enable_autoscaling" {
+  description = "If set to true, enable auto scaling"
+  type        = bool
+  default     = false
+}
+
+variable "instance_listen_port" {
+  description = "The port the server will use for http requests"
+  type        = number
+}
