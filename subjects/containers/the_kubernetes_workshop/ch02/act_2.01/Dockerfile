@@ -1,0 +1,8 @@
+FROM alpine:3.10
+
+ARG APP_NAME
+
+COPY $APP_NAME /
+
+CMD ["/$APP_NAME"]
+
