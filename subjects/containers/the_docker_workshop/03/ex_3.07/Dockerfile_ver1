@@ -1,0 +1,5 @@
+FROM basic-base
+CMD mkdir -p /var/www/html
+WORKDIR /var/www/html
+ADD Dockerfile /var/www/html/
+RUN cat Dockerfile
