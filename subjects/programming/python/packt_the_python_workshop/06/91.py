@@ -8,7 +8,7 @@ result = subprocess.run(
     env={**os.environ, "SERVER": "OTHER_SERVER"}
 )
 
-# print(result.stdout)
+print(result.stdout)
 myenv = result.stdout.split("\n")
 for val in myenv:
     print(val)
