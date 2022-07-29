@@ -7,20 +7,20 @@ import (
 
 func main() {
 	var count int
-	fmt.Print("count : %#v ", count)
+	fmt.Printf("count : %#v \n", count)
 
-	// var discount float64
-	// fmt.Println("discount : %#v", discount)
+	var discount float64
+	fmt.Printf("discount : %#v \n", discount)
 
-	// var debug bool
-	// fmt.Println("debug : %#v", debug)
+	var debug bool
+	fmt.Printf("debug : %#v \n", debug)
 
-	// var message string
-	// fmt.Println("message : %#v", message)
+	var message string
+	fmt.Printf("message : %#v \n", message)
 
-	// var emails []string
-	// fmt.Println("emails : %#v", emails)
+	var emails []string
+	fmt.Printf("emails : %#v \n", emails)
 
 	var startTime time.Time 
-	fmt.Println("startTime : %#v", startTime)
+	fmt.Printf("startTime : %#v \n", startTime)
 }
