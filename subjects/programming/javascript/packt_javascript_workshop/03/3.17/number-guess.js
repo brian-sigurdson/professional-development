@@ -8,10 +8,6 @@ let testButtonEle = document.getElementById('test-button');
 
 testButtonEle.addEventListener('click', testMatch);
 
-// function testMatch(e){
-//     console.log("Clicked!");
-// }
-
 function testMatch(e){
     matchedMsgEle.style.display = 'none';
     noMatchMsgEle.style.display = 'none';
