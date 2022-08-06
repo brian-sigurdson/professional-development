@@ -41,7 +41,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	passedLocale := locle {
+	passedLocale := locale {
 		lang: localeParts[0],
 		region: localeParts[1],
 	}
