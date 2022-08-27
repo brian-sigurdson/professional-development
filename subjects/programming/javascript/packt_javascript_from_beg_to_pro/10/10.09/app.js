@@ -5,4 +5,8 @@ buttons.forEach( (btn) => {
         console.log(this.textContent);
     }
     btn.addEventListener("click", output);
-})
+});
+
+buttons.forEach(element => {
+    console.log(element);
+});
