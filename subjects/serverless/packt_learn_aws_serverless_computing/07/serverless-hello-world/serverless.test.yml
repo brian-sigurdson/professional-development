@@ -1,0 +1,15 @@
+- name: gives us a hello world message
+  endpoint: {function: hello}
+  response:
+    body:
+      message: "Hello World deployed from Serverless Framework!"
+
+- name: says hello to alice
+  endpoint:
+    function: hello
+  request:
+    body:
+      message: "Hello request"
+  response:
+    body:   
+      message: "Hello response"
