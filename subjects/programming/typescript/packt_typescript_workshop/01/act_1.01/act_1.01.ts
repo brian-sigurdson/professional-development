@@ -25,24 +25,59 @@ const toWords = function (first: string) {
     return spaceDashUnderscore(first);
 }
 
-const repeat = function (first: string) {
-    
+const repeat = function (first: string, second: number): string {
+    let val = "";
+    for (let i = 0; i < second; i++) {
+        val += first;
+    }
+    return val;
 }
 
 const isAlpha = function (first: string) {
-    
+    for (let i = 0; i < first.length; i++) {
+        let tmp = first.charAt(i);
+
+        if (!/[A-Za-z]/.test(tmp)) {
+            return false;
+        }
+    }
+
+    return true;
 }
 
 const isBlank = function (first: string) {
-    
+
+    if (first.length == 0){
+        return true;
+    }
+
+    for (let i = 0; i < first.length; i++) {
+        let tmp = first.charAt(i);
+
+        if (!/[" "]/.test(tmp)) {
+            return false;
+        }
+    }
+
+    return true;
 }
 
 
 const result_1 = toTitleCase("tO kILL A mOCKINGBIRD");
-console.log(result_1);
+console.log("toTitleCase: ", result_1);
 
 const result_2 = countWords("for_whom the-bell-tolls");
-console.log(result_2);
+console.log("countWords: ", result_2);
 
 const result_3 = toWords("for_whom the-bell-tolls");
-console.log(result_3);
+console.log("toWords: ", result_3);
+
+const result_4 = repeat("_bob_", 4);
+console.log("repeat: ", result_4);
+
+// const result_5 = isAlpha("War and Peace");
+const result_5 = isAlpha("1Q44");
+console.log("isAlpha: ", result_5);
+
+const result_6 = isBlank("     ");
+console.log("isBlank: ", result_6);
