@@ -1,3 +1,14 @@
+terraform {
+    backend "s3" {
+        bucket = "name-bks-terraform-up-and-running-3rd-state"
+        key = "global/s3/terraform.tfstate"
+        region = "us-east-1"
+    
+        dynamodb_table = "name-bks-terraform-up-and-running-3rd-locks"
+        encrypt = true 
+    }
+}
+
 provider "aws" {
   region = "us-east-1"
 }
@@ -48,13 +59,3 @@ resource "aws_dynamodb_table" "terraform_locks" {
   }
 }
 
-terraform {
-    backend "s3" {
-        bucket = "name-bks-terraform-up-and-running-3rd-state"
-        key = "global/s3/terraform.state"
-        region = "us-east-1"
-    
-        dynamodb_table = "name-bks-terraform-up-and-running-3rd-locks"
-        encrypt = true 
-    }
-}
