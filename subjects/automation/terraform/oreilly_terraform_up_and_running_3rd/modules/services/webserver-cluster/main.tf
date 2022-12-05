@@ -16,11 +16,7 @@ data "terraform_remote_state" "db" {
     bucket = "name-bks-terraform-up-and-running-3rd-state"
     key    = "stage/data-stores/mysql/terraform.tfstate"
     region = "us-east-1"
-  }
-}
-
-provider "aws" {
-  region = "us-east-1"
+  } 
 }
 
 resource "aws_security_group" "instance" {
