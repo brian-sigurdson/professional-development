@@ -2,7 +2,7 @@ terraform {
   backend "s3" {
     bucket = "name-bks-terraform-up-and-running-3rd-state"
     key    = "stage/services/webserver-cluster/terraform.tfstate"
-    region = "us-east-1"
+    region = var.region
 
     dynamodb_table = "name-bks-terraform-up-and-running-3rd-locks"
     encrypt        = true
@@ -13,14 +13,14 @@ data "terraform_remote_state" "db" {
   backend = "s3"
 
   config = {
-    bucket = "name-bks-terraform-up-and-running-3rd-state"
-    key    = "stage/data-stores/mysql/terraform.tfstate"
-    region = "us-east-1"
+    bucket = var.db_remote_state_bucket
+    key    = var.db_remote_state_key
+    region = var.region
   } 
 }
 
 resource "aws_security_group" "instance" {
-  name = "terraform-example-instance"
+  name = "${var.cluster_name}-ec2-sg"
 
   ingress {
     from_port   = var.server_port
@@ -59,7 +59,7 @@ resource "aws_autoscaling_group" "example" {
 
   tag {
     key                 = "Name"
-    value               = "terraform-asg-example"
+    value               = "${var.cluster_name}-asg"
     propagate_at_launch = true
   }
 }
@@ -77,7 +77,7 @@ data "aws_subnets" "default" {
 
 ####################    ALB     ####################
 resource "aws_alb" "example" {
-  name               = "terraform-asg-example"
+  name               = "${var.cluster_name}-alb"
   load_balancer_type = "application"
   subnets            = data.aws_subnets.default.ids
   security_groups    = [aws_security_group.alb.id]
@@ -101,7 +101,7 @@ resource "aws_lb_listener" "http" {
 }
 
 resource "aws_security_group" "alb" {
-  name = "terraform-example-alb"
+  name = "${var.cluster_name}-sg-alb"
 
   # allow inbound http requests
   ingress {
@@ -121,7 +121,7 @@ resource "aws_security_group" "alb" {
 }
 
 resource "aws_lb_target_group" "asg" {
-  name     = "terraform-asg-example"
+  name     = "${var.cluster_name}-asg-target-grp"
   port     = var.server_port
   protocol = "HTTP"
   vpc_id   = data.aws_vpc.default.id
