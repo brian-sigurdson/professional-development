@@ -1,13 +1,15 @@
-terraform {
-  backend "s3" {
-    bucket = "name-bks-terraform-up-and-running-3rd-state"
-    key    = "stage/services/webserver-cluster/terraform.tfstate"
-    region = var.region
+# terraform {
+#   backend "s3" {
+#     bucket = "name-bks-terraform-up-and-running-3rd-state"
+#     key    = "stage/services/webserver-cluster/terraform.tfstate"
+#     # terraform blocks cannot contain vars, so we'll get an error if the region var is different.
+#     # eventually, use Terragrunt
+#     region = "us-east-1"
 
-    dynamodb_table = "name-bks-terraform-up-and-running-3rd-locks"
-    encrypt        = true
-  }
-}
+#     dynamodb_table = "name-bks-terraform-up-and-running-3rd-locks"
+#     encrypt        = true
+#   }
+# }
 
 data "terraform_remote_state" "db" {
   backend = "s3"
@@ -15,7 +17,7 @@ data "terraform_remote_state" "db" {
   config = {
     bucket = var.db_remote_state_bucket
     key    = var.db_remote_state_key
-    region = var.region
+    region = var.aws_region
   } 
 }
 
