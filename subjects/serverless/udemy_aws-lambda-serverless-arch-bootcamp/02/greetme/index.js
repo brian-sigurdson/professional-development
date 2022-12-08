@@ -1,15 +1,17 @@
-// const moment = require("moment/moment");
+const moment = require("moment/moment");
 
 const greeting = {
-    "en": "hello",
-    "fr": "bonjour",
-    "hi": "namaste"
+    "en": "Hello",
+    "fr": "Bonjour",
+    "hi": "Namaste",
+    "es": "Hola",
+    "pt": "Ola",
+    "it": "Ciao",
+    "de": "Hallo"
 }
 
 exports.handler = async (event) => {
 
-    // node 8 example, doesn't work with node 18
-    // i won't mess with for now
     let name = event.pathParameters.name;
     let {lang, ...info} = event.queryStringParameters;
 
@@ -18,7 +20,7 @@ exports.handler = async (event) => {
     let response = {
         message: message,
         info: info,
-        // timestamp: moment().unix()
+        timestamp: moment().unix()
     }
 
     return {
