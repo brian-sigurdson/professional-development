@@ -1,4 +1,4 @@
-const moment = require("moment/moment");
+// const moment = require("moment/moment");
 
 const greeting = {
     "en": "hello",
@@ -18,7 +18,7 @@ exports.handler = async (event) => {
     let response = {
         message: message,
         info: info,
-        timestamp: moment().unix()
+        // timestamp: moment().unix()
     }
 
     return {
