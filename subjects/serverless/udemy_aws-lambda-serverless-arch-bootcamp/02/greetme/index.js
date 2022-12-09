@@ -1,5 +1,3 @@
-const moment = require("moment/moment");
-
 const greeting = {
     "en": "Hello",
     "fr": "Bonjour",
@@ -10,17 +8,17 @@ const greeting = {
     "de": "Hallo"
 }
 
-exports.handler = async (event) => {
+export async function handler(event) {
 
     let name = event.pathParameters.name;
-    let {lang, ...info} = event.queryStringParameters;
+    let {lang, ...info} = event.queryStringParameters || {};
 
     let message = `${greeting[lang] ? greeting[lang] : greeting['en'] } ${name}`
 
     let response = {
         message: message,
         info: info,
-        timestamp: moment().unix()
+        timestamp: new Date()
     }
 
     return {
