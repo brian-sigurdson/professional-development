@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket = "name-bks-terraform-up-and-running-3rd-state"
-    key    = "stage/services/webserver-cluster/terraform.tfstate"
+    key    = "stage/data-stores/mysql/terraform.tfstate"
     # terraform blocks cannot contain vars, so we'll get an error if the region var is different.
     # eventually, use Terragrunt
     region = "us-east-1"

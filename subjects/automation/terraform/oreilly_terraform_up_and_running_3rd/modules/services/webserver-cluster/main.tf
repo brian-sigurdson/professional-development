@@ -1,26 +1,3 @@
-# terraform {
-#   backend "s3" {
-#     bucket = "name-bks-terraform-up-and-running-3rd-state"
-#     key    = "stage/services/webserver-cluster/terraform.tfstate"
-#     # terraform blocks cannot contain vars, so we'll get an error if the region var is different.
-#     # eventually, use Terragrunt
-#     region = "us-east-1"
-
-#     dynamodb_table = "name-bks-terraform-up-and-running-3rd-locks"
-#     encrypt        = true
-#   }
-# }
-
-data "terraform_remote_state" "db" {
-  backend = "s3"
-
-  config = {
-    bucket = var.db_remote_state_bucket
-    key    = var.db_remote_state_key
-    region = var.aws_region
-  } 
-}
-
 resource "aws_security_group" "instance" {
   name = "${var.cluster_name}-ec2-sg"
 
@@ -32,12 +9,22 @@ resource "aws_security_group" "instance" {
   }
 }
 
+data "terraform_remote_state" "db" {
+  backend = "s3"
+
+  config = {
+    bucket = var.db_remote_state_bucket
+    key    = var.db_remote_state_key
+    region = var.aws_region
+  } 
+}
+
 resource "aws_launch_configuration" "example" {
   image_id        = "ami-08c40ec9ead489470" # ubuntu
   instance_type   = "t2.micro"
   security_groups = [aws_security_group.instance.id]
 
-  user_data = templatefile("user-data.sh", {
+  user_data = templatefile("${path.module}/user-data.tftpl", {
     server_port = var.server_port
     db_address = data.terraform_remote_state.db.outputs.address
     db_port = data.terraform_remote_state.db.outputs.port 

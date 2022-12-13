@@ -4,7 +4,7 @@ locals {
 }
 
 provider "aws" {
-    region = local.region
+    region = "us-east-1"
 }
 
 module "webserver_cluster" {
