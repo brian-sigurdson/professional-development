@@ -15,13 +15,13 @@ provider "aws" {
 }
 
 resource "aws_instance" "app_server" {
-    # amazon linux
-    # ami           = "ami-0661cd3308ec33aaa" 
-    # ubuntu
-    ami = "ami-0fb653ca2d3203ac1"
-    instance_type = "t2.micro"
+  # amazon linux
+  # ami           = "ami-0661cd3308ec33aaa" 
+  # ubuntu
+  ami           = "ami-0fb653ca2d3203ac1"
+  instance_type = "t2.micro"
 
-    tags = {
-        Name = var.instance_name
-    }
+  tags = {
+    Name = var.instance_name
+  }
 }

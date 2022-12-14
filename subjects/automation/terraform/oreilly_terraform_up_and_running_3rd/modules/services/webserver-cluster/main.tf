@@ -16,7 +16,7 @@ data "terraform_remote_state" "db" {
     bucket = var.db_remote_state_bucket
     key    = var.db_remote_state_key
     region = var.aws_region
-  } 
+  }
 }
 
 resource "aws_launch_configuration" "example" {
@@ -26,8 +26,8 @@ resource "aws_launch_configuration" "example" {
 
   user_data = templatefile("${path.module}/user-data.tftpl", {
     server_port = var.server_port
-    db_address = data.terraform_remote_state.db.outputs.address
-    db_port = data.terraform_remote_state.db.outputs.port 
+    db_address  = data.terraform_remote_state.db.outputs.address
+    db_port     = data.terraform_remote_state.db.outputs.port
   })
 
   # required when using launch config with asg
