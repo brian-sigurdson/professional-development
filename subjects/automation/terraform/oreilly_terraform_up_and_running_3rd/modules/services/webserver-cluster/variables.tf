@@ -24,3 +24,21 @@ variable "aws_region" {
   type        = string
   default     = "us-east-1"
 }
+
+variable "instance_type" {
+  description = "The type of EC2 instances to run (eg. t2.micro)"
+  type        = string
+  default     = "t2.micro"
+}
+
+variable "min_size" {
+  description = "The minimum number of EC2 instnaces to run"
+  type        = number 
+  default     = 2
+}
+
+variable "max_size" {
+  description = "The maximum number of EC2 instnaces to run"
+  type        = number 
+  default     = 5
+}
