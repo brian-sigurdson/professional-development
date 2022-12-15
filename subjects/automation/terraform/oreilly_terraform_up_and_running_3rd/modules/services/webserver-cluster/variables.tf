@@ -33,12 +33,12 @@ variable "instance_type" {
 
 variable "min_size" {
   description = "The minimum number of EC2 instnaces to run"
-  type        = number 
+  type        = number
   default     = 2
 }
 
 variable "max_size" {
   description = "The maximum number of EC2 instnaces to run"
-  type        = number 
+  type        = number
   default     = 5
 }

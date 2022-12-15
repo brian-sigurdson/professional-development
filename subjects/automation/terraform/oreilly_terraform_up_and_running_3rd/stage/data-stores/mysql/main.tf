@@ -12,7 +12,7 @@ terraform {
 }
 
 locals {
-  env = "stage"
+  env    = "stage"
   region = "us-east-1"
 }
 
