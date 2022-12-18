@@ -22,7 +22,7 @@ variable "db_remote_state_key" {
 variable "aws_region" {
   description = "The region to deploy resources"
   type        = string
-  default     = "us-east-1"
+  default     = "us-east-2"
 }
 
 variable "instance_type" {

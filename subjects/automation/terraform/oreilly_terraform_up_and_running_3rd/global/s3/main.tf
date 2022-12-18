@@ -1,20 +1,20 @@
-terraform {
-  backend "s3" {
-    bucket = "name-bks-terraform-up-and-running-3rd-state"
-    key    = "global/s3/terraform.tfstate"
-    region = "us-east-1"
+# terraform {
+#   backend "s3" {
+#     bucket = "name-bks-terraform-up-and-running-3rd-ed-state"
+#     key    = "global/s3/terraform.tfstate"
+#     region = "us-east-2"
 
-    dynamodb_table = "name-bks-terraform-up-and-running-3rd-locks"
-    encrypt        = true
-  }
-}
+#     dynamodb_table = "name-bks-terraform-up-and-running-3rd-ed-locks"
+#     encrypt        = true
+#   }
+# }
 
 provider "aws" {
-  region = "us-east-1"
+  region = "us-east-2"
 }
 
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "name-bks-terraform-up-and-running-3rd-state"
+  bucket = "name-bks-terraform-up-and-running-3rd-ed-state"
 
   # prevent accidental deletion
   lifecycle {
@@ -49,7 +49,7 @@ resource "aws_s3_bucket_public_access_block" "public_access" {
 }
 
 resource "aws_dynamodb_table" "terraform_locks" {
-  name         = "name-bks-terraform-up-and-running-3rd-locks"
+  name         = "name-bks-terraform-up-and-running-3rd-ed-locks"
   billing_mode = "PAY_PER_REQUEST"
   hash_key     = "LockID"
 
