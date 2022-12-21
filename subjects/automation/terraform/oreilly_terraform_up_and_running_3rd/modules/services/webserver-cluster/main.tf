@@ -20,7 +20,8 @@ data "terraform_remote_state" "db" {
 }
 
 resource "aws_launch_configuration" "example" {
-  image_id        = "ami-08c40ec9ead489470" # ubuntu
+  # image_id        = "ami-08c40ec9ead489470" # ubuntu - us-east-1
+  image_id        = "ami-0283a57753b18025b" # ubuntu - us-ease-2
   instance_type   = var.instance_type
   security_groups = [aws_security_group.instance.id]
 
@@ -48,7 +49,7 @@ resource "aws_autoscaling_group" "example" {
 
   tag {
     key                 = "Name"
-    value               = "${var.cluster_name}-asg"
+    value               = "${var.cluster_name}-ec2"
     propagate_at_launch = true
   }
 }

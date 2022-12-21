@@ -1,13 +1,13 @@
-# terraform {
-#   backend "s3" {
-#     bucket = "name-bks-terraform-up-and-running-3rd-ed-state"
-#     key    = "global/s3/terraform.tfstate"
-#     region = "us-east-2"
+terraform {
+  backend "s3" {
+    bucket = "name-bks-terraform-up-and-running-3rd-ed-state"
+    key    = "global/s3/terraform.tfstate"
+    region = "us-east-2"
 
-#     dynamodb_table = "name-bks-terraform-up-and-running-3rd-ed-locks"
-#     encrypt        = true
-#   }
-# }
+    dynamodb_table = "name-bks-terraform-up-and-running-3rd-ed-locks"
+    encrypt        = true
+  }
+}
 
 provider "aws" {
   region = "us-east-2"
