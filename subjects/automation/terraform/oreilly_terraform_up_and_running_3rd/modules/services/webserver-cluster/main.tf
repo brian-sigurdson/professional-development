@@ -52,6 +52,16 @@ resource "aws_autoscaling_group" "example" {
     value               = "${var.cluster_name}-ec2"
     propagate_at_launch = true
   }
+
+  dynamic "tag" {
+    for_each = var.custom_tags
+
+    content {
+      key = tag.key 
+      value = tag.value 
+      propagate_at_launch = true 
+    }
+  }
 }
 
 data "aws_vpc" "default" {
@@ -95,19 +105,19 @@ resource "aws_security_group" "alb" {
 }
 
 resource "aws_security_group_rule" "allow_http_inbound" {
-  type = "ingress"
-  security_group_id = aws_security_group.alb.id 
+  type              = "ingress"
+  security_group_id = aws_security_group.alb.id
 
   # allow inbound http requests
   from_port   = local.http_port
   to_port     = local.http_port
   protocol    = local.tcp_protocol
-  cidr_blocks = local.all_ips  
+  cidr_blocks = local.all_ips
 }
-  
+
 resource "aws_security_group_rule" "allow_http_outbound" {
-  type = "egress"
-  security_group_id = aws_security_group.alb.id 
+  type              = "egress"
+  security_group_id = aws_security_group.alb.id
 
   # allow all outbound requests
   from_port   = local.any_port

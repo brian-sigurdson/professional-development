@@ -14,6 +14,6 @@ output "asg_name" {
 }
 
 output "alb_security_group_id" {
-  value       = aws_security_group.alb.id 
+  value       = aws_security_group.alb.id
   description = "The ID of the security group attached to the load balancer"
 }

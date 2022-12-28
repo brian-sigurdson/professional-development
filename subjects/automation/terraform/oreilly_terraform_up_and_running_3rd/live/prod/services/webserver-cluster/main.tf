@@ -8,14 +8,20 @@ provider "aws" {
 }
 
 module "webserver_cluster" {
-  source = "../../../modules/services/webserver-cluster"
+  source = "../../../../modules/services/webserver-cluster"
 
   cluster_name           = "webservers-${local.env}"
   db_remote_state_bucket = "name-bks-terraform-up-and-running-3rd-ed-state"
   db_remote_state_key    = "${local.env}/data-stores/mysql/terraform.tfstate"
+
+  instance_type          = "t2.micro"
   min_size               = 2
   max_size               = 10
-  instance_type          = "t2.micro"
+  
+  custom_tags = {
+    Owner = "team-foo"
+    ManagedBy = "terraform"
+  }
 }
 
 resource "aws_autoscaling_schedule" "scale_out_during_business_hours" {
@@ -23,8 +29,8 @@ resource "aws_autoscaling_schedule" "scale_out_during_business_hours" {
   min_size              = 2
   max_size              = 10
   # desired_capacity      = 10
-  desired_capacity      = 2
-  recurrence            = "0 9 * * *"
+  desired_capacity = 2
+  recurrence       = "0 9 * * *"
 
   autoscaling_group_name = module.webserver_cluster.asg_name
 }
