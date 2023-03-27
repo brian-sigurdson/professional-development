@@ -3,11 +3,9 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "storageName": {
-            "type": "string",
             "value": "namebks987654"
         },
         "storageType": {
-            "type": "string",
             "value": "Standard_LRS"
         }
     }
