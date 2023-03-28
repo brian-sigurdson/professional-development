@@ -1,12 +1,21 @@
-param location string = 'eastus'
-var storageAccountName = 'namebkssa${toLower(uniqueString(resourceGroup().id))}'
-var serverFarmsName = 'namebkssf${toLower(uniqueString(resourceGroup().id))}'
+param location string = resourceGroup().location
+param storageAccountName string = 'toylaunch${uniqueString(resourceGroup().id)}'
+param appServiceAppName string = 'toylaunch${uniqueString(resourceGroup().id)}'
+@allowed([
+  'nonprod'
+  'prod'
+])
+param environmentType string
+
+var appServicePlanName = 'toy-product-launch-plan'
+var storageAccountSkuName = (environmentType == 'prod') ? 'Standard_GRS' : 'Standard_LRS'
+var appServicePlanSkuName = (environmentType == 'prod') ? 'P2v3' : 'F1'
 
 resource storageAccount 'Microsoft.Storage/storageAccounts@2022-09-01' = {
   name: storageAccountName
   location: location
   sku: {
-    name: 'Standard_LRS'
+    name: storageAccountSkuName
   }
   kind: 'StorageV2'
   properties: {
@@ -14,19 +23,19 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2022-09-01' = {
   }
 }
 
-resource serverFarms001 'Microsoft.Web/serverFarms@2022-03-01' = {
-  name: serverFarmsName
+resource appServicePlan 'Microsoft.Web/serverFarms@2022-03-01' = {
+  name: appServicePlanName
   location: location
   sku: {
-    name: 'F1'
+    name: appServicePlanSkuName
   }
 }
 
-resource sites001 'Microsoft.Web/sites@2022-03-01' = {
-  name: 'toy-product-launch-${serverFarmsName}'
+resource appServiceApp 'Microsoft.Web/sites@2022-03-01' = {
+  name: appServiceAppName
   location: location
   properties: {
-    serverFarmId: serverFarms001.id
+    serverFarmId: appServicePlan.id
     httpsOnly: true
   }
 }
