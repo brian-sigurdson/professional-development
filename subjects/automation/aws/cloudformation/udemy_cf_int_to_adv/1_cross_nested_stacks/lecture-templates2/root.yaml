@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Root stack template for AWS CF Step by Step series
+
+Resources:
+  NetworkStack:
+    Type: AWS::CloudFormation::Stack
+    Description: The network nested stack
+    Properties:
+      TemplateURL: "https://name-bks-udemy-cf.s3.us-east-2.amazonaws.com/network-template.yaml"
+
+  DatabaseStack:
+    Type: AWS::CloudFormation::Stack
+    Description: The database nested stack
+    Properties:
+      TemplateURL: "https://name-bks-udemy-cf.s3.us-east-2.amazonaws.com/database-template.yaml"
+      Parameters:
+        AllocatedStorage: 10
+        DbSecurityGroup: !GetAtt NetworkStack.Outputs.DbSecurityGroup
+        DbSubnets:  !GetAtt NetworkStack.Outputs.PrivateSubnets
