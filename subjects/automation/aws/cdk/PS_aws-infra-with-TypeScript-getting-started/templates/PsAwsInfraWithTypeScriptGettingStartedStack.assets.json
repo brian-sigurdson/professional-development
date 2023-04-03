@@ -1,0 +1,19 @@
+{
+  "version": "31.0.0",
+  "files": {
+    "92f0fec88ef0de359614d6a24a58d2309dc2dc695a646c1e19679c3c9540a6ab": {
+      "source": {
+        "path": "PsAwsInfraWithTypeScriptGettingStartedStack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "92f0fec88ef0de359614d6a24a58d2309dc2dc695a646c1e19679c3c9540a6ab.json",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}
