@@ -1,15 +1,14 @@
 {
-  "name": "udemy_understanding-npm",
+  "name": "clock",
   "version": "1.0.0",
-  "description": "",
+  "description": "\"Udemy Understanding NPM exercise\"",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Brian Sigurdson",
+  "author": "\"Brian Sigurdson\"",
   "license": "ISC",
   "dependencies": {
-    "moment": "^2.29.4",
-    "semver": "^7.5.0"
+    "moment": "^2.29.4"
   }
 }

@@ -1,4 +1,5 @@
 const semver = require("semver");
+const moment = require("moment");
 
 // console.log(semver.valid('1.2.3'));
 // console.log(semver.valid('12.3'));
@@ -14,3 +15,5 @@ const semver = require("semver");
 // console.log(semver.satisfies("2.2.2",range));
 
 console.log(semver.inc("1.4.3", "patch"));
+
+console.log(moment.now());
