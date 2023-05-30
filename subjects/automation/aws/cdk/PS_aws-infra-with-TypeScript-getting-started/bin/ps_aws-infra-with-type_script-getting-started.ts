@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
-import * as cdk from 'aws-cdk-lib';
+import * as cdk from '@aws-cdk/core';
 import { PsAwsInfraWithTypeScriptGettingStartedStack } from '../lib/ps_aws-infra-with-type_script-getting-started-stack';
 
 const app = new cdk.App();
