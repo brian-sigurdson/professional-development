@@ -9,3 +9,5 @@ cdk.out
 
 # override the higher level gitignore for this lib dir
 !lib
+
+!lambda/*.js 
