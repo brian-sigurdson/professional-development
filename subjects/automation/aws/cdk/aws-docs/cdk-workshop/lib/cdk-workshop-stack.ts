@@ -25,11 +25,14 @@ export class CdkWorkshopStack extends cdk.Stack {
       handler: helloWithCounter.handler
     });
 
-    new TableViewer(this, 'ViewHitCounter', {
-      title: 'Hello Hits',
-      table: helloWithCounter.table,
-      sortBy: "-path"
-    });
+    // running this throws errors about the use of node12 to create lambdas
+    // I couldn't figure it out
+    // 
+    // new TableViewer(this, 'ViewHitCounter', {
+    //   title: 'Hello Hits',
+    //   table: helloWithCounter.table,
+    //   sortBy: "-path"
+    // });
 
   }
 }

@@ -24,13 +24,14 @@ export class HitCounter extends Construct {
         name: 'path',
         type: dynamodb.AttributeType.STRING
       },
+      encryption: dynamodb.TableEncryption.AWS_MANAGED,
       removalPolicy: cdk.RemovalPolicy.DESTROY
     });
 
     this.table = table;
 
     this.handler = new lambda.Function(this, 'HitCounterHandler', {
-      runtime: lambda.Runtime.NODEJS_14_X,
+      runtime: lambda.Runtime.NODEJS_16_X,
       handler: 'hitcounter.handler',
       code: lambda.Code.fromAsset('lambda'),
       environment: {
