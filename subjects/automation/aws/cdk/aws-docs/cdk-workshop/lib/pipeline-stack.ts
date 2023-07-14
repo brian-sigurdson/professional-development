@@ -3,6 +3,7 @@ import * as codecommit from 'aws-cdk-lib/aws-codecommit';
 import { Construct } from 'constructs';
 import { WorkshopPipelineStage } from './pipeline-stage';
 import { CodeBuildStep, CodePipeline, CodePipelineSource } from 'aws-cdk-lib/pipelines';
+import { DeployTimeSubstitutedFile } from 'aws-cdk-lib/aws-s3-deployment';
 
 export class WorkshopPipelineStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -36,5 +37,18 @@ export class WorkshopPipelineStack extends cdk.Stack {
     // const testStage = pipeline.addStage(test);
     // const prodStage = pipeline.addStage(prod);
 
+    devStage.addPost(
+      new CodeBuildStep('TestAPIGatewayEndpoint', {
+        projectName: 'TestAPIGatewayEndpoint',
+        envFromCfnOutputs: {
+          ENDPOINT_URL: dev.hcEndpoint
+        },
+        commands: [
+          'curl -Ssf $ENDPOINT_URL',
+          'curl -Ssf $ENDPOINT_URL/hello',
+          'curl -Ssf $ENDPOINT_URL/test'
+        ]
+      })
+    )
   }
 }

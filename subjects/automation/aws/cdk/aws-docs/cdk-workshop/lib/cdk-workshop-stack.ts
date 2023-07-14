@@ -7,6 +7,8 @@ import { Construct } from 'constructs';
 
 
 export class CdkWorkshopStack extends cdk.Stack {
+  public readonly hcEndpoint: cdk.CfnOutput;
+
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
@@ -22,7 +24,7 @@ export class CdkWorkshopStack extends cdk.Stack {
     });
 
     // define an api gateway rest api resource backed by our "hello" function
-    new apigw.LambdaRestApi(this, 'Endpoint', {
+    const gateway = new apigw.LambdaRestApi(this, 'Endpoint', {
       handler: helloWithCounter.handler
     });
 
@@ -34,6 +36,10 @@ export class CdkWorkshopStack extends cdk.Stack {
     //   table: helloWithCounter.table,
     //   sortBy: "-path"
     // });
+
+    this.hcEndpoint = new cdk.CfnOutput(this, 'GatewayUrl', {
+      value: gateway.url 
+    });
 
   }
 }
