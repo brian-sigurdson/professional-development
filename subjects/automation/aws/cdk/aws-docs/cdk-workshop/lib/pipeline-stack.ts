@@ -10,6 +10,6 @@ export class WorkshopPipelineStack extends cdk.Stack {
     new codecommit.Repository(this, 'WorkshopRepo', {
       repositoryName: "WorkshopRepo"
     });
-    
+
   }
 }
