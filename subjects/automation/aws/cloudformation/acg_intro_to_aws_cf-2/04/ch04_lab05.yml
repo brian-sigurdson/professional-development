@@ -1,0 +1,48 @@
+Parameters:
+  NameOfService:
+    Description: The name of the service created by this stack.
+    Type: String
+  KeyName: 
+    Description: The name of an existing EC2 KeyPair to enable SSH access to the server.
+    Type: AWS::EC2::KeyPair::KeyName
+
+  InstTypeParam:
+    Type: String
+    Default: t2.micro
+    AllowedValues:
+      - t2.micro
+      - m2.small
+      - m1.large
+    Description: EC2 Instance Type
+
+Mappings:
+  RegionMap:
+    us-east-1: 
+      AMI: ami-03a6eaae9938c858c
+    us-east-2:
+      AMI: ami-0d406e26e5ad4de53
+
+Resources: 
+  myEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: !FindInMap [ RegionMap, !Ref AWS::Region, AMI]
+      InstanceType: !Ref InstTypeParam
+      SecurityGroups:
+        - !Ref MySecurityGroup
+      Tags:
+        - Key: Name
+          Value: !Ref NameOfService
+        - Key: Region
+          Value: !Join ["", ["EC2 instance for ", !Ref AWS::Region]]
+      KeyName: !Ref KeyName        
+
+  MySecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: Allow port 22
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
