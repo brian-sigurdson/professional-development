@@ -1,2 +1,5 @@
-GET https://xbuyxnzag8.execute-api.us-east-1.amazonaws.com/prod/spaces
+GET https://c1gx5f7ed9.execute-api.us-east-1.amazonaws.com/prod/spaces
+###
+
+POST https://c1gx5f7ed9.execute-api.us-east-1.amazonaws.com/prod/spaces
 ###

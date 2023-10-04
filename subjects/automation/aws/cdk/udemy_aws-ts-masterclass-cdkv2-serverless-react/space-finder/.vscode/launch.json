@@ -1,0 +1,41 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+
+    // I was able to get the debugger to work by opening vscode in the space-finder dir, 
+    // then having .vscode in the root of space-finder was okay.
+
+    // Also, I had to add the session tokens in the "env" key.
+    // I don't know if the skip files are necessary, but I've left them in for now.
+    // There is probably a better way, but at least it is working for now.
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug local file",
+            "runtimeArgs": [
+                "-r",
+                "ts-node/register"
+            ],
+            "args": [
+                "${relativeFile}"
+            ],
+            "env": {
+                "AWS_REGION": "us-east-1",
+                "AWS_ACCESS_KEY_ID": "ASIAUECONJJFHIPBUP5D",
+                "AWS_SECRET_ACCESS_KEY": "t/R/HSoJgA5s7akJcg4aI9IFmVd3Dvlgn20pWKB3",
+                "AWS_SESSION_TOKEN": "IQoJb3JpZ2luX2VjEEQaCXVzLWVhc3QtMSJHMEUCIBRdTJ9czZlTxBuCXm9Mt5AfKwrV7yF2BKzRF5rfuIsLAiEAzhwz0oM8HEs9fOePX+s69DsxmGuATB80RjNY5CaNBj8q+gIITRAAGgwyODM2MzIyOTAzNzgiDL0SAOgEOzlNJe/lJCrXAkDW8Ol8AyQKVwV0gS6W3XX3QHZTxwldgqXmL37SITZ1C1EX+qhainA+rilfW6ulSU9jIp+roIdTAZs44eIRIb4NsQsjQ3QJVKi0hDe0KSdBFr2CHplG9blbaMImXGLMZuhpVtD8AH0enEGb09XnaomSkm+LJgqt2G17o6Wcw9xoJEcvIB0rv4Z6xdIpqX+g7AB3R8ymOJwTQpLpLD26T004zzJwiNutMFbODALRNlvu1oAkvRKc5kTdJK89TRJx7OW7Mne27qMJqKnZZ0e1Gn/y2zYVROPkiItzWIQWrXK91Gxv7sWAfDiD3p9GMKc72Nt09h3BjCqlanF57nbcut9o61tRyioZBoj16kkPKECrbMN/aSgYbU+qNiO+Dqzc552DJgZSGxycoS9DtUK6P8nPHhx7uAYJbtSoGAN8MB/8REaG8ziYHTMKEsMciGGzR6IPF5RpYt4w6YD3qAY6pwECqHmuDRTps10zM/V5hy05Kos8BhYc2v9UhwXl64+7jjj947mwKSowlOD3A5xZGPMI/8l7b5vQ15kzBx1La31QY/FjCDdpUej/LBdWumdjVpZriLuKtYV3BdhmlERiogXaHkx6oQuE1Ms058Txg5U3kCi2vembmbvu9mYb8537Fl2T9cRn1lRi/FhYpmGXWTMh2CR7ctDEbOskrtVptRCLiJMOpanovw=="
+            },            
+            "skipFiles": [
+                "${workspaceFolder}/node_modules/**/*.js",
+                "<node_internals>/**/*.js"
+            ],
+            // "program": "${workspaceFolder}/test/launcher.ts",
+            "outFiles": [
+                "${workspaceFolder}/out/**/*.js"
+            ]
+        }
+    ]
+}
