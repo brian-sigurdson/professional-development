@@ -16,24 +16,6 @@ export class LambdaStack extends Stack {
 
     public readonly spacesLambdaIntegration: LambdaIntegration
 
-        // old using new LambdaFunction
-    // constructor(scope: Construct, id: string, props: LambdaStackProps) {
-    //     super(scope, id, props);
-
-    //     const helloLambda = new LambdaFunction(this, 'HelloLambda', {
-    //         runtime: Runtime.NODEJS_18_X,
-    //         handler: 'hello.main',
-    //         code: Code.fromAsset(join(__dirname, '..', '..', 'services')),
-    //         environment: {
-    //             TABLE_NAME: props.spacesTable.tableName
-    //         }
-    //     })
-
-    //     this.helloLambdaIntegration =  new LambdaIntegration(helloLambda);
-
-    // }
-
-    // new using NodejsFunction
     constructor(scope: Construct, id: string, props: LambdaStackProps) {
         super(scope, id, props);
 
@@ -45,6 +27,20 @@ export class LambdaStack extends Stack {
                 TABLE_NAME: props.spacesTable.tableName
             }
         });
+
+        spacesLambda.addToRolePolicy(new PolicyStatement({
+            effect: Effect.ALLOW,
+            resources: [
+                props.spacesTable.tableArn
+            ],
+            actions: [
+                'dynamodb:PutItem',
+                'dynamodb:Scan',
+                'dynamodb:GetItem',
+                'dynamodb:UpdateItem',
+                'dynamodb:DeleteItem'
+            ]
+        }));
 
         this.spacesLambdaIntegration =  new LambdaIntegration(spacesLambda);
 

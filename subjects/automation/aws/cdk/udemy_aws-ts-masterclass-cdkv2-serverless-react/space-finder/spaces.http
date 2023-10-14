@@ -2,4 +2,25 @@ GET https://c1gx5f7ed9.execute-api.us-east-1.amazonaws.com/prod/spaces
 ###
 
 POST https://c1gx5f7ed9.execute-api.us-east-1.amazonaws.com/prod/spaces
+content-type: application/json
+
+{
+    "location": "Dublin",
+    "name": "Best location2"
+}
+###
+
+GET https://c1gx5f7ed9.execute-api.us-east-1.amazonaws.com/prod/spaces?id=15641355-2546-42c3-8dd7-662809e7ab33
+###
+
+PUT https://c1gx5f7ed9.execute-api.us-east-1.amazonaws.com/prod/spaces?id=e5595bd7-b675-408e-bf87-a382598af1f5
+content-type: application/json
+
+{
+    "location": "Dublin 3",
+    "name": "best location 3"
+}
+###
+
+DELETE  https://c1gx5f7ed9.execute-api.us-east-1.amazonaws.com/prod/spaces?id=15641355-2546-42c3-8dd7-662809e7ab33
 ###
