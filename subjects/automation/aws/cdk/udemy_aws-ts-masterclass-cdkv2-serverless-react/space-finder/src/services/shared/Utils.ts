@@ -1,3 +1,4 @@
+import { APIGatewayProxyResult } from "aws-lambda";
 import { JSONError } from "./Validator";
 import { randomUUID } from "crypto";
 
@@ -13,4 +14,12 @@ export function parseJSON(arg: string) {
 
 export function createRandomId() {
     return randomUUID();
+}
+
+export function addCorsHeader(arg: APIGatewayProxyResult) {
+    if (!arg.headers) {
+        arg.headers = {};
+    }
+    arg.headers['Access-Control-Allow-Origin'] = '*';
+    arg.headers['Access-Control-Allow-Methods'] = '*';
 }

@@ -6,31 +6,38 @@ import { updateSpace } from "./UpdateSpace";
 import { deleteSpace } from "./DeleteSpace";
 import { JSONError, MissingFieldError } from "../shared/Validator";
 import { RetryStrategy } from "aws-cdk-lib/aws-batch";
+import { get } from "http";
+import { addCorsHeader } from "../shared/Utils";
 
 const ddbClient = new DynamoDBClient({});
 
 async function handler(event: APIGatewayProxyEvent, context: Context): Promise<APIGatewayProxyResult> {
 
     let message: string;
+    let response: APIGatewayProxyResult;
 
     try {
         switch(event.httpMethod) {
             case 'GET':
                 const getResponse = await getSpace(event, ddbClient);  
                 console.log(getResponse);
-                return getResponse;     
+                response = getResponse;
+                break; 
             case 'POST':
                 const postResponse = await postSpace(event, ddbClient);
                 console.log(postResponse);
-                return postResponse;
+                response = getResponse;
+                break; 
             case 'PUT':
                 const putResponse = await updateSpace(event, ddbClient);
                 console.log(putResponse);
-                return putResponse;      
+                response = getResponse;
+                break;      
             case 'DELETE':
                 const deleteResponse = await deleteSpace(event, ddbClient);
                 console.log(deleteResponse);
-                return deleteResponse;                            
+                response = getResponse;
+                break;                           
             default:
                 message = 'Error!'
                 break;
@@ -56,12 +63,8 @@ async function handler(event: APIGatewayProxyEvent, context: Context): Promise<A
             body: JSON.stringify(error.message)
         }
     }
-
-    const response: APIGatewayProxyResult = {
-        statusCode: 200,
-        body: JSON.stringify(message)
-    }
-
+    
+    addCorsHeader(response);
     return response;
 }
 
