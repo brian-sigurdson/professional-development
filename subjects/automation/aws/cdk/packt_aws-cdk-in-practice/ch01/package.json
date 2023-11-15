@@ -1,8 +1,8 @@
 {
-  "name": "packt_aws-cdk-in-practice",
+  "name": "ch01",
   "version": "0.1.0",
   "bin": {
-    "packt_aws-cdk-in-practice": "bin/packt_aws-cdk-in-practice.js"
+    "ch01": "bin/ch01.js"
   },
   "scripts": {
     "build": "tsc",

@@ -2,14 +2,15 @@ import { Stack, StackProps } from 'aws-cdk-lib';
 import { ContainerImage } from 'aws-cdk-lib/aws-ecs';
 import { ApplicationLoadBalancedFargateService } from 'aws-cdk-lib/aws-ecs-patterns';
 import { Construct } from 'constructs';
+// import * as sqs from 'aws-cdk-lib/aws-sqs';
 
-export class PacktAwsCdkInPracticeStack extends Stack {
+export class Ch01Stack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
     new ApplicationLoadBalancedFargateService(this, 'MyWebServer', {
       taskImageOptions: {
-        image: ContainerImage.fromRegistry('amazon/amazon-ecs-sample'), 
+        image: ContainerImage.fromRegistry('amazon/amazon-ecs-sample'),
       },
       publicLoadBalancer: true 
     });
