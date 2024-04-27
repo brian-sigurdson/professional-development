@@ -1,3 +1,5 @@
+"""This script computes the factorial for a list of numbers"""
+
 import math
 
 numbers = [5, 7, 11]
