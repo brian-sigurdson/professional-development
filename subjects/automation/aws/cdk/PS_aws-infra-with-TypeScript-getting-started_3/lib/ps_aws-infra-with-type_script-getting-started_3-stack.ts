@@ -15,9 +15,11 @@ export class PsAwsInfraWithTypeScriptGettingStarted3Stack extends cdk.Stack {
       exportName: 'namebksDocumentsBucketName'
     });
 
-    new Networking(this, 'NetworkingConstruct', {
+    const networkingStack = new Networking(this, 'NetworkingConstruct', {
       maxAzs: 2
     });
+
+    cdk.Tags.of(networkingStack).add('Module', 'Networking');
 
   }
 }
