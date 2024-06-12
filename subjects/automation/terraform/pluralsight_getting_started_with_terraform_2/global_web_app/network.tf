@@ -9,9 +9,8 @@ provider "aws" {
 ##################################################################################
 # DATA
 ##################################################################################
-
-data "aws_ssm_parameter" "amzn2_linux" {
-  name = var.aws_ssm_parameter_name
+data "aws_availability_zones" "available" {
+  state = "available"
 }
 
 ##################################################################################
@@ -31,10 +30,21 @@ resource "aws_internet_gateway" "app" {
 }
 
 resource "aws_subnet" "public_subnet1" {
-  cidr_block              = var.aws_subnet_cidr_block
+  cidr_block              = var.aws_public_subnets_cidr_block[0]
   vpc_id                  = aws_vpc.app.id
   map_public_ip_on_launch = var.aws_subnet_map_public_ip_on_launch
-  tags                    = local.common_tags
+  availability_zone       = data.aws_availability_zones.available.names[0]
+
+  tags = local.common_tags
+}
+
+resource "aws_subnet" "public_subnet2" {
+  cidr_block              = var.aws_public_subnets_cidr_block[1]
+  vpc_id                  = aws_vpc.app.id
+  map_public_ip_on_launch = var.aws_subnet_map_public_ip_on_launch
+  availability_zone       = data.aws_availability_zones.available.names[1]
+
+  tags = local.common_tags
 }
 
 # ROUTING #
@@ -54,10 +64,15 @@ resource "aws_route_table_association" "app_subnet1" {
   route_table_id = aws_route_table.app.id
 }
 
+resource "aws_route_table_association" "app_subnet2" {
+  subnet_id      = aws_subnet.public_subnet2.id
+  route_table_id = aws_route_table.app.id
+}
+
 # SECURITY GROUPS #
 # Nginx security group 
 resource "aws_security_group" "nginx_sg" {
-  name   = var.aws_security_group_name
+  name   = "nginx_sg"
   vpc_id = aws_vpc.app.id
 
   # HTTP access from anywhere
@@ -65,7 +80,7 @@ resource "aws_security_group" "nginx_sg" {
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
-    cidr_blocks = [var.aws_security_group_ingress_cidr_blocks]
+    cidr_blocks = [var.aws_vpc_cidr_block]
   }
 
   # outbound internet access
@@ -73,20 +88,31 @@ resource "aws_security_group" "nginx_sg" {
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
-    cidr_blocks = [var.aws_security_group_egress_cidr_blocks]
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   tags = local.common_tags
 }
 
-# INSTANCES #
-resource "aws_instance" "nginx1" {
-  ami                    = nonsensitive(data.aws_ssm_parameter.amzn2_linux.value)
-  instance_type          = var.aws_instance_instance_type
-  subnet_id              = aws_subnet.public_subnet1.id
-  vpc_security_group_ids = [aws_security_group.nginx_sg.id]
+resource "aws_security_group" "alb_sg" {
+  name   = "nginx_alb_sg"
+  vpc_id = aws_vpc.app.id
 
-  user_data = var.aws_instance_user_data
+  # HTTP access from anywhere
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  # outbound internet access
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 
   tags = local.common_tags
 }
