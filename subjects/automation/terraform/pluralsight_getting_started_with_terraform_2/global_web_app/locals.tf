@@ -21,6 +21,13 @@ locals {
   }
 
   naming_prefix = "${var.naming_prefix}-${var.environment}"
+
+  toppings = ["cheese", "lettuce", "salsa"]
+  better = {
+    item1 = "cheese"
+    item2 = "lettuce"
+    item3 = "salse"
+  }
 }
 
 resource "random_integer" "s3" {
