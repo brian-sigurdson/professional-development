@@ -9,10 +9,16 @@ variable "aws_ssm_parameter_name" {
   default = "/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2"
 }
 
-variable "aws_vpc_cidr_block" {
+variable "vpc_cidr_block" {
   type        = string
   description = "The VPC cidr setting"
   default     = "10.0.0.0/16"
+}
+
+variable "vpc_public_subnet_count" {
+  type        = number
+  description = "public subnet count"
+  default     = 2
 }
 
 variable "aws_vpc_enable_dns_hostnames" {
@@ -41,19 +47,25 @@ variable "aws_security_group_name" {
   default = "nginx_sg"
 }
 
-variable "aws_security_group_ingress_cidr_blocks" {
-  type    = string
-  default = "0.0.0.0/0"
-}
+# variable "aws_security_group_ingress_cidr_blocks" {
+#   type    = string
+#   default = "0.0.0.0/0"
+# }
 
-variable "aws_security_group_egress_cidr_blocks" {
-  type    = string
-  default = "0.0.0.0/0"
-}
+# variable "aws_security_group_egress_cidr_blocks" {
+#   type    = string
+#   default = "0.0.0.0/0"
+# }
 
 variable "aws_instance_instance_type" {
   type    = string
   default = "t3.micro"
+}
+
+variable "instance_count" {
+  type        = number
+  description = "instance count"
+  default     = 2
 }
 
 variable "company" {
@@ -67,4 +79,16 @@ variable "project" {
 
 variable "billing_code" {
   type = string
+}
+
+variable "naming_prefix" {
+  type        = string
+  description = "common naming prefix"
+  default     = "globo-web-app"
+}
+
+variable "environment" {
+  type        = string
+  description = "the env"
+  default     = "dev"
 }
