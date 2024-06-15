@@ -23,25 +23,33 @@ Gopkg.toml
 vendor/
 
 ######################################################################
+# asdf
+######################################################################
+.tool-versions
+
+######################################################################
+# terragrunt
+######################################################################
+.terragrunt-cache
+
+######################################################################
 # terraform
 ######################################################################
 #  Local .terraform directories
-.terraform
-.terraform.*
-.terragrunt-cache
-.tool-versions
-.lock.hcl
+**/.terraform/*
 
 # .tfstate files
 *.tfstate
 *.tfstate.*
 
 # .tfvars files
-
 *.tfvars
 
 # tfplan output
 *.tfplan
+
+# .hcl files
+*.hcl 
 
 # anything related to mac
 __MACOSX
