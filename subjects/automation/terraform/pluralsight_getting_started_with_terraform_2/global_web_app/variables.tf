@@ -1,94 +1,75 @@
-variable "region" {
+variable "aws_region" {
   type        = string
-  description = "AWS region to sue for resources."
+  description = "AWS region to use for resources."
   default     = "us-east-1"
 }
 
-variable "aws_ssm_parameter_name" {
-  type    = string
-  default = "/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2"
+variable "enable_dns_hostnames" {
+  type        = bool
+  description = "Enable DNS hostnames in VPC"
+  default     = true
 }
 
 variable "vpc_cidr_block" {
   type        = string
-  description = "The VPC cidr setting"
+  description = "Base CIDR Block for VPC"
   default     = "10.0.0.0/16"
 }
 
 variable "vpc_public_subnet_count" {
   type        = number
-  description = "public subnet count"
+  description = "Number of public subnets to create."
   default     = 2
 }
 
-variable "aws_vpc_enable_dns_hostnames" {
-  type    = bool
-  default = true
-}
-
-variable "aws_public_subnets_cidr_block" {
+variable "vpc_public_subnets_cidr_block" {
   type        = list(string)
-  description = "CIDR Block for public subnets in vpc"
+  description = "CIDR Block for Public Subnets in VPC"
   default     = ["10.0.0.0/24", "10.0.1.0/24"]
 }
 
-variable "aws_subnet_map_public_ip_on_launch" {
-  type    = bool
-  default = true
+variable "map_public_ip_on_launch" {
+  type        = bool
+  description = "Map a public IP address for Subnet instances"
+  default     = true
 }
 
-variable "aws_route_table_cidr_block" {
-  type    = string
-  default = "0.0.0.0/0"
-}
-
-variable "aws_security_group_name" {
-  type    = string
-  default = "nginx_sg"
-}
-
-# variable "aws_security_group_ingress_cidr_blocks" {
-#   type    = string
-#   default = "0.0.0.0/0"
-# }
-
-# variable "aws_security_group_egress_cidr_blocks" {
-#   type    = string
-#   default = "0.0.0.0/0"
-# }
-
-variable "aws_instance_instance_type" {
-  type    = string
-  default = "t3.micro"
+variable "instance_type" {
+  type        = string
+  description = "Type for EC2 Instance"
+  default     = "t3.micro"
 }
 
 variable "instance_count" {
   type        = number
-  description = "instance count"
+  description = "Number of instances to create"
   default     = 2
 }
 
 variable "company" {
-  type    = string
-  default = "Globomantics"
+  type        = string
+  description = "Company name for resource tagging"
+  default     = "Globomantics"
 }
 
 variable "project" {
-  type = string
+  type        = string
+  description = "Project name for resource tagging"
 }
 
 variable "billing_code" {
-  type = string
+  type        = string
+  description = "Billing code for resource tagging"
 }
 
 variable "naming_prefix" {
   type        = string
-  description = "common naming prefix"
+  description = "Naming prefix for all resources."
   default     = "globo-web-app"
 }
 
 variable "environment" {
   type        = string
-  description = "the env"
-  default     = "dev"
+  description = "Environment for deployment"
+  default     = "development"
 }

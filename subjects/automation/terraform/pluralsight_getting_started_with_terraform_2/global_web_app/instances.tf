@@ -1,17 +1,13 @@
-##################################################################################
-# DATA
-##################################################################################
-
 data "aws_ssm_parameter" "amzn2_linux" {
-  name = var.aws_ssm_parameter_name
+  name = "/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2"
 }
 
 # INSTANCES #
-resource "aws_instance" "nginx_instances" {
-  count                  = (var.instance_count > var.vpc_public_subnet_count ? var.vpc_public_subnet_count : var.instance_count)
+resource "aws_instance" "nginx" {
+  count                  = var.instance_count
   ami                    = nonsensitive(data.aws_ssm_parameter.amzn2_linux.value)
-  instance_type          = var.aws_instance_instance_type
-  subnet_id              = module.app.public_subnets[(count.index % var.vpc_public_subnet_count)].id
+  instance_type          = var.instance_type
+  subnet_id              = aws_subnet.public_subnets[(count.index % var.vpc_public_subnet_count)].id
   vpc_security_group_ids = [aws_security_group.nginx_sg.id]
   iam_instance_profile   = aws_iam_instance_profile.nginx_profile.name
   depends_on             = [aws_iam_role_policy.allow_s3_all]
@@ -20,10 +16,12 @@ resource "aws_instance" "nginx_instances" {
     s3_bucket_name = aws_s3_bucket.web_bucket.id
   })
 
-  tags = local.common_tags
+
+  tags = merge(local.common_tags, {
+    Name = "${local.naming_prefix}-nginx-${count.index}"
+  })
 }
 
-# aws_iam_role
 resource "aws_iam_role" "allow_nginx_s3" {
   name = "allow_nginx_s3"
 
@@ -43,12 +41,20 @@ resource "aws_iam_role" "allow_nginx_s3" {
 }
 EOF
 
+  tags = merge(local.common_tags, {
+    Name = "${local.naming_prefix}-nginx"
+  })
+}
+
+resource "aws_iam_instance_profile" "nginx_profile" {
+  name = "${local.naming_prefix}-nginx_profile"
+  role = aws_iam_role.allow_nginx_s3.name
+
   tags = local.common_tags
 }
 
-# aws_iam_role_policy
 resource "aws_iam_role_policy" "allow_s3_all" {
-  name = "allow_s3_all"
+  name = "${local.naming_prefix}-allow_s3_all"
   role = aws_iam_role.allow_nginx_s3.name
 
   policy = <<EOF
@@ -69,12 +75,4 @@ resource "aws_iam_role_policy" "allow_s3_all" {
 }
 EOF
 
-}
-
-# aws_iam_instance_profile
-resource "aws_iam_instance_profile" "nginx_profile" {
-  name = "nginx_profile"
-  role = aws_iam_role.allow_nginx_s3.name
-
-  tags = local.common_tags
 }

@@ -1,6 +1,7 @@
 ##################################################################################
 # DATA
 ##################################################################################
+
 data "aws_availability_zones" "available" {
   state = "available"
 }
@@ -10,30 +11,60 @@ data "aws_availability_zones" "available" {
 ##################################################################################
 
 # NETWORKING #
-module "app" {
-  source  = "terraform-aws-modules/vpc/aws"
-  version = "4.0.2"
+resource "aws_vpc" "app" {
+  cidr_block           = var.vpc_cidr_block
+  enable_dns_hostnames = var.enable_dns_hostnames
 
-  cidr = var.vpc_cidr_block
+  tags = merge(local.common_tags, {
+    Name = "${local.naming_prefix}-vpc"
+  })
+}
 
-  azs = slice(data.aws_availability_zones.available.names, 0, var.vpc_public_subnet_count)
-  # private_subnets = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
-  public_subnets = [for subnet in range(var.vpc_public_subnet_count) : cidrsubnet(var.vpc_cidr_block, 8, subnet)]
+resource "aws_internet_gateway" "app" {
+  vpc_id = aws_vpc.app.id
 
-  enable_nat_gateway = false
-  enable_vpn_gateway = false
+  tags = merge(local.common_tags, {
+    Name = "${local.naming_prefix}-igw"
+  })
+}
 
-  enable_dns_hostnames    = var.aws_vpc_enable_dns_hostnames
-  map_public_ip_on_launch = var.aws_subnet_map_public_ip_on_launch
+resource "aws_subnet" "public_subnets" {
+  count                   = var.vpc_public_subnet_count
+  cidr_block              = cidrsubnet(var.vpc_cidr_block, 8, count.index)
+  vpc_id                  = aws_vpc.app.id
+  map_public_ip_on_launch = var.map_public_ip_on_launch
+  availability_zone       = data.aws_availability_zones.available.names[count.index]
 
-  tags = merge(local.common_tags, { Name = "${local.naming_prefix}-vpc" })
+  tags = merge(local.common_tags, {
+    Name = "${local.naming_prefix}-subnet-${count.index}"
+  })
+}
+
+# ROUTING #
+resource "aws_route_table" "app" {
+  vpc_id = aws_vpc.app.id
+
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.app.id
+  }
+
+  tags = merge(local.common_tags, {
+    Name = "${local.naming_prefix}-rtb"
+  })
+}
+
+resource "aws_route_table_association" "app_subnets" {
+  count          = var.vpc_public_subnet_count
+  subnet_id      = aws_subnet.public_subnets[count.index].id
+  route_table_id = aws_route_table.app.id
 }
 
 # SECURITY GROUPS #
 # Nginx security group 
 resource "aws_security_group" "nginx_sg" {
-  name   = "${local.naming_prefix}-vpc"
-  vpc_id = module.app.vpc_id
+  name   = "${local.naming_prefix}-nginx_sg"
+  vpc_id = aws_vpc.app.id
 
   # HTTP access from anywhere
   ingress {
@@ -51,12 +82,12 @@ resource "aws_security_group" "nginx_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags = merge(local.common_tags, { Name = "${local.naming_prefix}-nginx_sg" })
+  tags = local.common_tags
 }
 
 resource "aws_security_group" "alb_sg" {
-  name   = "${local.naming_prefix}-sg"
-  vpc_id = module.app.vpc_id
+  name   = "${local.naming_prefix}-nginx_alb_sg"
+  vpc_id = aws_vpc.app.id
 
   # HTTP access from anywhere
   ingress {
@@ -74,5 +105,5 @@ resource "aws_security_group" "alb_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags = merge(local.common_tags, { Name = "${local.naming_prefix}-alb_sg" })
+  tags = local.common_tags
 }
