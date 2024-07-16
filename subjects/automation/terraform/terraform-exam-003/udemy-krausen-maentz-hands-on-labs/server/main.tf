@@ -1,6 +1,7 @@
 # Configure the AWS Provider
 provider "aws" {
   region = "us-east-1"
+
 }
 
 #Retrieve the list of AZs in the current AWS region
@@ -140,5 +141,29 @@ resource "aws_instance" "web_server" {
   subnet_id     = aws_subnet.public_subnets["public_subnet_1"].id
   tags = {
     Name = "Ubuntu EC2 Server"
+  }
+}
+
+resource "aws_instance" "web" {
+  ami = data.aws_ami.ubuntu.id
+  instance_type = "t3.micro"
+
+  subnet_id = aws_subnet.public_subnets["public_subnet_1"].id
+  vpc_security_group_ids = data.aws_security_groups.vpc_security_groups.ids
+
+  tags = {
+  "Identity" = "section 04"
+  }
+}
+
+data "aws_security_groups" "vpc_security_groups" {
+  # filter {
+  #   name   = "group-name"
+  #   values = ["*nodes*"]
+  # }
+
+  filter {
+    name   = "vpc-id"
+    values = [aws_vpc.vpc.id]
   }
 }
