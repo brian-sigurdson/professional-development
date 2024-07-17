@@ -100,7 +100,7 @@ resource "aws_internet_gateway" "internet_gateway" {
 
 #Create EIP for NAT Gateway
 resource "aws_eip" "nat_gateway_eip" {
-  domain     = "vpc"
+  # domain     = "vpc"
   depends_on = [aws_internet_gateway.internet_gateway]
   tags = {
     Name = "demo_igw_eip"
@@ -145,14 +145,14 @@ resource "aws_instance" "web_server" {
 }
 
 resource "aws_instance" "web" {
-  ami = data.aws_ami.ubuntu.id
+  ami           = data.aws_ami.ubuntu.id
   instance_type = "t3.micro"
 
-  subnet_id = aws_subnet.public_subnets["public_subnet_1"].id
+  subnet_id              = aws_subnet.public_subnets["public_subnet_1"].id
   vpc_security_group_ids = data.aws_security_groups.vpc_security_groups.ids
 
   tags = {
-  "Identity" = "section 04"
+    "Identity" = "section 04"
   }
 }
 
