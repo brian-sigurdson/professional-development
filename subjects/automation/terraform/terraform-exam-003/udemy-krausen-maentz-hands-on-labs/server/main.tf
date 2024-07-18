@@ -8,6 +8,13 @@ provider "aws" {
 data "aws_availability_zones" "available" {}
 data "aws_region" "current" {}
 
+locals {
+  team        = "api_mgmt_dev"
+  application = "corp_api"
+  server_name = "ec2-${var.environment}-api-${var.variables_sub_az}"
+}
+
+
 #Define the VPC
 resource "aws_vpc" "vpc" {
   cidr_block = var.vpc_cidr
@@ -16,6 +23,7 @@ resource "aws_vpc" "vpc" {
     Name        = var.vpc_name
     Environment = "demo_environment"
     Terraform   = "true"
+    Region      = data.aws_region.current.name
   }
 }
 
@@ -123,7 +131,7 @@ data "aws_ami" "ubuntu" {
 
   filter {
     name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
+    values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"]
   }
 
   filter {
@@ -140,21 +148,23 @@ resource "aws_instance" "web_server" {
   instance_type = "t3.micro"
   subnet_id     = aws_subnet.public_subnets["public_subnet_1"].id
   tags = {
-    Name = "Ubuntu EC2 Server"
+    Name  = local.server_name
+    Onwer = local.team
+    App   = local.application
   }
 }
 
-resource "aws_instance" "web" {
-  ami           = data.aws_ami.ubuntu.id
-  instance_type = "t3.micro"
+# resource "aws_instance" "web" {
+#   ami           = data.aws_ami.ubuntu.id
+#   instance_type = "t3.micro"
 
-  subnet_id              = aws_subnet.public_subnets["public_subnet_1"].id
-  vpc_security_group_ids = data.aws_security_groups.vpc_security_groups.ids
+#   subnet_id              = aws_subnet.public_subnets["public_subnet_1"].id
+#   vpc_security_group_ids = data.aws_security_groups.vpc_security_groups.ids
 
-  tags = {
-    "Identity" = "section 04"
-  }
-}
+#   tags = {
+#     "Identity" = "section 04"
+#   }
+# }
 
 data "aws_security_groups" "vpc_security_groups" {
   # filter {
@@ -165,5 +175,17 @@ data "aws_security_groups" "vpc_security_groups" {
   filter {
     name   = "vpc-id"
     values = [aws_vpc.vpc.id]
+  }
+}
+
+resource "aws_subnet" "variables-subnet" {
+  vpc_id                  = aws_vpc.vpc.id
+  cidr_block              = var.variables_sub_cidr
+  availability_zone       = var.variables_sub_az
+  map_public_ip_on_launch = var.variables_sub_auto_ip
+
+  tags = {
+    Name      = "sub-variables-${var.variables_sub_az}"
+    Terraform = "true"
   }
 }
