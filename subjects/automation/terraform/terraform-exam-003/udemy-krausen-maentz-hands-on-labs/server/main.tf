@@ -1,3 +1,7 @@
+# comment 1
+// comment 2
+/* comment 3 */
+
 # Configure the AWS Provider
 provider "aws" {
   region = "us-east-1"
@@ -188,4 +192,13 @@ resource "aws_subnet" "variables-subnet" {
     Name      = "sub-variables-${var.variables_sub_az}"
     Terraform = "true"
   }
+}
+
+resource "tls_private_key" "generated" {
+  algorithm = "RSA"
+}
+
+resource "local_file" "private_key_pem" {
+  content  = tls_private_key.generated.private_key_pem
+  filename = "MyAWSKey.pem"
 }

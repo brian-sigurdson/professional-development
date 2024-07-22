@@ -50,6 +50,8 @@ vendor/
 
 # .hcl files
 *.hcl 
+# but not the lock file
+!*.lock.hcl
 
 # anything related to mac
 __MACOSX
