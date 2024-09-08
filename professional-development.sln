@@ -1,0 +1,1152 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "subjects", "subjects", "{78A407A2-D721-47BA-BAB1-283A62B0FA5D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "programming", "programming", "{162A15B1-061E-43F2-946C-8F58389FBE67}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dotnet", "dotnet", "{E3BC50CC-6018-42B0-9261-45291CE69585}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "packt_csharp-workshop", "packt_csharp-workshop", "{72DA9504-543F-4BAB-9D55-CAC961E868E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01", "01", "{4973CCEE-58DD-41E4-AB0C-9601B032FC64}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyConsoleApp", "subjects\programming\dotnet\packt_csharp-workshop\01\MyConsoleApp\MyConsoleApp.csproj", "{5E000555-0D27-4CD3-A213-77F65473EDAA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "automation", "automation", "{B642A7EF-F9D8-4A68-84A5-FB74F667BCE8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws", "aws", "{71E49EBC-DB63-4DCE-AC08-B763A57A1661}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cdk", "cdk", "{3D9D07F8-B6CE-42E8-B2AC-390B7A36A90B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PS_aws-cdk-the-big-picture_3", "PS_aws-cdk-the-big-picture_3", "{4EAB25D9-3D7D-4D9F-8DBC-1FEEF37CA74F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "node_modules", "node_modules", "{337AD7B1-A12E-4727-9006-057E7A4CB6D1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws-cdk", "aws-cdk", "{D7D61F25-1C23-4E3B-BE8C-593A39C05F23}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{05B98BD3-089A-45BB-8C8E-5676D0529845}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "init-templates", "init-templates", "{DD3DCCB9-FC18-4DB3-9BE9-1246B76DCB78}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{81DCB38E-DC0A-43E3-90DF-7DB84C777845}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{1B07A52E-0396-4296-9464-D6689FCEE73C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A3C65723-0A0C-4581-BF2E-EA2EDFDD2B18}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\PS_aws-cdk-the-big-picture_3\node_modules\aws-cdk\lib\init-templates\app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{5950BE6C-4361-4520-8205-1854D985C5A3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample-app", "sample-app", "{208C0A90-EDDB-4B6B-B7D7-4DEDCBDD5E31}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{5D54E4BB-E582-432E-8CCC-89D23DC71CD9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DEACE0EE-2969-4A47-B444-FA5C154D8EF8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\PS_aws-cdk-the-big-picture_3\node_modules\aws-cdk\lib\init-templates\sample-app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{FFA00ACA-AD1D-4C5E-8C2B-81BC8B098910}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PS_aws-cdk-the-big-picture_2", "PS_aws-cdk-the-big-picture_2", "{1E85A7B8-3565-4492-A9A1-03B586185FE2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "node_modules", "node_modules", "{1139FD9C-A1B8-4496-B61D-98D4D2DBFBE6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws-cdk", "aws-cdk", "{2E216F03-2435-4515-ACF4-0EEB3307366F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{4A3999F5-174C-4F9C-9FD5-D08C04718AFE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "init-templates", "init-templates", "{30F670D1-DF98-48EE-82E9-67843E49715B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{BDA5FAAE-2043-41CF-BC15-0575E7F05E96}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{CF91E400-DA24-4BD8-A53C-120DF950E047}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{00CBFF4B-221C-4A65-89A5-D3C3E326810D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\PS_aws-cdk-the-big-picture_2\node_modules\aws-cdk\lib\init-templates\app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{5A454E91-7418-4AED-A7C0-B25FECA02AC1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample-app", "sample-app", "{CF4FA13B-2C10-47AA-B0E6-DCA45DA1B01B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{74FA6996-7589-4041-BF1F-076BDE8D984B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6349E96C-596C-4760-9C73-C6D3B5E06DD6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\PS_aws-cdk-the-big-picture_2\node_modules\aws-cdk\lib\init-templates\sample-app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{1B442CC7-7533-487A-8E19-51E47EA7BA18}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PS_aws-cdk-the-big-picture", "PS_aws-cdk-the-big-picture", "{FE64E672-C05B-4746-B9D7-7A91E9D3D54B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "node_modules", "node_modules", "{274A698B-C6B6-4F43-9C5C-51C0A5315730}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws-cdk", "aws-cdk", "{91681341-B274-4E8E-A4CC-77A1FDBB8FE2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{109428AD-E878-4AD7-AF43-1429B56E0545}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "init-templates", "init-templates", "{0264C74B-193A-4D25-84A8-CDF8A22DB93A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{8B65F139-0558-4B61-AB8A-6CFBD59E4200}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{C3B63FC2-A9CF-4312-965A-14B3FA90F61C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DB52B9E2-2BB2-4B98-9A3E-C964D1192391}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\PS_aws-cdk-the-big-picture\node_modules\aws-cdk\lib\init-templates\app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{C709326F-C039-4673-B60D-B85E4A72E811}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample-app", "sample-app", "{7910E7E2-4A10-4062-B305-B0F58CAADE2F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{8E5C9287-26E8-46FD-9795-58B07C8B09B2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9015554C-C932-4BB9-91A1-6F1EE9CC065C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\PS_aws-cdk-the-big-picture\node_modules\aws-cdk\lib\init-templates\sample-app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{0CB54047-CB1D-4DDA-9D76-7923D699C26C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PS_aws-infra-with-TypeScript-getting-started_3", "PS_aws-infra-with-TypeScript-getting-started_3", "{49453243-7537-437E-B89C-F19E7167B3BF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "node_modules", "node_modules", "{8B5CF229-67B4-4ADE-A4E8-FA5C99020116}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws-cdk", "aws-cdk", "{B522D0A4-BC3D-427E-814C-1AAC093DCE30}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{B951E94D-04D8-4292-9754-7CB6C2FAAEB5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "init-templates", "init-templates", "{7B130FA8-33DF-4C1C-95F7-6F4177CECC6D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{A7F92C62-6516-4C5D-BBEB-55A309F861E7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{2AAFF1F6-0D70-4327-9D05-46EA60F677BA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D3EFACED-877C-4047-9163-B32B5866D260}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\PS_aws-infra-with-TypeScript-getting-started_3\node_modules\aws-cdk\lib\init-templates\app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{6500D30D-0101-416C-A100-DC216B3AF25F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample-app", "sample-app", "{8BCF0EAD-011E-44AA-8B48-83CCE595E572}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{3C6C135C-A200-4896-B6CD-759C55DD807D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7EFF7077-8787-400C-A642-B8658AE4A992}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\PS_aws-infra-with-TypeScript-getting-started_3\node_modules\aws-cdk\lib\init-templates\sample-app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{316B7874-4EA7-4A28-9BA7-EC01782CED0A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PS_aws-infra-with-TypeScript-getting-started", "PS_aws-infra-with-TypeScript-getting-started", "{433EE600-41CA-4380-A72F-1587A6E42936}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "node_modules", "node_modules", "{FF3D1180-0712-4F36-BE48-77DD23CFC95B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws-cdk", "aws-cdk", "{AE47489A-71E2-47F4-827A-5B84FC8465E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{F853EE07-6850-436A-8151-4A9A7AE41208}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "init-templates", "init-templates", "{0115C187-E969-4728-A795-B1E582D7C462}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{9B2E260A-F43A-4EBF-8795-483D90A880D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{549D35A1-235A-4D50-9DFC-48E9FA567D74}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4BA470F1-53EE-41B8-B282-EBF2875EF16A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\PS_aws-infra-with-TypeScript-getting-started\node_modules\aws-cdk\lib\init-templates\app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{4A1E04F7-6A50-4DB9-B059-9664C4B7C96A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample-app", "sample-app", "{85F33FF9-8EB4-44AD-AF1A-867D38635EF9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{E4965BD6-9ADE-4D09-AED8-EAE3606984F0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9EBEC535-71F6-4351-A337-5F8690BDF6D2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\PS_aws-infra-with-TypeScript-getting-started\node_modules\aws-cdk\lib\init-templates\sample-app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{446B62CE-08F0-4BD2-930A-49035ADD51F8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PS_aws-infra-with-TypeScript-getting-started_2", "PS_aws-infra-with-TypeScript-getting-started_2", "{15E70F92-19F3-4B6D-8943-021DE43E2892}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "node_modules", "node_modules", "{FBF5214A-65B2-4B8D-AD2C-B851B153FE43}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws-cdk", "aws-cdk", "{4FD4BE6F-7F7B-4D35-A495-42D6D79C16AB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{843DF47B-6740-4059-8CBD-1D44E3F94F3C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "init-templates", "init-templates", "{02B4F187-AFB6-455E-A543-85D4ABC66460}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{EE4341C4-3629-431E-BE6A-C4641848941D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{289DC045-831A-44C1-B390-8E24273810C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{474FF577-C8EF-4085-B865-48B011F12685}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\PS_aws-infra-with-TypeScript-getting-started_2\node_modules\aws-cdk\lib\init-templates\app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{BD65FB32-1A71-4466-BA92-065E2C38A582}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample-app", "sample-app", "{3E5969BD-1058-4D8D-83FA-373FDA7F6366}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{AE385B3E-9D9F-46B0-89AB-4755BC8FA11D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1A7A014C-EC74-43FF-B5A0-94B77B4719DF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\PS_aws-infra-with-TypeScript-getting-started_2\node_modules\aws-cdk\lib\init-templates\sample-app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{0563A64C-D796-4557-81EA-7710CEA7CD7E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws-docs", "aws-docs", "{30418203-3F26-48E9-B45A-57F6F118B620}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "hello-cdk-001", "hello-cdk-001", "{94FAE731-2A0D-48A9-AFC2-F55A74E36546}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "node_modules", "node_modules", "{10F1DDD0-C4E5-49C2-8891-F2EF13902A98}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws-cdk", "aws-cdk", "{6E388EB0-1F65-470F-949A-D72F9E3B91A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{FB167EBB-32FC-48EB-9D0E-5F7008E83761}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "init-templates", "init-templates", "{D4E83118-A3CF-4B09-8FD5-637638AE61F3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{D0E9928C-8AC6-4467-AEAF-FCC8FC002109}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{5BAC288B-4180-4954-9A5C-E189FAF728FF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DEA399C9-661A-470C-ACFB-8760D92BBF8F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\aws-docs\hello-cdk-001\node_modules\aws-cdk\lib\init-templates\app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{21A4C1A3-6738-437D-959A-ECE6C07EBED7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample-app", "sample-app", "{81020E58-37AB-4B95-B8EC-9687A76FD5C6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{95FDE95C-76CB-471F-A374-78389B990375}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EC29F578-044F-44DD-8C9A-D0174B8EEC76}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\aws-docs\hello-cdk-001\node_modules\aws-cdk\lib\init-templates\sample-app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{056CFB82-726C-448E-9127-22811F4A8440}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cdk-workshop-001", "cdk-workshop-001", "{EF11712F-2E81-481D-B4B4-8FBE576585EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "node_modules", "node_modules", "{E0E7FDB1-5820-44DF-A3AF-E31E90B91D4A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws-cdk", "aws-cdk", "{2961061F-9ABE-47C2-BD27-B2E1050B767F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{54B6D634-8895-49F1-90B3-D145366830D0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "init-templates", "init-templates", "{9641BA14-1395-47E2-B533-993DBBB768ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{A793C7F1-AEE3-42C8-8155-B2F88EA36F5E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{24935B02-223D-4189-8D81-7EC21EE6BCAE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{35D9086F-8877-4516-905C-36CA06713C74}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\aws-docs\cdk-workshop-001\node_modules\aws-cdk\lib\init-templates\app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{FA80A092-B79C-4F65-93D0-B7D274513575}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample-app", "sample-app", "{BC13B839-5E63-4288-AA61-04B22931E7AA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{52E35A8D-8B02-48FC-8B4B-CA953081F3DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E9A9DEDF-43EB-47F0-8F0D-46687E13016F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\aws-docs\cdk-workshop-001\node_modules\aws-cdk\lib\init-templates\sample-app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{DE08FD18-2F34-4A14-AE16-50394D997240}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cdk-workshop", "cdk-workshop", "{B8B1BF30-46EE-4D50-8C32-12084C80D990}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "node_modules", "node_modules", "{99EBB289-6D5E-48E1-AB2F-BB8C6D174AB8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws-cdk", "aws-cdk", "{EC9179C3-D53C-4E8B-BF2D-C34CD6EE86C2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{981B0CBB-3308-4AB3-9347-AB73E6F3A132}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "init-templates", "init-templates", "{81191474-48B3-4300-B2EA-603C0BB13B87}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{1CEAD7FD-E8F2-4EDB-8D4F-177FCB75793E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{81FED46C-4779-44C9-952C-CE7BC339D27D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8E7FCFC6-60CF-4543-AC20-8EA28DAC194E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\aws-docs\cdk-workshop\node_modules\aws-cdk\lib\init-templates\app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{6B7090F1-1BA3-40A1-965E-81D7C26004F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample-app", "sample-app", "{48B2AA58-F822-46DC-8BA4-5068B96366E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{14D4435B-43BC-4AF3-9537-4776FA9AAC93}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{58D5328D-871C-4DDA-8AEE-63C192A4BD76}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\aws-docs\cdk-workshop\node_modules\aws-cdk\lib\init-templates\sample-app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{817913C1-F583-40C6-AF21-3F858BD72013}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "hello-cdk", "hello-cdk", "{841A6314-7010-41DE-8560-8C263FE899DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "node_modules", "node_modules", "{03EA88D3-3A2D-45D7-BEE6-07AB9BD27646}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws-cdk", "aws-cdk", "{461CB497-4D85-438D-A11C-111A2157D1D7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{7704C2C4-D3AC-466D-8BA5-C83442048ACA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "init-templates", "init-templates", "{A0C56915-A59F-4962-90C4-36C51DAFA3E7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{072287E6-5637-4EFB-9A53-2FAC33B866C8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{094BA5B9-EA35-438F-B184-AD9EAC781968}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9CE6F7AC-9705-4588-A194-89C5A8BFCB01}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\aws-docs\hello-cdk\node_modules\aws-cdk\lib\init-templates\app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{84869119-1586-44A0-8EC8-F7623760BEAC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample-app", "sample-app", "{92522332-062B-4D00-9E6B-51612C8B5FD6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{200C8CFD-B110-47CE-BC05-E86A65333E65}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E380ADC6-832F-4F03-9422-1929E3CA3FAB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\aws-docs\hello-cdk\node_modules\aws-cdk\lib\init-templates\sample-app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{28CEBBB7-95AE-405B-90EC-A0A872A1F74E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "udemy_aws-ts-masterclass-cdkv2-serverless-react", "udemy_aws-ts-masterclass-cdkv2-serverless-react", "{EF91D5C1-2406-49C8-8CA0-2F120C06DBBA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "space-finder", "space-finder", "{FF437594-ABEB-489D-BE75-31591F142477}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "node_modules", "node_modules", "{02AE169A-1E7C-419E-B844-B3E1C55E2977}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws-cdk", "aws-cdk", "{D4B85916-498E-46EF-9EF3-F69966A99271}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{2F9D700D-8437-45A6-91E8-819B9CE1226C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "init-templates", "init-templates", "{E0D5123F-1195-442F-B7CE-5061DADF6A7B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{D8A71BC5-4FE9-4339-B18C-AD8D175C978D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{58E9D390-52E7-4842-97EA-DD545662511C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B1984A12-1031-44A9-9616-4CADBDC60A14}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\udemy_aws-ts-masterclass-cdkv2-serverless-react\space-finder\node_modules\aws-cdk\lib\init-templates\app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{2C70BC37-E3CE-467B-BDFE-F87561071E1E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample-app", "sample-app", "{C8A1DD03-56C6-492E-9F38-022A34DA9A42}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{54C9425F-37A6-497C-B255-9B5CE96823E2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{04BED67E-E16E-4BED-AB74-3ABD7EEC74B0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\udemy_aws-ts-masterclass-cdkv2-serverless-react\space-finder\node_modules\aws-cdk\lib\init-templates\sample-app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{51B8984F-E0B2-4D07-828D-C0A4FEF895AE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cdk-starter", "cdk-starter", "{49A56FAC-5A18-483E-8EC6-FB41E8A295AA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "node_modules", "node_modules", "{F4723588-E4EC-4AA1-A4A1-38599CA3FDDE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws-cdk", "aws-cdk", "{A7EDE465-5238-4E26-889E-B278361B529C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{D52F89AE-F2BE-4569-9FD9-02A30B7BBBF7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "init-templates", "init-templates", "{4FD6CFFC-C034-4779-8C32-E365C023B9BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{4494743A-3FE7-470D-81C3-8C478ECEEEB3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{97561CF7-3421-4ADB-81DC-0F54C2FE118C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F174FE61-7A6C-4AF3-8924-A4AC743164C5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\udemy_aws-ts-masterclass-cdkv2-serverless-react\cdk-starter\node_modules\aws-cdk\lib\init-templates\app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{1B141F16-4A3C-49D8-A83D-11D6970447B5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample-app", "sample-app", "{3236B305-572F-41B9-B753-CEE0340C8978}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{C7DC3CDF-1FA6-4C9D-A61D-E9A877A253A2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E120F04F-0391-4EFE-AEAE-7D7E20176709}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\udemy_aws-ts-masterclass-cdkv2-serverless-react\cdk-starter\node_modules\aws-cdk\lib\init-templates\sample-app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{45FD2E23-C3AF-4235-86A3-D3ED038D1CC2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws-skill-builder", "aws-skill-builder", "{D555C9F2-4ACD-47D4-AF21-F90712F1DC4E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws-cdk-primer-1.1.14-MyWidgetSrv", "aws-cdk-primer-1.1.14-MyWidgetSrv", "{B5206344-D90A-4792-86D9-5E88E07AC5E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "node_modules", "node_modules", "{93B1265B-5F75-4C3A-8E8B-18B4CD73BE64}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws-cdk", "aws-cdk", "{914B9FA3-E75B-4F34-9FAD-686E3A04D372}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{F6627402-B8F0-4859-AF68-EF109E42833C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "init-templates", "init-templates", "{B797FB87-7DD7-43DC-AE68-57C9F0A5F419}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "v1", "v1", "{00163E6A-2019-42D7-8C4E-DB1D6864DDFD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{A83E112F-5B3B-4DA5-8A59-185D9A316762}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{EF8FEA5F-EB9C-4C48-9D95-01E82D990B0B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0F56B728-BF51-48EC-8AD7-AA3E6EE6F357}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\aws-skill-builder\aws-cdk-primer-1.1.14-MyWidgetSrv\node_modules\aws-cdk\lib\init-templates\v1\app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{7A86701E-9962-4459-9EC5-A7D205F86294}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample-app", "sample-app", "{6E684F2C-37C4-452E-8E34-383728F7637F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{9B1ED0C8-8B5A-4FD2-9807-E1FBBD4DFA28}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{754F823E-DA7A-44E8-A62E-95C2BEDB0529}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\aws-skill-builder\aws-cdk-primer-1.1.14-MyWidgetSrv\node_modules\aws-cdk\lib\init-templates\v1\sample-app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{7FBECA0E-D71A-4386-A353-8E657F224C62}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "v2", "v2", "{40FC3A37-D225-4E66-AAE1-70209BD06A6E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{30A07A19-3FAA-4080-90BE-03572EAC06EF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{CBCAE13A-C247-47CA-BFE7-166D64CA0A1E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FCCF42DD-E358-45BA-96A9-1BA3F18FB657}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\aws-skill-builder\aws-cdk-primer-1.1.14-MyWidgetSrv\node_modules\aws-cdk\lib\init-templates\v2\app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{C43204F0-748A-40FD-AF47-96C029875EE2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample-app", "sample-app", "{1A75A1E7-2521-4769-A374-4C3FA982F3B1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{94E577BD-B5E0-446C-A000-3568F6888ED6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DD6EA60F-950B-4968-A611-D01FD5A23EBF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\aws-skill-builder\aws-cdk-primer-1.1.14-MyWidgetSrv\node_modules\aws-cdk\lib\init-templates\v2\sample-app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{0F10F7F8-C8E9-4AB7-A05B-6D5B14CBBDC4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws-cdk-primer-1.1.14", "aws-cdk-primer-1.1.14", "{BDF26DBE-44CD-425E-BAE2-8B8559919531}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "node_modules", "node_modules", "{598877B8-AAC4-4A64-A1A6-9893466D471A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws-cdk", "aws-cdk", "{39516D32-D277-4F9A-8614-A6B41BB1481E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{E36830AF-DDD6-4D8C-944A-502C814FA78F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "init-templates", "init-templates", "{36233A8B-677A-4BE9-9824-4C115152A86D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "v1", "v1", "{2E2DE6ED-0698-48D2-B26A-E8077739D951}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{3CCB6728-6D7A-4771-8387-6298DEA7261A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{FBE47859-143D-4419-AEF3-6DAD278AEFC8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A7E370A8-D22F-44BB-ABF9-F8C34B3E7355}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\aws-skill-builder\aws-cdk-primer-1.1.14\node_modules\aws-cdk\lib\init-templates\v1\app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{1BE74E21-ED61-498D-98AE-602D0F859FA0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample-app", "sample-app", "{27EACC7B-965F-4F34-9182-33C38E456724}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{B2B01B10-DD94-414C-84DA-967FF3A2E82B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{81CA54BD-9C98-4A18-8F29-6A601495F5B7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\aws-skill-builder\aws-cdk-primer-1.1.14\node_modules\aws-cdk\lib\init-templates\v1\sample-app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{B5FDD069-CDE3-42D1-BC99-C3703F20B35A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "v2", "v2", "{64A2492F-20A1-45FB-8AC5-4117AA47DAA8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{2B0A4372-FC5E-4057-982F-0F9603DD3284}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{8F9BCE7F-FEF3-4711-8FDB-168A569E8EBC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5BEA6E67-8A86-4D5D-B7E1-E2F571000457}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\aws-skill-builder\aws-cdk-primer-1.1.14\node_modules\aws-cdk\lib\init-templates\v2\app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{7EA9B422-3377-4675-AA08-622D8071E9B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample-app", "sample-app", "{B43ABA8D-FF34-4248-A606-9AF470A42D63}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{4ADDFDA8-6A1A-41A2-96FF-F321A1ACB7A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{04568B0A-14B5-4448-B80B-3A39DAA4DAD1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\aws-skill-builder\aws-cdk-primer-1.1.14\node_modules\aws-cdk\lib\init-templates\v2\sample-app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{20C6C0D5-D52A-4626-9E0E-D0FB72494D91}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws-cdk-primer-1.1.14-TestingConstructs", "aws-cdk-primer-1.1.14-TestingConstructs", "{041768E9-99BD-4B18-B542-CADEF7F066AC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "node_modules", "node_modules", "{CCC2150B-BB06-4483-8BD0-A94B3E2130A2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws-cdk", "aws-cdk", "{C312913A-6444-4076-BC08-7D5CB404B6DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{BC9FD0AC-2365-4239-8BFD-45F3E9704EA3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "init-templates", "init-templates", "{4D6E09AB-5FC5-4D7D-8C1A-8EB62E703BB3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "v1", "v1", "{7128654A-F8B8-4833-972E-F2374098FF42}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{ADCFA593-2A03-481E-B495-8DEE05624340}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{73E748BD-239C-4470-B0D8-B3B085EF1362}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3D16D13E-4488-4F98-BE0A-418481361202}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\aws-skill-builder\aws-cdk-primer-1.1.14-TestingConstructs\node_modules\aws-cdk\lib\init-templates\v1\app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{7068975D-F1CE-4903-A26E-B12A8C064F3C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample-app", "sample-app", "{2786972B-E49E-47D3-882A-D2BAC4F6B36B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{C81FD272-FE8C-4296-91F5-A02F025DA218}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FC5F06AD-55C2-432F-A116-6A469DC77A24}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\aws-skill-builder\aws-cdk-primer-1.1.14-TestingConstructs\node_modules\aws-cdk\lib\init-templates\v1\sample-app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{8A989A6B-9131-4E48-A3F2-7DC22BA05239}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "v2", "v2", "{62BA43DF-D1C7-4184-9D19-17C5E24A7087}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{65CEEC2B-9552-409E-947D-1700CC5A343F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{6DA22CB8-62E4-41B4-B1E2-2D710FB2790C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6C10C7E7-E436-447B-B316-1420B1BC66C5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\aws-skill-builder\aws-cdk-primer-1.1.14-TestingConstructs\node_modules\aws-cdk\lib\init-templates\v2\app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{BA308990-0215-4D7D-B31D-659F7BBB1A5C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample-app", "sample-app", "{0E8F01E7-C302-4717-A0FD-DD0D600D5A6A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{C095CC2D-1A86-4F62-BED9-F0862814E72F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{44B21E17-B9B5-40CA-BEA9-ADAE9DBFBF4D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\aws-skill-builder\aws-cdk-primer-1.1.14-TestingConstructs\node_modules\aws-cdk\lib\init-templates\v2\sample-app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{58B30399-1052-4AF5-BF1B-9E1F00DC69DB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws-cdk-primer-1.1.14-vpc", "aws-cdk-primer-1.1.14-vpc", "{75D77DD9-F940-4513-BB67-CCD3A1CBC33B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "node_modules", "node_modules", "{9FC6C7B3-CFC4-44D9-B889-831D5D7CFC3D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws-cdk", "aws-cdk", "{867147F3-CE2C-4A80-A628-F831D1E1CC7A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{400EECFF-3EDD-40E8-8CE1-0C00F55732B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "init-templates", "init-templates", "{2FF495CC-33AA-4710-8AEC-F230D2CD398A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "v1", "v1", "{3F8D1484-1F2B-40C8-A7DF-81645D8BD6C0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{E64C88E2-4455-4609-99D4-A0CAFC5CDF45}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{0CE175A7-AD26-4E9D-9E00-B52AC9FB547D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{439251B6-7083-45A1-A94F-A3BC74AB4DED}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\aws-skill-builder\aws-cdk-primer-1.1.14-vpc\node_modules\aws-cdk\lib\init-templates\v1\app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{AC4C07F3-1599-46F1-8DB7-2C307567A958}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample-app", "sample-app", "{46686C39-D01E-495F-828D-6BEA775E62F3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{91F42732-05A9-4524-A6AB-A9B8138DC1A2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4775FF84-C0C7-4753-96FD-5EABD3629682}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\aws-skill-builder\aws-cdk-primer-1.1.14-vpc\node_modules\aws-cdk\lib\init-templates\v1\sample-app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{86675701-17D4-45DC-A476-BCC1F68C356D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "v2", "v2", "{057A905B-10BD-438E-BD1D-B91DF9CCDE12}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{EE991B40-B8B0-4C65-8FF4-36035AFF42A5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{E796B5B7-71CC-4D6B-BA27-0B604B1F4DFE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F98A01BC-6DF3-42EB-A668-4573DFEB4586}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\aws-skill-builder\aws-cdk-primer-1.1.14-vpc\node_modules\aws-cdk\lib\init-templates\v2\app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{2B7D4B0A-B55F-4DAD-ABF6-2883CE5D4851}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample-app", "sample-app", "{278E877C-015F-42F0-9869-39A9844A1266}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{2373E8A9-945D-4757-B83B-DB673F8A3C73}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{90544C97-EF95-4265-A17F-617B8B47C068}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\aws-skill-builder\aws-cdk-primer-1.1.14-vpc\node_modules\aws-cdk\lib\init-templates\v2\sample-app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{FDB0AC0B-C8B9-4218-BB7B-C2C23E864830}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "packt_aws-cdk-in-practice", "packt_aws-cdk-in-practice", "{076656C5-0DBA-432F-8773-00A3005A9583}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ch01", "ch01", "{405FE5D8-BB72-4CC5-80B2-66F4E5D9D8F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "node_modules", "node_modules", "{63D200FB-31BC-4685-B3D3-7F65840B52BD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws-cdk", "aws-cdk", "{0ED2CAA1-EF38-491D-B55A-2902F3310D02}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{92DE35D2-FDA2-43AC-B615-67DA5556EB68}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "init-templates", "init-templates", "{711AEA01-FEED-4E95-B726-049933CE0F6F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "v1", "v1", "{44BD70CF-34CA-4D2F-A813-7C975C2A33BD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{EC3411C3-7BB7-41BC-9F7A-91A2C03E77D1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{F5AB9ED5-5546-42CF-B912-23E37C0945EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{58EC7714-1817-43C9-AEA6-981D4063F3F2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\packt_aws-cdk-in-practice\ch01\node_modules\aws-cdk\lib\init-templates\v1\app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{4805F74E-2DE1-4F36-BA11-1E8CC9241F24}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample-app", "sample-app", "{B74BE7A4-67DC-4A28-94F0-159B8CF2B442}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{D2CF51FA-0216-4401-8ABD-50B2C399F492}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{095359E9-9C3C-4D00-8171-BAE21250F05E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\packt_aws-cdk-in-practice\ch01\node_modules\aws-cdk\lib\init-templates\v1\sample-app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{D9B1B618-3641-40B5-83D9-222F5F8D6CC4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "v2", "v2", "{069E0364-D3E3-4580-8213-53D1E5BFBBE3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{DB4898A7-C520-4D88-A905-2F165D0B0F44}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{5D2DC0FC-4406-4273-AFC1-1A73BCF5C257}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B26AE027-13B9-4634-BA4A-80A2AD9E9AFD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\packt_aws-cdk-in-practice\ch01\node_modules\aws-cdk\lib\init-templates\v2\app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{00CB0674-BF12-4736-A178-128546151DBD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample-app", "sample-app", "{71A60EBA-257F-4A51-9784-AAD6A5327402}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{29A8FF16-A7F5-412F-B6D2-89F8CA929BAE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1D57FE6A-67C1-49B0-8BC3-1AB19E183BD6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\packt_aws-cdk-in-practice\ch01\node_modules\aws-cdk\lib\init-templates\v2\sample-app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{5ABCC3FD-BC4D-4D12-9AC8-9EBAA538944B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cdk-examples-serverless-000", "cdk-examples-serverless-000", "{DE43AA0F-9E0B-4FF3-8EDB-3B37D814B5CD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MyWidgetService", "MyWidgetService", "{32C5D17D-685D-481A-98E3-34150BDE9F36}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "node_modules", "node_modules", "{1EC656A8-541D-4EA9-9C7E-D084A9765825}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws-cdk", "aws-cdk", "{F65F1EF5-EF60-498C-AE71-2F1FDE787663}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{E0ADDE7A-A645-4FAD-9E00-9C553273262C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "init-templates", "init-templates", "{44ABB33D-FAC0-4C7A-8E09-5193AC043CD2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{3E0D34C9-BB9E-401E-BBB4-D67F947EB528}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{D24CEE2C-7066-493B-82B3-20B2B73840F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9E4918DB-2357-4CFC-AEAC-F14AE9A579D3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\aws-docs\cdk-examples-serverless-000\MyWidgetService\node_modules\aws-cdk\lib\init-templates\app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{AE01EF8C-64EC-4A50-A011-41EFA17EB849}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample-app", "sample-app", "{3D56F231-58D8-48EE-A883-707E6E5B6F55}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{EDD47A7A-345B-48C0-9462-077C0B7036CB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3174B079-721A-4B2C-AECC-89A123474826}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\aws-docs\cdk-examples-serverless-000\MyWidgetService\node_modules\aws-cdk\lib\init-templates\sample-app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{0F52804F-BD17-4AA5-96FF-3E30766C1D2B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cdk-examples-multistack-000", "cdk-examples-multistack-000", "{9E9F7646-70E4-44C8-9A40-F0EA201903D1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "multistack", "multistack", "{08AE6FD0-8CED-4F2F-BDB4-187EB2076FD1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "node_modules", "node_modules", "{05398DD3-2BC4-4B5F-A6D5-739B654E988F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws-cdk", "aws-cdk", "{CF6BC12B-BB94-48D3-8E45-518B7FD76041}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{C39A421A-2343-4BB0-90CB-82F769A8C103}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "init-templates", "init-templates", "{C043C250-450B-4551-9765-78C63B083B70}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{B40C95B1-C8A5-48C5-83F2-6E6ADE2FD6DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{0B03C4D2-6496-49B2-8687-91185159FE1E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AB38DFE7-747A-4874-9297-06F4539A1A18}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\aws-docs\cdk-examples-multistack-000\multistack\node_modules\aws-cdk\lib\init-templates\app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{B63CD775-F128-406B-9908-B9E51EE3284B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample-app", "sample-app", "{AEE53AD8-8BC2-40EA-8833-F78F1D1DC981}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{A7994CA4-EA64-4EC5-8646-E157AF514295}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7BC0CFB3-30F0-4D36-9AB4-BAEAEA70211E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "%name.PascalCased%.template", "subjects\automation\aws\cdk\aws-docs\cdk-examples-multistack-000\multistack\node_modules\aws-cdk\lib\init-templates\sample-app\csharp\src\%name.PascalCased%\%name.PascalCased%.template.csproj", "{C42C1DFC-5794-49E4-A060-A1BCD6393798}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E000555-0D27-4CD3-A213-77F65473EDAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E000555-0D27-4CD3-A213-77F65473EDAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E000555-0D27-4CD3-A213-77F65473EDAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E000555-0D27-4CD3-A213-77F65473EDAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5950BE6C-4361-4520-8205-1854D985C5A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5950BE6C-4361-4520-8205-1854D985C5A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5950BE6C-4361-4520-8205-1854D985C5A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5950BE6C-4361-4520-8205-1854D985C5A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFA00ACA-AD1D-4C5E-8C2B-81BC8B098910}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFA00ACA-AD1D-4C5E-8C2B-81BC8B098910}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFA00ACA-AD1D-4C5E-8C2B-81BC8B098910}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFA00ACA-AD1D-4C5E-8C2B-81BC8B098910}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A454E91-7418-4AED-A7C0-B25FECA02AC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A454E91-7418-4AED-A7C0-B25FECA02AC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A454E91-7418-4AED-A7C0-B25FECA02AC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A454E91-7418-4AED-A7C0-B25FECA02AC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B442CC7-7533-487A-8E19-51E47EA7BA18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B442CC7-7533-487A-8E19-51E47EA7BA18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B442CC7-7533-487A-8E19-51E47EA7BA18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B442CC7-7533-487A-8E19-51E47EA7BA18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C709326F-C039-4673-B60D-B85E4A72E811}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C709326F-C039-4673-B60D-B85E4A72E811}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C709326F-C039-4673-B60D-B85E4A72E811}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C709326F-C039-4673-B60D-B85E4A72E811}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CB54047-CB1D-4DDA-9D76-7923D699C26C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CB54047-CB1D-4DDA-9D76-7923D699C26C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CB54047-CB1D-4DDA-9D76-7923D699C26C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CB54047-CB1D-4DDA-9D76-7923D699C26C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6500D30D-0101-416C-A100-DC216B3AF25F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6500D30D-0101-416C-A100-DC216B3AF25F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6500D30D-0101-416C-A100-DC216B3AF25F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6500D30D-0101-416C-A100-DC216B3AF25F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{316B7874-4EA7-4A28-9BA7-EC01782CED0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{316B7874-4EA7-4A28-9BA7-EC01782CED0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{316B7874-4EA7-4A28-9BA7-EC01782CED0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{316B7874-4EA7-4A28-9BA7-EC01782CED0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A1E04F7-6A50-4DB9-B059-9664C4B7C96A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A1E04F7-6A50-4DB9-B059-9664C4B7C96A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A1E04F7-6A50-4DB9-B059-9664C4B7C96A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A1E04F7-6A50-4DB9-B059-9664C4B7C96A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{446B62CE-08F0-4BD2-930A-49035ADD51F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{446B62CE-08F0-4BD2-930A-49035ADD51F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{446B62CE-08F0-4BD2-930A-49035ADD51F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{446B62CE-08F0-4BD2-930A-49035ADD51F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD65FB32-1A71-4466-BA92-065E2C38A582}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD65FB32-1A71-4466-BA92-065E2C38A582}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD65FB32-1A71-4466-BA92-065E2C38A582}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD65FB32-1A71-4466-BA92-065E2C38A582}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0563A64C-D796-4557-81EA-7710CEA7CD7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0563A64C-D796-4557-81EA-7710CEA7CD7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0563A64C-D796-4557-81EA-7710CEA7CD7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0563A64C-D796-4557-81EA-7710CEA7CD7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21A4C1A3-6738-437D-959A-ECE6C07EBED7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21A4C1A3-6738-437D-959A-ECE6C07EBED7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21A4C1A3-6738-437D-959A-ECE6C07EBED7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21A4C1A3-6738-437D-959A-ECE6C07EBED7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{056CFB82-726C-448E-9127-22811F4A8440}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{056CFB82-726C-448E-9127-22811F4A8440}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{056CFB82-726C-448E-9127-22811F4A8440}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{056CFB82-726C-448E-9127-22811F4A8440}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA80A092-B79C-4F65-93D0-B7D274513575}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA80A092-B79C-4F65-93D0-B7D274513575}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA80A092-B79C-4F65-93D0-B7D274513575}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA80A092-B79C-4F65-93D0-B7D274513575}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE08FD18-2F34-4A14-AE16-50394D997240}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE08FD18-2F34-4A14-AE16-50394D997240}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE08FD18-2F34-4A14-AE16-50394D997240}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE08FD18-2F34-4A14-AE16-50394D997240}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B7090F1-1BA3-40A1-965E-81D7C26004F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B7090F1-1BA3-40A1-965E-81D7C26004F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B7090F1-1BA3-40A1-965E-81D7C26004F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B7090F1-1BA3-40A1-965E-81D7C26004F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{817913C1-F583-40C6-AF21-3F858BD72013}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{817913C1-F583-40C6-AF21-3F858BD72013}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{817913C1-F583-40C6-AF21-3F858BD72013}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{817913C1-F583-40C6-AF21-3F858BD72013}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84869119-1586-44A0-8EC8-F7623760BEAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84869119-1586-44A0-8EC8-F7623760BEAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84869119-1586-44A0-8EC8-F7623760BEAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84869119-1586-44A0-8EC8-F7623760BEAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28CEBBB7-95AE-405B-90EC-A0A872A1F74E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28CEBBB7-95AE-405B-90EC-A0A872A1F74E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28CEBBB7-95AE-405B-90EC-A0A872A1F74E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28CEBBB7-95AE-405B-90EC-A0A872A1F74E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C70BC37-E3CE-467B-BDFE-F87561071E1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C70BC37-E3CE-467B-BDFE-F87561071E1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C70BC37-E3CE-467B-BDFE-F87561071E1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C70BC37-E3CE-467B-BDFE-F87561071E1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51B8984F-E0B2-4D07-828D-C0A4FEF895AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51B8984F-E0B2-4D07-828D-C0A4FEF895AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51B8984F-E0B2-4D07-828D-C0A4FEF895AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51B8984F-E0B2-4D07-828D-C0A4FEF895AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B141F16-4A3C-49D8-A83D-11D6970447B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B141F16-4A3C-49D8-A83D-11D6970447B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B141F16-4A3C-49D8-A83D-11D6970447B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B141F16-4A3C-49D8-A83D-11D6970447B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45FD2E23-C3AF-4235-86A3-D3ED038D1CC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45FD2E23-C3AF-4235-86A3-D3ED038D1CC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45FD2E23-C3AF-4235-86A3-D3ED038D1CC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45FD2E23-C3AF-4235-86A3-D3ED038D1CC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A86701E-9962-4459-9EC5-A7D205F86294}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A86701E-9962-4459-9EC5-A7D205F86294}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A86701E-9962-4459-9EC5-A7D205F86294}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A86701E-9962-4459-9EC5-A7D205F86294}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FBECA0E-D71A-4386-A353-8E657F224C62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FBECA0E-D71A-4386-A353-8E657F224C62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FBECA0E-D71A-4386-A353-8E657F224C62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FBECA0E-D71A-4386-A353-8E657F224C62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C43204F0-748A-40FD-AF47-96C029875EE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C43204F0-748A-40FD-AF47-96C029875EE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C43204F0-748A-40FD-AF47-96C029875EE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C43204F0-748A-40FD-AF47-96C029875EE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F10F7F8-C8E9-4AB7-A05B-6D5B14CBBDC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F10F7F8-C8E9-4AB7-A05B-6D5B14CBBDC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F10F7F8-C8E9-4AB7-A05B-6D5B14CBBDC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F10F7F8-C8E9-4AB7-A05B-6D5B14CBBDC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BE74E21-ED61-498D-98AE-602D0F859FA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BE74E21-ED61-498D-98AE-602D0F859FA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BE74E21-ED61-498D-98AE-602D0F859FA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BE74E21-ED61-498D-98AE-602D0F859FA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5FDD069-CDE3-42D1-BC99-C3703F20B35A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5FDD069-CDE3-42D1-BC99-C3703F20B35A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5FDD069-CDE3-42D1-BC99-C3703F20B35A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5FDD069-CDE3-42D1-BC99-C3703F20B35A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EA9B422-3377-4675-AA08-622D8071E9B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EA9B422-3377-4675-AA08-622D8071E9B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EA9B422-3377-4675-AA08-622D8071E9B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EA9B422-3377-4675-AA08-622D8071E9B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20C6C0D5-D52A-4626-9E0E-D0FB72494D91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20C6C0D5-D52A-4626-9E0E-D0FB72494D91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20C6C0D5-D52A-4626-9E0E-D0FB72494D91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20C6C0D5-D52A-4626-9E0E-D0FB72494D91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7068975D-F1CE-4903-A26E-B12A8C064F3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7068975D-F1CE-4903-A26E-B12A8C064F3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7068975D-F1CE-4903-A26E-B12A8C064F3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7068975D-F1CE-4903-A26E-B12A8C064F3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A989A6B-9131-4E48-A3F2-7DC22BA05239}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A989A6B-9131-4E48-A3F2-7DC22BA05239}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A989A6B-9131-4E48-A3F2-7DC22BA05239}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A989A6B-9131-4E48-A3F2-7DC22BA05239}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA308990-0215-4D7D-B31D-659F7BBB1A5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA308990-0215-4D7D-B31D-659F7BBB1A5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA308990-0215-4D7D-B31D-659F7BBB1A5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA308990-0215-4D7D-B31D-659F7BBB1A5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58B30399-1052-4AF5-BF1B-9E1F00DC69DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58B30399-1052-4AF5-BF1B-9E1F00DC69DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58B30399-1052-4AF5-BF1B-9E1F00DC69DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58B30399-1052-4AF5-BF1B-9E1F00DC69DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC4C07F3-1599-46F1-8DB7-2C307567A958}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC4C07F3-1599-46F1-8DB7-2C307567A958}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC4C07F3-1599-46F1-8DB7-2C307567A958}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC4C07F3-1599-46F1-8DB7-2C307567A958}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86675701-17D4-45DC-A476-BCC1F68C356D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86675701-17D4-45DC-A476-BCC1F68C356D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86675701-17D4-45DC-A476-BCC1F68C356D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86675701-17D4-45DC-A476-BCC1F68C356D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B7D4B0A-B55F-4DAD-ABF6-2883CE5D4851}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B7D4B0A-B55F-4DAD-ABF6-2883CE5D4851}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B7D4B0A-B55F-4DAD-ABF6-2883CE5D4851}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B7D4B0A-B55F-4DAD-ABF6-2883CE5D4851}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDB0AC0B-C8B9-4218-BB7B-C2C23E864830}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDB0AC0B-C8B9-4218-BB7B-C2C23E864830}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDB0AC0B-C8B9-4218-BB7B-C2C23E864830}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDB0AC0B-C8B9-4218-BB7B-C2C23E864830}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4805F74E-2DE1-4F36-BA11-1E8CC9241F24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4805F74E-2DE1-4F36-BA11-1E8CC9241F24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4805F74E-2DE1-4F36-BA11-1E8CC9241F24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4805F74E-2DE1-4F36-BA11-1E8CC9241F24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9B1B618-3641-40B5-83D9-222F5F8D6CC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9B1B618-3641-40B5-83D9-222F5F8D6CC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9B1B618-3641-40B5-83D9-222F5F8D6CC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9B1B618-3641-40B5-83D9-222F5F8D6CC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00CB0674-BF12-4736-A178-128546151DBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00CB0674-BF12-4736-A178-128546151DBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00CB0674-BF12-4736-A178-128546151DBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00CB0674-BF12-4736-A178-128546151DBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ABCC3FD-BC4D-4D12-9AC8-9EBAA538944B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ABCC3FD-BC4D-4D12-9AC8-9EBAA538944B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ABCC3FD-BC4D-4D12-9AC8-9EBAA538944B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ABCC3FD-BC4D-4D12-9AC8-9EBAA538944B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE01EF8C-64EC-4A50-A011-41EFA17EB849}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE01EF8C-64EC-4A50-A011-41EFA17EB849}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE01EF8C-64EC-4A50-A011-41EFA17EB849}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE01EF8C-64EC-4A50-A011-41EFA17EB849}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F52804F-BD17-4AA5-96FF-3E30766C1D2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F52804F-BD17-4AA5-96FF-3E30766C1D2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F52804F-BD17-4AA5-96FF-3E30766C1D2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F52804F-BD17-4AA5-96FF-3E30766C1D2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B63CD775-F128-406B-9908-B9E51EE3284B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B63CD775-F128-406B-9908-B9E51EE3284B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B63CD775-F128-406B-9908-B9E51EE3284B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B63CD775-F128-406B-9908-B9E51EE3284B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C42C1DFC-5794-49E4-A060-A1BCD6393798}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C42C1DFC-5794-49E4-A060-A1BCD6393798}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C42C1DFC-5794-49E4-A060-A1BCD6393798}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C42C1DFC-5794-49E4-A060-A1BCD6393798}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{162A15B1-061E-43F2-946C-8F58389FBE67} = {78A407A2-D721-47BA-BAB1-283A62B0FA5D}
+		{E3BC50CC-6018-42B0-9261-45291CE69585} = {162A15B1-061E-43F2-946C-8F58389FBE67}
+		{72DA9504-543F-4BAB-9D55-CAC961E868E0} = {E3BC50CC-6018-42B0-9261-45291CE69585}
+		{4973CCEE-58DD-41E4-AB0C-9601B032FC64} = {72DA9504-543F-4BAB-9D55-CAC961E868E0}
+		{5E000555-0D27-4CD3-A213-77F65473EDAA} = {4973CCEE-58DD-41E4-AB0C-9601B032FC64}
+		{B642A7EF-F9D8-4A68-84A5-FB74F667BCE8} = {78A407A2-D721-47BA-BAB1-283A62B0FA5D}
+		{71E49EBC-DB63-4DCE-AC08-B763A57A1661} = {B642A7EF-F9D8-4A68-84A5-FB74F667BCE8}
+		{3D9D07F8-B6CE-42E8-B2AC-390B7A36A90B} = {71E49EBC-DB63-4DCE-AC08-B763A57A1661}
+		{4EAB25D9-3D7D-4D9F-8DBC-1FEEF37CA74F} = {3D9D07F8-B6CE-42E8-B2AC-390B7A36A90B}
+		{337AD7B1-A12E-4727-9006-057E7A4CB6D1} = {4EAB25D9-3D7D-4D9F-8DBC-1FEEF37CA74F}
+		{D7D61F25-1C23-4E3B-BE8C-593A39C05F23} = {337AD7B1-A12E-4727-9006-057E7A4CB6D1}
+		{05B98BD3-089A-45BB-8C8E-5676D0529845} = {D7D61F25-1C23-4E3B-BE8C-593A39C05F23}
+		{DD3DCCB9-FC18-4DB3-9BE9-1246B76DCB78} = {05B98BD3-089A-45BB-8C8E-5676D0529845}
+		{81DCB38E-DC0A-43E3-90DF-7DB84C777845} = {DD3DCCB9-FC18-4DB3-9BE9-1246B76DCB78}
+		{1B07A52E-0396-4296-9464-D6689FCEE73C} = {81DCB38E-DC0A-43E3-90DF-7DB84C777845}
+		{A3C65723-0A0C-4581-BF2E-EA2EDFDD2B18} = {1B07A52E-0396-4296-9464-D6689FCEE73C}
+		{5950BE6C-4361-4520-8205-1854D985C5A3} = {A3C65723-0A0C-4581-BF2E-EA2EDFDD2B18}
+		{208C0A90-EDDB-4B6B-B7D7-4DEDCBDD5E31} = {DD3DCCB9-FC18-4DB3-9BE9-1246B76DCB78}
+		{5D54E4BB-E582-432E-8CCC-89D23DC71CD9} = {208C0A90-EDDB-4B6B-B7D7-4DEDCBDD5E31}
+		{DEACE0EE-2969-4A47-B444-FA5C154D8EF8} = {5D54E4BB-E582-432E-8CCC-89D23DC71CD9}
+		{FFA00ACA-AD1D-4C5E-8C2B-81BC8B098910} = {DEACE0EE-2969-4A47-B444-FA5C154D8EF8}
+		{1E85A7B8-3565-4492-A9A1-03B586185FE2} = {3D9D07F8-B6CE-42E8-B2AC-390B7A36A90B}
+		{1139FD9C-A1B8-4496-B61D-98D4D2DBFBE6} = {1E85A7B8-3565-4492-A9A1-03B586185FE2}
+		{2E216F03-2435-4515-ACF4-0EEB3307366F} = {1139FD9C-A1B8-4496-B61D-98D4D2DBFBE6}
+		{4A3999F5-174C-4F9C-9FD5-D08C04718AFE} = {2E216F03-2435-4515-ACF4-0EEB3307366F}
+		{30F670D1-DF98-48EE-82E9-67843E49715B} = {4A3999F5-174C-4F9C-9FD5-D08C04718AFE}
+		{BDA5FAAE-2043-41CF-BC15-0575E7F05E96} = {30F670D1-DF98-48EE-82E9-67843E49715B}
+		{CF91E400-DA24-4BD8-A53C-120DF950E047} = {BDA5FAAE-2043-41CF-BC15-0575E7F05E96}
+		{00CBFF4B-221C-4A65-89A5-D3C3E326810D} = {CF91E400-DA24-4BD8-A53C-120DF950E047}
+		{5A454E91-7418-4AED-A7C0-B25FECA02AC1} = {00CBFF4B-221C-4A65-89A5-D3C3E326810D}
+		{CF4FA13B-2C10-47AA-B0E6-DCA45DA1B01B} = {30F670D1-DF98-48EE-82E9-67843E49715B}
+		{74FA6996-7589-4041-BF1F-076BDE8D984B} = {CF4FA13B-2C10-47AA-B0E6-DCA45DA1B01B}
+		{6349E96C-596C-4760-9C73-C6D3B5E06DD6} = {74FA6996-7589-4041-BF1F-076BDE8D984B}
+		{1B442CC7-7533-487A-8E19-51E47EA7BA18} = {6349E96C-596C-4760-9C73-C6D3B5E06DD6}
+		{FE64E672-C05B-4746-B9D7-7A91E9D3D54B} = {3D9D07F8-B6CE-42E8-B2AC-390B7A36A90B}
+		{274A698B-C6B6-4F43-9C5C-51C0A5315730} = {FE64E672-C05B-4746-B9D7-7A91E9D3D54B}
+		{91681341-B274-4E8E-A4CC-77A1FDBB8FE2} = {274A698B-C6B6-4F43-9C5C-51C0A5315730}
+		{109428AD-E878-4AD7-AF43-1429B56E0545} = {91681341-B274-4E8E-A4CC-77A1FDBB8FE2}
+		{0264C74B-193A-4D25-84A8-CDF8A22DB93A} = {109428AD-E878-4AD7-AF43-1429B56E0545}
+		{8B65F139-0558-4B61-AB8A-6CFBD59E4200} = {0264C74B-193A-4D25-84A8-CDF8A22DB93A}
+		{C3B63FC2-A9CF-4312-965A-14B3FA90F61C} = {8B65F139-0558-4B61-AB8A-6CFBD59E4200}
+		{DB52B9E2-2BB2-4B98-9A3E-C964D1192391} = {C3B63FC2-A9CF-4312-965A-14B3FA90F61C}
+		{C709326F-C039-4673-B60D-B85E4A72E811} = {DB52B9E2-2BB2-4B98-9A3E-C964D1192391}
+		{7910E7E2-4A10-4062-B305-B0F58CAADE2F} = {0264C74B-193A-4D25-84A8-CDF8A22DB93A}
+		{8E5C9287-26E8-46FD-9795-58B07C8B09B2} = {7910E7E2-4A10-4062-B305-B0F58CAADE2F}
+		{9015554C-C932-4BB9-91A1-6F1EE9CC065C} = {8E5C9287-26E8-46FD-9795-58B07C8B09B2}
+		{0CB54047-CB1D-4DDA-9D76-7923D699C26C} = {9015554C-C932-4BB9-91A1-6F1EE9CC065C}
+		{49453243-7537-437E-B89C-F19E7167B3BF} = {3D9D07F8-B6CE-42E8-B2AC-390B7A36A90B}
+		{8B5CF229-67B4-4ADE-A4E8-FA5C99020116} = {49453243-7537-437E-B89C-F19E7167B3BF}
+		{B522D0A4-BC3D-427E-814C-1AAC093DCE30} = {8B5CF229-67B4-4ADE-A4E8-FA5C99020116}
+		{B951E94D-04D8-4292-9754-7CB6C2FAAEB5} = {B522D0A4-BC3D-427E-814C-1AAC093DCE30}
+		{7B130FA8-33DF-4C1C-95F7-6F4177CECC6D} = {B951E94D-04D8-4292-9754-7CB6C2FAAEB5}
+		{A7F92C62-6516-4C5D-BBEB-55A309F861E7} = {7B130FA8-33DF-4C1C-95F7-6F4177CECC6D}
+		{2AAFF1F6-0D70-4327-9D05-46EA60F677BA} = {A7F92C62-6516-4C5D-BBEB-55A309F861E7}
+		{D3EFACED-877C-4047-9163-B32B5866D260} = {2AAFF1F6-0D70-4327-9D05-46EA60F677BA}
+		{6500D30D-0101-416C-A100-DC216B3AF25F} = {D3EFACED-877C-4047-9163-B32B5866D260}
+		{8BCF0EAD-011E-44AA-8B48-83CCE595E572} = {7B130FA8-33DF-4C1C-95F7-6F4177CECC6D}
+		{3C6C135C-A200-4896-B6CD-759C55DD807D} = {8BCF0EAD-011E-44AA-8B48-83CCE595E572}
+		{7EFF7077-8787-400C-A642-B8658AE4A992} = {3C6C135C-A200-4896-B6CD-759C55DD807D}
+		{316B7874-4EA7-4A28-9BA7-EC01782CED0A} = {7EFF7077-8787-400C-A642-B8658AE4A992}
+		{433EE600-41CA-4380-A72F-1587A6E42936} = {3D9D07F8-B6CE-42E8-B2AC-390B7A36A90B}
+		{FF3D1180-0712-4F36-BE48-77DD23CFC95B} = {433EE600-41CA-4380-A72F-1587A6E42936}
+		{AE47489A-71E2-47F4-827A-5B84FC8465E1} = {FF3D1180-0712-4F36-BE48-77DD23CFC95B}
+		{F853EE07-6850-436A-8151-4A9A7AE41208} = {AE47489A-71E2-47F4-827A-5B84FC8465E1}
+		{0115C187-E969-4728-A795-B1E582D7C462} = {F853EE07-6850-436A-8151-4A9A7AE41208}
+		{9B2E260A-F43A-4EBF-8795-483D90A880D6} = {0115C187-E969-4728-A795-B1E582D7C462}
+		{549D35A1-235A-4D50-9DFC-48E9FA567D74} = {9B2E260A-F43A-4EBF-8795-483D90A880D6}
+		{4BA470F1-53EE-41B8-B282-EBF2875EF16A} = {549D35A1-235A-4D50-9DFC-48E9FA567D74}
+		{4A1E04F7-6A50-4DB9-B059-9664C4B7C96A} = {4BA470F1-53EE-41B8-B282-EBF2875EF16A}
+		{85F33FF9-8EB4-44AD-AF1A-867D38635EF9} = {0115C187-E969-4728-A795-B1E582D7C462}
+		{E4965BD6-9ADE-4D09-AED8-EAE3606984F0} = {85F33FF9-8EB4-44AD-AF1A-867D38635EF9}
+		{9EBEC535-71F6-4351-A337-5F8690BDF6D2} = {E4965BD6-9ADE-4D09-AED8-EAE3606984F0}
+		{446B62CE-08F0-4BD2-930A-49035ADD51F8} = {9EBEC535-71F6-4351-A337-5F8690BDF6D2}
+		{15E70F92-19F3-4B6D-8943-021DE43E2892} = {3D9D07F8-B6CE-42E8-B2AC-390B7A36A90B}
+		{FBF5214A-65B2-4B8D-AD2C-B851B153FE43} = {15E70F92-19F3-4B6D-8943-021DE43E2892}
+		{4FD4BE6F-7F7B-4D35-A495-42D6D79C16AB} = {FBF5214A-65B2-4B8D-AD2C-B851B153FE43}
+		{843DF47B-6740-4059-8CBD-1D44E3F94F3C} = {4FD4BE6F-7F7B-4D35-A495-42D6D79C16AB}
+		{02B4F187-AFB6-455E-A543-85D4ABC66460} = {843DF47B-6740-4059-8CBD-1D44E3F94F3C}
+		{EE4341C4-3629-431E-BE6A-C4641848941D} = {02B4F187-AFB6-455E-A543-85D4ABC66460}
+		{289DC045-831A-44C1-B390-8E24273810C3} = {EE4341C4-3629-431E-BE6A-C4641848941D}
+		{474FF577-C8EF-4085-B865-48B011F12685} = {289DC045-831A-44C1-B390-8E24273810C3}
+		{BD65FB32-1A71-4466-BA92-065E2C38A582} = {474FF577-C8EF-4085-B865-48B011F12685}
+		{3E5969BD-1058-4D8D-83FA-373FDA7F6366} = {02B4F187-AFB6-455E-A543-85D4ABC66460}
+		{AE385B3E-9D9F-46B0-89AB-4755BC8FA11D} = {3E5969BD-1058-4D8D-83FA-373FDA7F6366}
+		{1A7A014C-EC74-43FF-B5A0-94B77B4719DF} = {AE385B3E-9D9F-46B0-89AB-4755BC8FA11D}
+		{0563A64C-D796-4557-81EA-7710CEA7CD7E} = {1A7A014C-EC74-43FF-B5A0-94B77B4719DF}
+		{30418203-3F26-48E9-B45A-57F6F118B620} = {3D9D07F8-B6CE-42E8-B2AC-390B7A36A90B}
+		{94FAE731-2A0D-48A9-AFC2-F55A74E36546} = {30418203-3F26-48E9-B45A-57F6F118B620}
+		{10F1DDD0-C4E5-49C2-8891-F2EF13902A98} = {94FAE731-2A0D-48A9-AFC2-F55A74E36546}
+		{6E388EB0-1F65-470F-949A-D72F9E3B91A6} = {10F1DDD0-C4E5-49C2-8891-F2EF13902A98}
+		{FB167EBB-32FC-48EB-9D0E-5F7008E83761} = {6E388EB0-1F65-470F-949A-D72F9E3B91A6}
+		{D4E83118-A3CF-4B09-8FD5-637638AE61F3} = {FB167EBB-32FC-48EB-9D0E-5F7008E83761}
+		{D0E9928C-8AC6-4467-AEAF-FCC8FC002109} = {D4E83118-A3CF-4B09-8FD5-637638AE61F3}
+		{5BAC288B-4180-4954-9A5C-E189FAF728FF} = {D0E9928C-8AC6-4467-AEAF-FCC8FC002109}
+		{DEA399C9-661A-470C-ACFB-8760D92BBF8F} = {5BAC288B-4180-4954-9A5C-E189FAF728FF}
+		{21A4C1A3-6738-437D-959A-ECE6C07EBED7} = {DEA399C9-661A-470C-ACFB-8760D92BBF8F}
+		{81020E58-37AB-4B95-B8EC-9687A76FD5C6} = {D4E83118-A3CF-4B09-8FD5-637638AE61F3}
+		{95FDE95C-76CB-471F-A374-78389B990375} = {81020E58-37AB-4B95-B8EC-9687A76FD5C6}
+		{EC29F578-044F-44DD-8C9A-D0174B8EEC76} = {95FDE95C-76CB-471F-A374-78389B990375}
+		{056CFB82-726C-448E-9127-22811F4A8440} = {EC29F578-044F-44DD-8C9A-D0174B8EEC76}
+		{EF11712F-2E81-481D-B4B4-8FBE576585EE} = {30418203-3F26-48E9-B45A-57F6F118B620}
+		{E0E7FDB1-5820-44DF-A3AF-E31E90B91D4A} = {EF11712F-2E81-481D-B4B4-8FBE576585EE}
+		{2961061F-9ABE-47C2-BD27-B2E1050B767F} = {E0E7FDB1-5820-44DF-A3AF-E31E90B91D4A}
+		{54B6D634-8895-49F1-90B3-D145366830D0} = {2961061F-9ABE-47C2-BD27-B2E1050B767F}
+		{9641BA14-1395-47E2-B533-993DBBB768ED} = {54B6D634-8895-49F1-90B3-D145366830D0}
+		{A793C7F1-AEE3-42C8-8155-B2F88EA36F5E} = {9641BA14-1395-47E2-B533-993DBBB768ED}
+		{24935B02-223D-4189-8D81-7EC21EE6BCAE} = {A793C7F1-AEE3-42C8-8155-B2F88EA36F5E}
+		{35D9086F-8877-4516-905C-36CA06713C74} = {24935B02-223D-4189-8D81-7EC21EE6BCAE}
+		{FA80A092-B79C-4F65-93D0-B7D274513575} = {35D9086F-8877-4516-905C-36CA06713C74}
+		{BC13B839-5E63-4288-AA61-04B22931E7AA} = {9641BA14-1395-47E2-B533-993DBBB768ED}
+		{52E35A8D-8B02-48FC-8B4B-CA953081F3DD} = {BC13B839-5E63-4288-AA61-04B22931E7AA}
+		{E9A9DEDF-43EB-47F0-8F0D-46687E13016F} = {52E35A8D-8B02-48FC-8B4B-CA953081F3DD}
+		{DE08FD18-2F34-4A14-AE16-50394D997240} = {E9A9DEDF-43EB-47F0-8F0D-46687E13016F}
+		{B8B1BF30-46EE-4D50-8C32-12084C80D990} = {30418203-3F26-48E9-B45A-57F6F118B620}
+		{99EBB289-6D5E-48E1-AB2F-BB8C6D174AB8} = {B8B1BF30-46EE-4D50-8C32-12084C80D990}
+		{EC9179C3-D53C-4E8B-BF2D-C34CD6EE86C2} = {99EBB289-6D5E-48E1-AB2F-BB8C6D174AB8}
+		{981B0CBB-3308-4AB3-9347-AB73E6F3A132} = {EC9179C3-D53C-4E8B-BF2D-C34CD6EE86C2}
+		{81191474-48B3-4300-B2EA-603C0BB13B87} = {981B0CBB-3308-4AB3-9347-AB73E6F3A132}
+		{1CEAD7FD-E8F2-4EDB-8D4F-177FCB75793E} = {81191474-48B3-4300-B2EA-603C0BB13B87}
+		{81FED46C-4779-44C9-952C-CE7BC339D27D} = {1CEAD7FD-E8F2-4EDB-8D4F-177FCB75793E}
+		{8E7FCFC6-60CF-4543-AC20-8EA28DAC194E} = {81FED46C-4779-44C9-952C-CE7BC339D27D}
+		{6B7090F1-1BA3-40A1-965E-81D7C26004F5} = {8E7FCFC6-60CF-4543-AC20-8EA28DAC194E}
+		{48B2AA58-F822-46DC-8BA4-5068B96366E1} = {81191474-48B3-4300-B2EA-603C0BB13B87}
+		{14D4435B-43BC-4AF3-9537-4776FA9AAC93} = {48B2AA58-F822-46DC-8BA4-5068B96366E1}
+		{58D5328D-871C-4DDA-8AEE-63C192A4BD76} = {14D4435B-43BC-4AF3-9537-4776FA9AAC93}
+		{817913C1-F583-40C6-AF21-3F858BD72013} = {58D5328D-871C-4DDA-8AEE-63C192A4BD76}
+		{841A6314-7010-41DE-8560-8C263FE899DF} = {30418203-3F26-48E9-B45A-57F6F118B620}
+		{03EA88D3-3A2D-45D7-BEE6-07AB9BD27646} = {841A6314-7010-41DE-8560-8C263FE899DF}
+		{461CB497-4D85-438D-A11C-111A2157D1D7} = {03EA88D3-3A2D-45D7-BEE6-07AB9BD27646}
+		{7704C2C4-D3AC-466D-8BA5-C83442048ACA} = {461CB497-4D85-438D-A11C-111A2157D1D7}
+		{A0C56915-A59F-4962-90C4-36C51DAFA3E7} = {7704C2C4-D3AC-466D-8BA5-C83442048ACA}
+		{072287E6-5637-4EFB-9A53-2FAC33B866C8} = {A0C56915-A59F-4962-90C4-36C51DAFA3E7}
+		{094BA5B9-EA35-438F-B184-AD9EAC781968} = {072287E6-5637-4EFB-9A53-2FAC33B866C8}
+		{9CE6F7AC-9705-4588-A194-89C5A8BFCB01} = {094BA5B9-EA35-438F-B184-AD9EAC781968}
+		{84869119-1586-44A0-8EC8-F7623760BEAC} = {9CE6F7AC-9705-4588-A194-89C5A8BFCB01}
+		{92522332-062B-4D00-9E6B-51612C8B5FD6} = {A0C56915-A59F-4962-90C4-36C51DAFA3E7}
+		{200C8CFD-B110-47CE-BC05-E86A65333E65} = {92522332-062B-4D00-9E6B-51612C8B5FD6}
+		{E380ADC6-832F-4F03-9422-1929E3CA3FAB} = {200C8CFD-B110-47CE-BC05-E86A65333E65}
+		{28CEBBB7-95AE-405B-90EC-A0A872A1F74E} = {E380ADC6-832F-4F03-9422-1929E3CA3FAB}
+		{EF91D5C1-2406-49C8-8CA0-2F120C06DBBA} = {3D9D07F8-B6CE-42E8-B2AC-390B7A36A90B}
+		{FF437594-ABEB-489D-BE75-31591F142477} = {EF91D5C1-2406-49C8-8CA0-2F120C06DBBA}
+		{02AE169A-1E7C-419E-B844-B3E1C55E2977} = {FF437594-ABEB-489D-BE75-31591F142477}
+		{D4B85916-498E-46EF-9EF3-F69966A99271} = {02AE169A-1E7C-419E-B844-B3E1C55E2977}
+		{2F9D700D-8437-45A6-91E8-819B9CE1226C} = {D4B85916-498E-46EF-9EF3-F69966A99271}
+		{E0D5123F-1195-442F-B7CE-5061DADF6A7B} = {2F9D700D-8437-45A6-91E8-819B9CE1226C}
+		{D8A71BC5-4FE9-4339-B18C-AD8D175C978D} = {E0D5123F-1195-442F-B7CE-5061DADF6A7B}
+		{58E9D390-52E7-4842-97EA-DD545662511C} = {D8A71BC5-4FE9-4339-B18C-AD8D175C978D}
+		{B1984A12-1031-44A9-9616-4CADBDC60A14} = {58E9D390-52E7-4842-97EA-DD545662511C}
+		{2C70BC37-E3CE-467B-BDFE-F87561071E1E} = {B1984A12-1031-44A9-9616-4CADBDC60A14}
+		{C8A1DD03-56C6-492E-9F38-022A34DA9A42} = {E0D5123F-1195-442F-B7CE-5061DADF6A7B}
+		{54C9425F-37A6-497C-B255-9B5CE96823E2} = {C8A1DD03-56C6-492E-9F38-022A34DA9A42}
+		{04BED67E-E16E-4BED-AB74-3ABD7EEC74B0} = {54C9425F-37A6-497C-B255-9B5CE96823E2}
+		{51B8984F-E0B2-4D07-828D-C0A4FEF895AE} = {04BED67E-E16E-4BED-AB74-3ABD7EEC74B0}
+		{49A56FAC-5A18-483E-8EC6-FB41E8A295AA} = {EF91D5C1-2406-49C8-8CA0-2F120C06DBBA}
+		{F4723588-E4EC-4AA1-A4A1-38599CA3FDDE} = {49A56FAC-5A18-483E-8EC6-FB41E8A295AA}
+		{A7EDE465-5238-4E26-889E-B278361B529C} = {F4723588-E4EC-4AA1-A4A1-38599CA3FDDE}
+		{D52F89AE-F2BE-4569-9FD9-02A30B7BBBF7} = {A7EDE465-5238-4E26-889E-B278361B529C}
+		{4FD6CFFC-C034-4779-8C32-E365C023B9BC} = {D52F89AE-F2BE-4569-9FD9-02A30B7BBBF7}
+		{4494743A-3FE7-470D-81C3-8C478ECEEEB3} = {4FD6CFFC-C034-4779-8C32-E365C023B9BC}
+		{97561CF7-3421-4ADB-81DC-0F54C2FE118C} = {4494743A-3FE7-470D-81C3-8C478ECEEEB3}
+		{F174FE61-7A6C-4AF3-8924-A4AC743164C5} = {97561CF7-3421-4ADB-81DC-0F54C2FE118C}
+		{1B141F16-4A3C-49D8-A83D-11D6970447B5} = {F174FE61-7A6C-4AF3-8924-A4AC743164C5}
+		{3236B305-572F-41B9-B753-CEE0340C8978} = {4FD6CFFC-C034-4779-8C32-E365C023B9BC}
+		{C7DC3CDF-1FA6-4C9D-A61D-E9A877A253A2} = {3236B305-572F-41B9-B753-CEE0340C8978}
+		{E120F04F-0391-4EFE-AEAE-7D7E20176709} = {C7DC3CDF-1FA6-4C9D-A61D-E9A877A253A2}
+		{45FD2E23-C3AF-4235-86A3-D3ED038D1CC2} = {E120F04F-0391-4EFE-AEAE-7D7E20176709}
+		{D555C9F2-4ACD-47D4-AF21-F90712F1DC4E} = {3D9D07F8-B6CE-42E8-B2AC-390B7A36A90B}
+		{B5206344-D90A-4792-86D9-5E88E07AC5E0} = {D555C9F2-4ACD-47D4-AF21-F90712F1DC4E}
+		{93B1265B-5F75-4C3A-8E8B-18B4CD73BE64} = {B5206344-D90A-4792-86D9-5E88E07AC5E0}
+		{914B9FA3-E75B-4F34-9FAD-686E3A04D372} = {93B1265B-5F75-4C3A-8E8B-18B4CD73BE64}
+		{F6627402-B8F0-4859-AF68-EF109E42833C} = {914B9FA3-E75B-4F34-9FAD-686E3A04D372}
+		{B797FB87-7DD7-43DC-AE68-57C9F0A5F419} = {F6627402-B8F0-4859-AF68-EF109E42833C}
+		{00163E6A-2019-42D7-8C4E-DB1D6864DDFD} = {B797FB87-7DD7-43DC-AE68-57C9F0A5F419}
+		{A83E112F-5B3B-4DA5-8A59-185D9A316762} = {00163E6A-2019-42D7-8C4E-DB1D6864DDFD}
+		{EF8FEA5F-EB9C-4C48-9D95-01E82D990B0B} = {A83E112F-5B3B-4DA5-8A59-185D9A316762}
+		{0F56B728-BF51-48EC-8AD7-AA3E6EE6F357} = {EF8FEA5F-EB9C-4C48-9D95-01E82D990B0B}
+		{7A86701E-9962-4459-9EC5-A7D205F86294} = {0F56B728-BF51-48EC-8AD7-AA3E6EE6F357}
+		{6E684F2C-37C4-452E-8E34-383728F7637F} = {00163E6A-2019-42D7-8C4E-DB1D6864DDFD}
+		{9B1ED0C8-8B5A-4FD2-9807-E1FBBD4DFA28} = {6E684F2C-37C4-452E-8E34-383728F7637F}
+		{754F823E-DA7A-44E8-A62E-95C2BEDB0529} = {9B1ED0C8-8B5A-4FD2-9807-E1FBBD4DFA28}
+		{7FBECA0E-D71A-4386-A353-8E657F224C62} = {754F823E-DA7A-44E8-A62E-95C2BEDB0529}
+		{40FC3A37-D225-4E66-AAE1-70209BD06A6E} = {B797FB87-7DD7-43DC-AE68-57C9F0A5F419}
+		{30A07A19-3FAA-4080-90BE-03572EAC06EF} = {40FC3A37-D225-4E66-AAE1-70209BD06A6E}
+		{CBCAE13A-C247-47CA-BFE7-166D64CA0A1E} = {30A07A19-3FAA-4080-90BE-03572EAC06EF}
+		{FCCF42DD-E358-45BA-96A9-1BA3F18FB657} = {CBCAE13A-C247-47CA-BFE7-166D64CA0A1E}
+		{C43204F0-748A-40FD-AF47-96C029875EE2} = {FCCF42DD-E358-45BA-96A9-1BA3F18FB657}
+		{1A75A1E7-2521-4769-A374-4C3FA982F3B1} = {40FC3A37-D225-4E66-AAE1-70209BD06A6E}
+		{94E577BD-B5E0-446C-A000-3568F6888ED6} = {1A75A1E7-2521-4769-A374-4C3FA982F3B1}
+		{DD6EA60F-950B-4968-A611-D01FD5A23EBF} = {94E577BD-B5E0-446C-A000-3568F6888ED6}
+		{0F10F7F8-C8E9-4AB7-A05B-6D5B14CBBDC4} = {DD6EA60F-950B-4968-A611-D01FD5A23EBF}
+		{BDF26DBE-44CD-425E-BAE2-8B8559919531} = {D555C9F2-4ACD-47D4-AF21-F90712F1DC4E}
+		{598877B8-AAC4-4A64-A1A6-9893466D471A} = {BDF26DBE-44CD-425E-BAE2-8B8559919531}
+		{39516D32-D277-4F9A-8614-A6B41BB1481E} = {598877B8-AAC4-4A64-A1A6-9893466D471A}
+		{E36830AF-DDD6-4D8C-944A-502C814FA78F} = {39516D32-D277-4F9A-8614-A6B41BB1481E}
+		{36233A8B-677A-4BE9-9824-4C115152A86D} = {E36830AF-DDD6-4D8C-944A-502C814FA78F}
+		{2E2DE6ED-0698-48D2-B26A-E8077739D951} = {36233A8B-677A-4BE9-9824-4C115152A86D}
+		{3CCB6728-6D7A-4771-8387-6298DEA7261A} = {2E2DE6ED-0698-48D2-B26A-E8077739D951}
+		{FBE47859-143D-4419-AEF3-6DAD278AEFC8} = {3CCB6728-6D7A-4771-8387-6298DEA7261A}
+		{A7E370A8-D22F-44BB-ABF9-F8C34B3E7355} = {FBE47859-143D-4419-AEF3-6DAD278AEFC8}
+		{1BE74E21-ED61-498D-98AE-602D0F859FA0} = {A7E370A8-D22F-44BB-ABF9-F8C34B3E7355}
+		{27EACC7B-965F-4F34-9182-33C38E456724} = {2E2DE6ED-0698-48D2-B26A-E8077739D951}
+		{B2B01B10-DD94-414C-84DA-967FF3A2E82B} = {27EACC7B-965F-4F34-9182-33C38E456724}
+		{81CA54BD-9C98-4A18-8F29-6A601495F5B7} = {B2B01B10-DD94-414C-84DA-967FF3A2E82B}
+		{B5FDD069-CDE3-42D1-BC99-C3703F20B35A} = {81CA54BD-9C98-4A18-8F29-6A601495F5B7}
+		{64A2492F-20A1-45FB-8AC5-4117AA47DAA8} = {36233A8B-677A-4BE9-9824-4C115152A86D}
+		{2B0A4372-FC5E-4057-982F-0F9603DD3284} = {64A2492F-20A1-45FB-8AC5-4117AA47DAA8}
+		{8F9BCE7F-FEF3-4711-8FDB-168A569E8EBC} = {2B0A4372-FC5E-4057-982F-0F9603DD3284}
+		{5BEA6E67-8A86-4D5D-B7E1-E2F571000457} = {8F9BCE7F-FEF3-4711-8FDB-168A569E8EBC}
+		{7EA9B422-3377-4675-AA08-622D8071E9B6} = {5BEA6E67-8A86-4D5D-B7E1-E2F571000457}
+		{B43ABA8D-FF34-4248-A606-9AF470A42D63} = {64A2492F-20A1-45FB-8AC5-4117AA47DAA8}
+		{4ADDFDA8-6A1A-41A2-96FF-F321A1ACB7A1} = {B43ABA8D-FF34-4248-A606-9AF470A42D63}
+		{04568B0A-14B5-4448-B80B-3A39DAA4DAD1} = {4ADDFDA8-6A1A-41A2-96FF-F321A1ACB7A1}
+		{20C6C0D5-D52A-4626-9E0E-D0FB72494D91} = {04568B0A-14B5-4448-B80B-3A39DAA4DAD1}
+		{041768E9-99BD-4B18-B542-CADEF7F066AC} = {D555C9F2-4ACD-47D4-AF21-F90712F1DC4E}
+		{CCC2150B-BB06-4483-8BD0-A94B3E2130A2} = {041768E9-99BD-4B18-B542-CADEF7F066AC}
+		{C312913A-6444-4076-BC08-7D5CB404B6DF} = {CCC2150B-BB06-4483-8BD0-A94B3E2130A2}
+		{BC9FD0AC-2365-4239-8BFD-45F3E9704EA3} = {C312913A-6444-4076-BC08-7D5CB404B6DF}
+		{4D6E09AB-5FC5-4D7D-8C1A-8EB62E703BB3} = {BC9FD0AC-2365-4239-8BFD-45F3E9704EA3}
+		{7128654A-F8B8-4833-972E-F2374098FF42} = {4D6E09AB-5FC5-4D7D-8C1A-8EB62E703BB3}
+		{ADCFA593-2A03-481E-B495-8DEE05624340} = {7128654A-F8B8-4833-972E-F2374098FF42}
+		{73E748BD-239C-4470-B0D8-B3B085EF1362} = {ADCFA593-2A03-481E-B495-8DEE05624340}
+		{3D16D13E-4488-4F98-BE0A-418481361202} = {73E748BD-239C-4470-B0D8-B3B085EF1362}
+		{7068975D-F1CE-4903-A26E-B12A8C064F3C} = {3D16D13E-4488-4F98-BE0A-418481361202}
+		{2786972B-E49E-47D3-882A-D2BAC4F6B36B} = {7128654A-F8B8-4833-972E-F2374098FF42}
+		{C81FD272-FE8C-4296-91F5-A02F025DA218} = {2786972B-E49E-47D3-882A-D2BAC4F6B36B}
+		{FC5F06AD-55C2-432F-A116-6A469DC77A24} = {C81FD272-FE8C-4296-91F5-A02F025DA218}
+		{8A989A6B-9131-4E48-A3F2-7DC22BA05239} = {FC5F06AD-55C2-432F-A116-6A469DC77A24}
+		{62BA43DF-D1C7-4184-9D19-17C5E24A7087} = {4D6E09AB-5FC5-4D7D-8C1A-8EB62E703BB3}
+		{65CEEC2B-9552-409E-947D-1700CC5A343F} = {62BA43DF-D1C7-4184-9D19-17C5E24A7087}
+		{6DA22CB8-62E4-41B4-B1E2-2D710FB2790C} = {65CEEC2B-9552-409E-947D-1700CC5A343F}
+		{6C10C7E7-E436-447B-B316-1420B1BC66C5} = {6DA22CB8-62E4-41B4-B1E2-2D710FB2790C}
+		{BA308990-0215-4D7D-B31D-659F7BBB1A5C} = {6C10C7E7-E436-447B-B316-1420B1BC66C5}
+		{0E8F01E7-C302-4717-A0FD-DD0D600D5A6A} = {62BA43DF-D1C7-4184-9D19-17C5E24A7087}
+		{C095CC2D-1A86-4F62-BED9-F0862814E72F} = {0E8F01E7-C302-4717-A0FD-DD0D600D5A6A}
+		{44B21E17-B9B5-40CA-BEA9-ADAE9DBFBF4D} = {C095CC2D-1A86-4F62-BED9-F0862814E72F}
+		{58B30399-1052-4AF5-BF1B-9E1F00DC69DB} = {44B21E17-B9B5-40CA-BEA9-ADAE9DBFBF4D}
+		{75D77DD9-F940-4513-BB67-CCD3A1CBC33B} = {D555C9F2-4ACD-47D4-AF21-F90712F1DC4E}
+		{9FC6C7B3-CFC4-44D9-B889-831D5D7CFC3D} = {75D77DD9-F940-4513-BB67-CCD3A1CBC33B}
+		{867147F3-CE2C-4A80-A628-F831D1E1CC7A} = {9FC6C7B3-CFC4-44D9-B889-831D5D7CFC3D}
+		{400EECFF-3EDD-40E8-8CE1-0C00F55732B6} = {867147F3-CE2C-4A80-A628-F831D1E1CC7A}
+		{2FF495CC-33AA-4710-8AEC-F230D2CD398A} = {400EECFF-3EDD-40E8-8CE1-0C00F55732B6}
+		{3F8D1484-1F2B-40C8-A7DF-81645D8BD6C0} = {2FF495CC-33AA-4710-8AEC-F230D2CD398A}
+		{E64C88E2-4455-4609-99D4-A0CAFC5CDF45} = {3F8D1484-1F2B-40C8-A7DF-81645D8BD6C0}
+		{0CE175A7-AD26-4E9D-9E00-B52AC9FB547D} = {E64C88E2-4455-4609-99D4-A0CAFC5CDF45}
+		{439251B6-7083-45A1-A94F-A3BC74AB4DED} = {0CE175A7-AD26-4E9D-9E00-B52AC9FB547D}
+		{AC4C07F3-1599-46F1-8DB7-2C307567A958} = {439251B6-7083-45A1-A94F-A3BC74AB4DED}
+		{46686C39-D01E-495F-828D-6BEA775E62F3} = {3F8D1484-1F2B-40C8-A7DF-81645D8BD6C0}
+		{91F42732-05A9-4524-A6AB-A9B8138DC1A2} = {46686C39-D01E-495F-828D-6BEA775E62F3}
+		{4775FF84-C0C7-4753-96FD-5EABD3629682} = {91F42732-05A9-4524-A6AB-A9B8138DC1A2}
+		{86675701-17D4-45DC-A476-BCC1F68C356D} = {4775FF84-C0C7-4753-96FD-5EABD3629682}
+		{057A905B-10BD-438E-BD1D-B91DF9CCDE12} = {2FF495CC-33AA-4710-8AEC-F230D2CD398A}
+		{EE991B40-B8B0-4C65-8FF4-36035AFF42A5} = {057A905B-10BD-438E-BD1D-B91DF9CCDE12}
+		{E796B5B7-71CC-4D6B-BA27-0B604B1F4DFE} = {EE991B40-B8B0-4C65-8FF4-36035AFF42A5}
+		{F98A01BC-6DF3-42EB-A668-4573DFEB4586} = {E796B5B7-71CC-4D6B-BA27-0B604B1F4DFE}
+		{2B7D4B0A-B55F-4DAD-ABF6-2883CE5D4851} = {F98A01BC-6DF3-42EB-A668-4573DFEB4586}
+		{278E877C-015F-42F0-9869-39A9844A1266} = {057A905B-10BD-438E-BD1D-B91DF9CCDE12}
+		{2373E8A9-945D-4757-B83B-DB673F8A3C73} = {278E877C-015F-42F0-9869-39A9844A1266}
+		{90544C97-EF95-4265-A17F-617B8B47C068} = {2373E8A9-945D-4757-B83B-DB673F8A3C73}
+		{FDB0AC0B-C8B9-4218-BB7B-C2C23E864830} = {90544C97-EF95-4265-A17F-617B8B47C068}
+		{076656C5-0DBA-432F-8773-00A3005A9583} = {3D9D07F8-B6CE-42E8-B2AC-390B7A36A90B}
+		{405FE5D8-BB72-4CC5-80B2-66F4E5D9D8F4} = {076656C5-0DBA-432F-8773-00A3005A9583}
+		{63D200FB-31BC-4685-B3D3-7F65840B52BD} = {405FE5D8-BB72-4CC5-80B2-66F4E5D9D8F4}
+		{0ED2CAA1-EF38-491D-B55A-2902F3310D02} = {63D200FB-31BC-4685-B3D3-7F65840B52BD}
+		{92DE35D2-FDA2-43AC-B615-67DA5556EB68} = {0ED2CAA1-EF38-491D-B55A-2902F3310D02}
+		{711AEA01-FEED-4E95-B726-049933CE0F6F} = {92DE35D2-FDA2-43AC-B615-67DA5556EB68}
+		{44BD70CF-34CA-4D2F-A813-7C975C2A33BD} = {711AEA01-FEED-4E95-B726-049933CE0F6F}
+		{EC3411C3-7BB7-41BC-9F7A-91A2C03E77D1} = {44BD70CF-34CA-4D2F-A813-7C975C2A33BD}
+		{F5AB9ED5-5546-42CF-B912-23E37C0945EE} = {EC3411C3-7BB7-41BC-9F7A-91A2C03E77D1}
+		{58EC7714-1817-43C9-AEA6-981D4063F3F2} = {F5AB9ED5-5546-42CF-B912-23E37C0945EE}
+		{4805F74E-2DE1-4F36-BA11-1E8CC9241F24} = {58EC7714-1817-43C9-AEA6-981D4063F3F2}
+		{B74BE7A4-67DC-4A28-94F0-159B8CF2B442} = {44BD70CF-34CA-4D2F-A813-7C975C2A33BD}
+		{D2CF51FA-0216-4401-8ABD-50B2C399F492} = {B74BE7A4-67DC-4A28-94F0-159B8CF2B442}
+		{095359E9-9C3C-4D00-8171-BAE21250F05E} = {D2CF51FA-0216-4401-8ABD-50B2C399F492}
+		{D9B1B618-3641-40B5-83D9-222F5F8D6CC4} = {095359E9-9C3C-4D00-8171-BAE21250F05E}
+		{069E0364-D3E3-4580-8213-53D1E5BFBBE3} = {711AEA01-FEED-4E95-B726-049933CE0F6F}
+		{DB4898A7-C520-4D88-A905-2F165D0B0F44} = {069E0364-D3E3-4580-8213-53D1E5BFBBE3}
+		{5D2DC0FC-4406-4273-AFC1-1A73BCF5C257} = {DB4898A7-C520-4D88-A905-2F165D0B0F44}
+		{B26AE027-13B9-4634-BA4A-80A2AD9E9AFD} = {5D2DC0FC-4406-4273-AFC1-1A73BCF5C257}
+		{00CB0674-BF12-4736-A178-128546151DBD} = {B26AE027-13B9-4634-BA4A-80A2AD9E9AFD}
+		{71A60EBA-257F-4A51-9784-AAD6A5327402} = {069E0364-D3E3-4580-8213-53D1E5BFBBE3}
+		{29A8FF16-A7F5-412F-B6D2-89F8CA929BAE} = {71A60EBA-257F-4A51-9784-AAD6A5327402}
+		{1D57FE6A-67C1-49B0-8BC3-1AB19E183BD6} = {29A8FF16-A7F5-412F-B6D2-89F8CA929BAE}
+		{5ABCC3FD-BC4D-4D12-9AC8-9EBAA538944B} = {1D57FE6A-67C1-49B0-8BC3-1AB19E183BD6}
+		{DE43AA0F-9E0B-4FF3-8EDB-3B37D814B5CD} = {30418203-3F26-48E9-B45A-57F6F118B620}
+		{32C5D17D-685D-481A-98E3-34150BDE9F36} = {DE43AA0F-9E0B-4FF3-8EDB-3B37D814B5CD}
+		{1EC656A8-541D-4EA9-9C7E-D084A9765825} = {32C5D17D-685D-481A-98E3-34150BDE9F36}
+		{F65F1EF5-EF60-498C-AE71-2F1FDE787663} = {1EC656A8-541D-4EA9-9C7E-D084A9765825}
+		{E0ADDE7A-A645-4FAD-9E00-9C553273262C} = {F65F1EF5-EF60-498C-AE71-2F1FDE787663}
+		{44ABB33D-FAC0-4C7A-8E09-5193AC043CD2} = {E0ADDE7A-A645-4FAD-9E00-9C553273262C}
+		{3E0D34C9-BB9E-401E-BBB4-D67F947EB528} = {44ABB33D-FAC0-4C7A-8E09-5193AC043CD2}
+		{D24CEE2C-7066-493B-82B3-20B2B73840F4} = {3E0D34C9-BB9E-401E-BBB4-D67F947EB528}
+		{9E4918DB-2357-4CFC-AEAC-F14AE9A579D3} = {D24CEE2C-7066-493B-82B3-20B2B73840F4}
+		{AE01EF8C-64EC-4A50-A011-41EFA17EB849} = {9E4918DB-2357-4CFC-AEAC-F14AE9A579D3}
+		{3D56F231-58D8-48EE-A883-707E6E5B6F55} = {44ABB33D-FAC0-4C7A-8E09-5193AC043CD2}
+		{EDD47A7A-345B-48C0-9462-077C0B7036CB} = {3D56F231-58D8-48EE-A883-707E6E5B6F55}
+		{3174B079-721A-4B2C-AECC-89A123474826} = {EDD47A7A-345B-48C0-9462-077C0B7036CB}
+		{0F52804F-BD17-4AA5-96FF-3E30766C1D2B} = {3174B079-721A-4B2C-AECC-89A123474826}
+		{9E9F7646-70E4-44C8-9A40-F0EA201903D1} = {30418203-3F26-48E9-B45A-57F6F118B620}
+		{08AE6FD0-8CED-4F2F-BDB4-187EB2076FD1} = {9E9F7646-70E4-44C8-9A40-F0EA201903D1}
+		{05398DD3-2BC4-4B5F-A6D5-739B654E988F} = {08AE6FD0-8CED-4F2F-BDB4-187EB2076FD1}
+		{CF6BC12B-BB94-48D3-8E45-518B7FD76041} = {05398DD3-2BC4-4B5F-A6D5-739B654E988F}
+		{C39A421A-2343-4BB0-90CB-82F769A8C103} = {CF6BC12B-BB94-48D3-8E45-518B7FD76041}
+		{C043C250-450B-4551-9765-78C63B083B70} = {C39A421A-2343-4BB0-90CB-82F769A8C103}
+		{B40C95B1-C8A5-48C5-83F2-6E6ADE2FD6DD} = {C043C250-450B-4551-9765-78C63B083B70}
+		{0B03C4D2-6496-49B2-8687-91185159FE1E} = {B40C95B1-C8A5-48C5-83F2-6E6ADE2FD6DD}
+		{AB38DFE7-747A-4874-9297-06F4539A1A18} = {0B03C4D2-6496-49B2-8687-91185159FE1E}
+		{B63CD775-F128-406B-9908-B9E51EE3284B} = {AB38DFE7-747A-4874-9297-06F4539A1A18}
+		{AEE53AD8-8BC2-40EA-8833-F78F1D1DC981} = {C043C250-450B-4551-9765-78C63B083B70}
+		{A7994CA4-EA64-4EC5-8646-E157AF514295} = {AEE53AD8-8BC2-40EA-8833-F78F1D1DC981}
+		{7BC0CFB3-30F0-4D36-9AB4-BAEAEA70211E} = {A7994CA4-EA64-4EC5-8646-E157AF514295}
+		{C42C1DFC-5794-49E4-A060-A1BCD6393798} = {7BC0CFB3-30F0-4D36-9AB4-BAEAEA70211E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D148CDDF-D8CE-473A-96D3-BD795A94D451}
+	EndGlobalSection
+EndGlobal

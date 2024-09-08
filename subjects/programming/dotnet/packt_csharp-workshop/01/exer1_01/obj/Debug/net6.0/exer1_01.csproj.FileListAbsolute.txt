@@ -1,0 +1,15 @@
+/home/brian-267252/local_repos/personal/github/professional-development/subjects/programming/dotnet/packt_csharp-workshop/01/exer1_01/bin/Debug/net6.0/exer1_01
+/home/brian-267252/local_repos/personal/github/professional-development/subjects/programming/dotnet/packt_csharp-workshop/01/exer1_01/bin/Debug/net6.0/exer1_01.deps.json
+/home/brian-267252/local_repos/personal/github/professional-development/subjects/programming/dotnet/packt_csharp-workshop/01/exer1_01/bin/Debug/net6.0/exer1_01.runtimeconfig.json
+/home/brian-267252/local_repos/personal/github/professional-development/subjects/programming/dotnet/packt_csharp-workshop/01/exer1_01/bin/Debug/net6.0/exer1_01.dll
+/home/brian-267252/local_repos/personal/github/professional-development/subjects/programming/dotnet/packt_csharp-workshop/01/exer1_01/bin/Debug/net6.0/ref/exer1_01.dll
+/home/brian-267252/local_repos/personal/github/professional-development/subjects/programming/dotnet/packt_csharp-workshop/01/exer1_01/bin/Debug/net6.0/exer1_01.pdb
+/home/brian-267252/local_repos/personal/github/professional-development/subjects/programming/dotnet/packt_csharp-workshop/01/exer1_01/obj/Debug/net6.0/exer1_01.csproj.AssemblyReference.cache
+/home/brian-267252/local_repos/personal/github/professional-development/subjects/programming/dotnet/packt_csharp-workshop/01/exer1_01/obj/Debug/net6.0/exer1_01.GeneratedMSBuildEditorConfig.editorconfig
+/home/brian-267252/local_repos/personal/github/professional-development/subjects/programming/dotnet/packt_csharp-workshop/01/exer1_01/obj/Debug/net6.0/exer1_01.AssemblyInfoInputs.cache
+/home/brian-267252/local_repos/personal/github/professional-development/subjects/programming/dotnet/packt_csharp-workshop/01/exer1_01/obj/Debug/net6.0/exer1_01.AssemblyInfo.cs
+/home/brian-267252/local_repos/personal/github/professional-development/subjects/programming/dotnet/packt_csharp-workshop/01/exer1_01/obj/Debug/net6.0/exer1_01.csproj.CoreCompileInputs.cache
+/home/brian-267252/local_repos/personal/github/professional-development/subjects/programming/dotnet/packt_csharp-workshop/01/exer1_01/obj/Debug/net6.0/exer1_01.dll
+/home/brian-267252/local_repos/personal/github/professional-development/subjects/programming/dotnet/packt_csharp-workshop/01/exer1_01/obj/Debug/net6.0/ref/exer1_01.dll
+/home/brian-267252/local_repos/personal/github/professional-development/subjects/programming/dotnet/packt_csharp-workshop/01/exer1_01/obj/Debug/net6.0/exer1_01.pdb
+/home/brian-267252/local_repos/personal/github/professional-development/subjects/programming/dotnet/packt_csharp-workshop/01/exer1_01/obj/Debug/net6.0/exer1_01.genruntimeconfig.cache
