@@ -12,39 +12,41 @@ data "aws_subnets" "default" {
   }
 }
 
-data "terraform_remote_state" "db" {
-  backend = "s3"
+# data "terraform_remote_state" "db" {
+#   backend = "s3"
 
-  config = {
-    bucket = "name-bks-tfuar-state"
-    key    = "stage/data-stores/mysql/terraform.tfstate"
-    region = "us-east-2"
-  }
-}
+#   config = {
+#     bucket = var.db_remote_state_bucket
+#     key    = var.db_remote_state_key
+#     region = "us-east-2"
+#   }
+# }
 
 #
 # resources
 #
-data "template_file" "user_data" {
-  template = file("${path.module}/user_data.tpl")
-  vars = {
-    server_port = var.server_port
-    db_address  = data.terraform_remote_state.db.outputs.address
-    db_port     = data.terraform_remote_state.db.outputs.port
-  }
-}
+# data "template_file" "user_data" {
+#   template = file("${path.module}/user-data.sh")
+#   vars = {
+#     server_port = var.server_port
+#     db_address  = data.terraform_remote_state.db.outputs.address
+#     db_port     = data.terraform_remote_state.db.outputs.port
+#   }
+# }
 
 resource "aws_launch_template" "example" {
   # image_id = "ami-0866a3c8686eaeeba" # us-east-1
   image_id      = "ami-0ea3c35c5c3284d82" # us-east-2
-  instance_type = "t2.micro"              # free tier
-  # security_group_names = [aws_security_group.instance.name]
+  instance_type = var.instance_type   # free tier
   vpc_security_group_ids = [aws_security_group.instance.id]
-  # security_group_names = [ aws_security_group.instance.name ]
 
-  user_data = base64encode(data.template_file.user_data.rendered)
-  # user_data = base64encode(templatefile("${path.module}/user_data.tpl", {server_port = var.server_port}))
-  # user_data = base64encode("echo $RANDOM > index.html; nohup busybox httpd -f -p ${var.server_port} &")
+  # user_data = base64encode(data.template_file.user_data.rendered)
+  user_data = base64encode(templatefile("${path.module}/user-data.sh", {
+    server_port = var.server_port
+    db_address = "db_address" #data.terraform_remote_state.db.address
+    db_port = "db_port" #data.terraform_remote_state.db.outputs.port
+    }
+  ))
 
   lifecycle {
     create_before_destroy = true
@@ -63,18 +65,18 @@ resource "aws_autoscaling_group" "example" {
   target_group_arns = [aws_lb_target_group.asg.arn]
   health_check_type = "ELB"
 
-  min_size = 2
-  max_size = 10
+  min_size = var.min_size
+  max_size = var.max_size
 
   tag {
     key                 = "Name"
-    value               = "terraform-asg-example"
+    value               = "${var.cluster_name}-asg"
     propagate_at_launch = true
   }
 }
 
 resource "aws_lb" "example" {
-  name               = "terraform-asg-example"
+  name               = "${var.cluster_name}-alb"
   load_balancer_type = "application"
   subnets            = data.aws_subnets.default.ids
   security_groups    = [aws_security_group.alb.id]
@@ -82,8 +84,8 @@ resource "aws_lb" "example" {
 
 resource "aws_lb_listener" "http" {
   load_balancer_arn = aws_lb.example.arn
-  port              = 80
-  protocol          = "HTTP"
+  port              = local.http_port
+  protocol          = local.http_protocol
 
   # By default, return a simple 404 page
   default_action {
@@ -114,14 +116,14 @@ resource "aws_lb_listener_rule" "asg" {
 }
 
 resource "aws_lb_target_group" "asg" {
-  name     = "terraform-asg-example"
+  name     = "${var.cluster_name}-asg-example"
   port     = var.server_port
-  protocol = "HTTP"
+  protocol = local.http_protocol
   vpc_id   = data.aws_vpc.default.id
 
   health_check {
     path                = "/"
-    protocol            = "HTTP"
+    protocol            = local.http_protocol
     matcher             = "200"
     interval            = 15
     timeout             = 3
@@ -131,32 +133,36 @@ resource "aws_lb_target_group" "asg" {
 }
 
 resource "aws_security_group" "alb" {
-  name = "terraform-example-alb"
+  name = "${var.cluster_name}-alb"
+}
 
-  # Allow inbound HTTP requests
-  ingress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
+resource "aws_security_group_rule" "allow_http_inbound" {
+  type = "ingress"
+  security_group_id = aws_security_group.alb.id
 
-  # Allow all outbound requests
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
+    from_port   = local.http_port
+    to_port     = local.http_port
+    protocol    = local.tcp_protocol
+    cidr_blocks = local.all_ips
+}
+
+resource "aws_security_group_rule" "allow_http_outbound" {
+  type = "egress"
+  security_group_id = aws_security_group.alb.id
+
+    from_port   = local.any_port
+    to_port     = local.any_port
+    protocol    = local.any_protocol
+    cidr_blocks = local.all_ips
 }
 
 resource "aws_security_group" "instance" {
-  name = "terraform-example-instance"
+  name = "${var.cluster_name}-instance"
 
   ingress {
     from_port   = var.server_port
     to_port     = var.server_port
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    protocol    = local.tcp_protocol
+    cidr_blocks = local.all_ips
   }
 }
