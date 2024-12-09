@@ -6,7 +6,7 @@ terraform {
   backend "s3" {
     # Replace this with your bucket name!
     bucket         = "name-bks-tfuar-state"
-    key            = "stage/services/webserver-cluster/terraform.tfstate"
+    key            = "live/stage/services/webserver-cluster/terraform.tfstate"
     region         = "us-east-2"
 
     # Replace this with your DynamoDB table name!
